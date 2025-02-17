@@ -1,0 +1,694 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url(../fonts/HelveticaNeueRoman.otf);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    src: url(../fonts/HelveticaNeueLight.otf);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Medium';
+    src: url(../fonts/HelveticaNeueMedium.otf);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Bold';
+    src: url(../fonts/HelveticaNeueBold.otf);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Condensed Bold';
+    src: url(../fonts/HelveticaNeueCondensedBold.ttf);
+}
+
+@font-face {
+    font-family: 'GT America Trial';
+    src: url(../fonts/gt-america-trial/GT-America-Compressed-Regular-Trial.otf);
+}
+
+@font-face {
+    font-family: 'GT America Trial Bold';
+    src: url(../fonts/gt-america-trial/GT-America-Compressed-Bold-Trial.otf);
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth overflow-x-hidden
+    }
+
+    body {
+        @apply font-helvetica font-normal box-border bg-transparent
+    }
+
+    p {
+        @apply text-sm font-normal leading-8 m-0
+    }
+}
+
+@layer components {
+    .nav_link {
+        @apply text-base leading-[22.4px] py-2 font-medium text-white uppercase transition-all duration-500 hover:text-[#B2811F]
+    }
+
+    .nav-white {
+        background: rgba(0, 0, 0, 0.3) !important;
+        backdrop-filter: blur(4px);
+    }
+
+    .btn-white {
+        @apply py-5 px-9 bg-white rounded-full text-base leading-[22.4px] font-medium text-black;
+    }
+
+    .btn-black {
+        @apply py-5 px-9 bg-black rounded-full text-base leading-[22.4px] font-medium text-white transition-all duration-500;
+    }
+
+    .btn-black:hover {
+        @apply shadow-xl;
+    }
+
+    .max-w-8xl {
+        width: 100%;
+        max-width: 1440px;
+    }
+
+    .text-anim {
+        overflow: hidden;
+    }
+
+    .text-anim div {
+        display: inline-block;
+    }
+
+
+   
+
+
+    /* TIMELINE CONTAINER */
+    .timeline-container .swiper-Timeline {
+        width: 100%;
+        height: auto;
+        overflow: hidden !important;
+        @apply lg:h-[800px] md:h-[900px];
+    }
+
+    .timeline-container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+
+
+        align-items: center;
+        gap: 50px;
+        position: relative;
+        @apply flex flex-col lg:flex-row px-4 lg:px-[70px];
+    }
+
+
+    .timeline-container .left-panel {
+
+        align-items: center;
+        gap: 20px;
+        @apply flex flex-row lg:flex-col;
+    }
+
+
+    .timeline-container .year-list {
+        @apply flex lg:flex-col lg:gap-10 sm:gap-5 gap-3;
+    }
+
+    .timeline-container .year {
+        color: #A8A8A8;
+        font-family: "Helvetica Neue";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 1.92px;
+        transition: color 0.5s, transform 0.5s;
+        cursor: pointer;
+        @apply flex flex-col items-center justify-center;
+    }
+
+    .timeline-container .year .tringle {
+        @apply opacity-0 w-0 h-0 border-l-[10px] border-l-transparent border-b-[15px] border-b-black border-r-[10px] border-r-transparent;
+    }
+
+    .year.active {
+        color: #262626;
+
+    }
+
+    .year.active .tringle {
+        @apply max-lg:opacity-100;
+    }
+
+
+
+    .swiper-Timeline .swiper-wrapper {
+        flex-direction: column;
+    }
+
+    .swiper-Timeline .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        color: #444;
+        background: #ffffff;
+        border-radius: 10px;
+        overflow: visible;
+        transition: transform 0.5s, opacity 0.5s;
+    }
+
+    .timeline-container .left-panel button {
+        border-radius: 60px;
+        background: #fff;
+        border: 1.25px solid #E0E0E0;
+        cursor: pointer;
+        transition: background 0.3s;
+        color: #000;
+        @apply p-4 lg:py-[26px] lg:px-[18px]
+    }
+
+    .swiper-Timeline .left-panel button:hover {
+        border-color: #000;
+        background-color: #000;
+        color: #fff;
+    }
+
+    .swiper-Timeline .small_Title {
+        color: #A8A8A8;
+        font-family: "Helvetica Neue";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 1.92px;
+        margin-top: 44px;
+        margin-bottom: 18px;
+        text-align: left;
+    }
+
+    .swiper-Timeline .counter-pera {
+        color: #393939;
+        font-family: "Helvetica Neue";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        text-align: left;
+    }
+
+    .swiper-Timeline .odometer {
+        color: var(--Neutral-900, #161616);
+        font-family: "GT America Trial Bold" !important;
+        font-size: 240px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+        /* 264px */
+        text-transform: uppercase;
+        display: inline-block;
+        overflow-y: hidden;
+
+
+    }
+
+    .swiper-Timeline .odometer-formatting-mark {
+        display: none;
+    }
+
+    .odometer-1963 {
+        position: relative;
+    }
+
+    .card {
+        transition: transform 0.3s ease-in-out, z-index 0.2s ease-in-out, filter 0.3s ease-in-out;
+    }
+
+    .card img {
+        transition: filter 0.3s ease-in-out;
+    }
+
+    /* iconic Swiper */
+    .iconic-slider-container .swiper-container {
+        position: relative;
+        padding-left: 320px;
+        overflow: visible;
+        max-width: 1440px;
+    }
+
+    .iconic-slider-container .swiper-slide .slide-title .title {
+        @apply !opacity-0;
+    }
+
+    .iconic-slider-container .swiper-slide.swiper-slide-active .slide-title .title {
+        @apply !opacity-100;
+    }
+
+    .iconic-slider-container .swiper-slide {
+
+        margin-left: auto;
+    }
+
+    .iconic-slider-container .swiper-buttons {
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        gap: 12px;
+    }
+
+    .iconic-slider-container .swiper-buttons button,
+    .story-slide-btn {
+        border: 1.25px solid #E0E0E0;
+        border-radius: 60px;
+        padding: 18px 26px;
+        cursor: pointer;
+        pointer-events: auto;
+        transition: background 0.3s;
+    }
+
+    .iconic-slider-container .swiper-buttons button svg,
+    .story-slide-btn svg {
+        stroke: #A8A8A8;
+        transition: all .6s ease-in-out;
+    }
+
+    .iconic-slider-container .swiper-buttons button:hover svg,
+    .story-slide-btn:hover svg {
+        stroke: #161616;
+    }
+
+    /* Slide Counter */
+    .iconic-slider-container .slide-counter {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Progress Bar */
+    .iconic-slider-container .swiper-progress {
+        width: 100%;
+        height: 1px;
+        background: #C6C6C6;
+    }
+
+    .iconic-slider-container .swiper-progress-bar {
+        width: 0%;
+        height: 6px;
+        background: black;
+        transition: width 0.3s ease;
+        transform: translateY(-3px);
+    }
+
+    .iconic-slider-container .swiper-pagination {
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 46px;
+        color: #A8A8A8;
+        position: relative;
+        width: auto;
+        font-family: 'Helvetica Neue Condensed Bold';
+    }
+
+    .iconic-slider-container .swiper-pagination-current {
+        color: #161616;
+    }
+
+    .story-slider {
+        overflow: hidden;
+    }
+
+    .iconic-slider-container .slide-title {
+        @apply opacity-0 transition-all duration-300;
+    }
+
+    .iconic-slider-container .swiper-slide.swiper-slide-active .slide-title {
+        @apply opacity-100;
+    }
+
+    /*news slider*/
+    .news-slider {
+        height: 782px;
+    }
+
+    .news-slider .swiper-slide {
+        background-position: top !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        position: relative;
+        padding: 80px 120px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .news-slider .swiper-slide::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 83.5%);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .news-slide-btn {
+        border-radius: 100px;
+        background: rgba(255, 255, 255, 0.10);
+        padding: 18px 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .news-slider .swiper-pagination {
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 46px;
+        color: rgba(255, 255, 255, 0.50);
+        position: relative;
+        width: auto;
+        font-family: 'Helvetica Neue Condensed Bold';
+    }
+
+    .news-slider .swiper-pagination-current {
+        color: #fff;
+    }
+
+    @media(max-width:1500px) {
+        .iconic-slider-container .swiper-container {
+            padding-left: 100px;
+        }
+    }
+
+    @media(max-width:1300px) {
+        .iconic-slider-container .swiper-container {
+            padding-left: 50px;
+        }
+    }
+
+    @media(max-width:767px) {
+        .iconic-slider-container .swiper-container {
+            padding-left: 24px;
+        }
+
+        .iconic-slider-container .swiper-pagination {
+            font-size: 24px;
+        }
+
+        .iconic-slider-container .swiper-buttons button,
+        .story-slide-btn {
+            width: 48px;
+            height: 36px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-slide-img {
+            width: 100%;
+            height: 360px;
+        }
+
+        .story-slide-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    .photo-slider-container {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .photo-slider-thumb {
+        width: 510px;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .photo-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .photo-nav .photo-swiper-button-next:after,
+    .photo-nav .photo-swiper-button-prev:after {
+        content: none;
+    }
+
+    .swiper-arrow {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .photo-slider-container .thumb-slider {
+        width: 100%;
+        height: 230px;
+        overflow: hidden;
+    }
+
+    .photo-slider-container .main-slider {
+        height: 800px;
+        width: 780px;
+        margin: 0 !important;
+        overflow: hidden;
+    }
+
+
+
+    .photo-slider-container .swiper-slide {
+        overflow: hidden;
+        margin: 0 !important;
+    }
+
+    .photo-slider-container .slide-inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo-slider-container .photo-swiper-button-next,
+    .photo-slider-container .photo-swiper-button-prev {
+        position: relative;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        margin: 0 !important;
+        background: none !important;
+        width: auto !important;
+        height: auto !important;
+        font-size: 20px;
+        font-weight: 500;
+        color: #161616;
+        line-height: 28px;
+        cursor: pointer;
+    }
+
+    .photo-nav-main {
+        max-width: 510px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    /* Slide Counter Styles */
+
+    .photo-nav-main .swiper-pagination-fraction {
+        position: relative;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: auto !important;
+        font-family: 'Helvetica Neue Condensed Bold';
+    }
+
+    .photo-nav-main .swiper-pagination-fraction {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        color: #A8A8A8;
+    }
+
+    .photo-nav-main .swiper-pagination-current {
+        color: #161616;
+    }
+
+    .volume-switcher {
+        display: none;
+    }
+
+    /* volume on : container */
+    .switcher-container {
+        display: block;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 32px;
+        right: 32px;
+        cursor: pointer;
+        opacity: 0.8;
+        width: 132px;
+        height: 96px;
+        border-radius: 80px;
+        background: rgba(0, 0, 0, 0.40);
+        backdrop-filter: blur(2px);
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-transition: all 0.3s ease-in;
+        -moz-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in 0s;
+    }
+
+    .switcher-container:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 1);
+        -webkit-transition: all 0.3s ease-in;
+        -moz-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in 0s;
+    }
+
+    .btn-back {
+        @apply flex items-center gap-3 text-sm font-medium leading-[140%] text-[#161616] transition-all duration-500
+    }
+
+    .btn-share {
+        @apply w-20 h-20 flex items-center justify-center rounded-full bg-neutral-50 transition-all duration-500 hover:bg-neutral-100
+    }
+
+    @media(max-width:1300px) {
+        .photo-slider-thumb {
+            width: 350px;
+        }
+
+        .photo-slider-container .main-slider {
+            width: 500px;
+        }
+    }
+
+    @media(max-width:1100px) {
+        .swiper-Timeline .odometer {
+            font-size: 180px;
+        }
+
+        .news-slider .swiper-slide {
+            padding: 40px 40px 140px;
+        }
+    }
+
+    @media(max-width:900px) {
+        .swiper-Timeline .odometer {
+            font-size: 130px;
+        }
+
+        .photo-slider-container {
+            flex-direction: column-reverse;
+        }
+
+        .photo-slider-container .main-slider {
+
+            height: 500px;
+        }
+
+        .photo-slider-thumb {
+            background: #fff;
+            padding: 16px;
+            margin-top: -150px;
+            position: relative;
+            z-index: 100;
+            gap: 16px;
+        }
+
+        .photo-nav-main .swiper-pagination-fraction {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        .iconic-slider-container .swiper-wrapper {
+            /* width: 230%; */
+        }
+
+        .iconic-slider-container .swiper-wrapper .swiper-slide {
+            width: 100% !important;
+        }
+
+        .iconic-slider-container .swiper-wrapper .swiper-slide {
+            /* width: 80% !important;*/
+        }
+
+        .swiper-Timeline .swiper-wrapper {
+            flex-direction: row;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 270px;
+        }
+
+        .news-slider .swiper-slide {
+            padding: 20px 20px 140px;
+        }
+    }
+
+    @media(max-width:767px) {
+        .card {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .photo-slider-thumb {
+            width: 300px;
+        }
+
+        .swiper-Timeline .swiper-slide {
+            overflow: hidden;
+        }
+
+        .switcher-container {
+            width: 80px;
+            height: 56px;
+            bottom: 12px;
+            right: 12px;
+        }
+    }
+
+    @media(max-width:650px) {
+        .iconic-slider-container .swiper-wrapper .swiper-slide {
+            width: 630px!important;
+        }
+        .iconic-slider-container .swiper-container {
+            overflow: hidden;
+        }
+        #nextSlide1.disabled {
+            pointer-events: none;  /* Disable clicking */
+            opacity: 0.5;          /* Optional: makes the button look disabled */
+        }
+    }
+}
