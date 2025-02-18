@@ -70,8 +70,8 @@
     </nav>
     <!-- navbar end  -->
     <!-- hero-section start  -->
-    <div class="hero-sec fixed top-0 bg-fixed bg-cover z-0 bg-center w-full h-screen"
-        style="background-image: url('assets/images/hero-img.webp');">
+    <div class="hero-sec fixed top-0 bg-center bg-no-repeat md:bg-cover bg-auto md:bg-fixed bg-scroll z-0  w-full h-screen xl:bg-[url('../images/hero-img.webp')] bg-[url('../images/hero-img-mobile.png')]"
+        >
         <div id="hero-Bottom" class="absolute bottom-0 bg-black py-6 w-full">
             <div class=" w-full mx-auto px-2.5 md:px-6 lg:px-8 2xl:px-8 max-w-8xl">
                 <div class="flex items-end justify-between gap-14">
@@ -638,7 +638,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex items-center gap-8 mt-10 max-w-[360px] md:max-w-[650px] lg:max-w-[1280px] mx-auto">
+                <div class="flex items-center gap-8 mt-10 max-w-[320px] md:max-w-[650px] lg:max-w-[1180px]  xl:max-w-[1280px] mx-auto">
                     <!-- Slide Counter -->
                     <!-- Fraction Pagination -->
                     <div class="swiper-pagination swiper-pagination-fraction swiper-pagination1"></div>
@@ -904,7 +904,7 @@
                 class="mb-[60px] text-center font-helvetica-condensed-bold text-[56px] font-bold leading-[100%] text-black lg:text-left lg:text-[80px]">
                 YOUR STYLE. YOUR STORY
             </h2>
-            <div class="grid sm:grid-cols-[repeat(auto-fit,minmax(224px,1fr))] gap-5">
+            <div class="grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(224px,1fr))] gap-5">
                 <div class="col-span-2 row-span-3">
                     <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-1.webp" alt=""
                         loading="lazy" />
@@ -913,12 +913,12 @@
                     <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-2.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="block sm:hidden w-full h-40"></div>
+                <div class="block sm:hidden w-full h-32"></div>
                 <div class="max-sm:row-span-2">
                     <img class=" h-full w-full rounded-md object-cover" src="assets/images/book-cover-3.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="block sm:hidden w-full h-40"></div>
+                <div class="block sm:hidden w-full h-32"></div>
                 <div>
                     <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-4.webp" alt=""
                         loading="lazy" />
@@ -936,12 +936,12 @@
                         loading="lazy" />
                 </div>
                 <div class="hidden sm:block w-full h-full"></div>
-                <div class="max-sm:aspect-[1/2] sm:col-span-2 row-span-2">
-                    <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-7.webp" alt=""
+                <div class="sm:hidden">
+                    <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-10.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="sm:hidden">
-                    <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-8.webp" alt=""
+                <div class="max-sm:aspect-[1/2] sm:col-span-2 row-span-2">
+                    <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-7.webp" alt=""
                         loading="lazy" />
                 </div>
                 <div class="w-full h-full "></div>
@@ -953,8 +953,12 @@
                     <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-8.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="">
+                <div class="hidden sm:block">
                     <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-10.webp" alt=""
+                        loading="lazy" />
+                </div>
+                <div class="sm:hidden">
+                    <img class="h-full w-full rounded-md object-cover" src="assets/images/book-cover-8.webp" alt=""
                         loading="lazy" />
                 </div>
                 <div class="sm:col-span-2">

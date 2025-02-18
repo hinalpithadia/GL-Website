@@ -1250,6 +1250,10 @@ p {
   background-color: rgb(245 245 245 / var(--tw-bg-opacity, 1));
 }
 
+/* .hero-sec{
+        background-image: url('../images/hero-img.webp');
+    } */
+
 @media(max-width:1300px) {
   .photo-slider-thumb {
     width: 350px;
@@ -1318,6 +1322,10 @@ p {
   .news-slider .swiper-slide {
     padding: 20px 20px 140px;
   }
+
+  /* .hero-sec{
+            background-image: url('../images/hero-img-mobile.png')!important;
+        } */
 }
 
 @media(max-width:767px) {
@@ -1623,8 +1631,8 @@ p {
   height: 3.5rem;
 }
 
-.h-40 {
-  height: 10rem;
+.h-32 {
+  height: 8rem;
 }
 
 .h-8 {
@@ -1724,8 +1732,8 @@ p {
   max-width: 200px;
 }
 
-.max-w-\[360px\] {
-  max-width: 360px;
+.max-w-\[320px\] {
+  max-width: 320px;
 }
 
 .max-w-\[527px\] {
@@ -1840,6 +1848,10 @@ p {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -2098,16 +2110,24 @@ p {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-cover {
-  background-size: cover;
+.bg-\[url\(\'\.\.\/images\/hero-img-mobile\.png\'\)\] {
+  background-image: url('../images/hero-img-mobile.png');
 }
 
-.bg-fixed {
-  background-attachment: fixed;
+.bg-auto {
+  background-size: auto;
+}
+
+.bg-scroll {
+  background-attachment: scroll;
 }
 
 .bg-center {
   background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .object-cover {
@@ -3104,6 +3124,14 @@ p {
     gap: 100px;
   }
 
+  .md\:bg-cover {
+    background-size: cover;
+  }
+
+  .md\:bg-fixed {
+    background-attachment: fixed;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -3275,8 +3303,8 @@ p {
     max-width: 42rem;
   }
 
-  .lg\:max-w-\[1280px\] {
-    max-width: 1280px;
+  .lg\:max-w-\[1180px\] {
+    max-width: 1180px;
   }
 
   .lg\:max-w-\[426px\] {
@@ -3406,12 +3434,20 @@ p {
     left: 120px !important;
   }
 
+  .xl\:max-w-\[1280px\] {
+    max-width: 1280px;
+  }
+
   .xl\:max-w-\[550px\] {
     max-width: 550px;
   }
 
   .xl\:flex-row {
     flex-direction: row;
+  }
+
+  .xl\:bg-\[url\(\'\.\.\/images\/hero-img\.webp\'\)\] {
+    background-image: url('../images/hero-img.webp');
   }
 }
 
