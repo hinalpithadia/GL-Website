@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
             el: ".swiper-pagination1", // Pagination container
             type: "custom", // Custom pagination
             renderCustom: function (swiper, current, total) {
-                const formattedCurrent = current <= 3 ? "0" + current : 3; // Ensure it stops at 3
+                const formattedCurrent = current <= 3 ? "0" + current : "0" + 3; // Ensure it stops at 3
                 const formattedTotal = '03'; // Always show 3 as total
 
                 return `<span class="swiper-pagination-current">${formattedCurrent}</span>/<span class="swiper-pagination-total">${formattedTotal}</span>`;

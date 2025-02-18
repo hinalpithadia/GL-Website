@@ -1350,6 +1350,13 @@ p {
   .iconic-slider-container .swiper-container {
     overflow: hidden;
   }
+
+  #nextSlide1.disabled {
+    pointer-events: none;
+    /* Disable clicking */
+    opacity: 0.5;
+    /* Optional: makes the button look disabled */
+  }
 }
 
 .visible {
@@ -1670,6 +1677,10 @@ p {
 
 .w-2\/4 {
   width: 50%;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-8 {
@@ -2709,12 +2720,12 @@ p {
   background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:p-6:hover {
-  padding: 1.5rem;
+.hover\:p-4:hover {
+  padding: 1rem;
 }
 
-.hover\:pb-10:hover {
-  padding-bottom: 2.5rem;
+.hover\:pb-6:hover {
+  padding-bottom: 1.5rem;
 }
 
 .hover\:text-white:hover {
@@ -3057,6 +3068,10 @@ p {
     height: 100vh;
   }
 
+  .md\:w-14 {
+    width: 3.5rem;
+  }
+
   .md\:max-w-\[296px\] {
     max-width: 296px;
   }
@@ -3180,6 +3195,14 @@ p {
 
   .md\:leading-\[85px\] {
     line-height: 85px;
+  }
+
+  .md\:hover\:p-6:hover {
+    padding: 1.5rem;
+  }
+
+  .md\:hover\:pb-10:hover {
+    padding-bottom: 2.5rem;
   }
 }
 
@@ -3351,6 +3374,11 @@ p {
 
   .lg\:text-\[92px\] {
     font-size: 92px;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .lg\:text-lg {
