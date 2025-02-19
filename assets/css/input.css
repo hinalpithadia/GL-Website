@@ -243,7 +243,9 @@
         overflow: visible;
         max-width: 1440px;
     }
-
+    .iconic-slider-container .swiper-wrapper{
+        align-items: flex-end;
+    }
     .iconic-slider-container .swiper-slide .slide-title .title {
         @apply !opacity-0;
     }
@@ -316,6 +318,7 @@
         position: relative;
         width: auto;
         font-family: 'Helvetica Neue Condensed Bold';
+        bottom: 0;
     }
 
     .iconic-slider-container .swiper-pagination-current {
