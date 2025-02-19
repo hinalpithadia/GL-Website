@@ -26,13 +26,13 @@
         <div id="navwrapper"
             class=" w-full mx-auto px-2.5 md:px-6 lg:px-8 2xl:px-8 max-w-8xl py-3 lg:py-[21px] h-[76px]">
             <div class="flex flex-col lg:flex-row justify-between items-center">
-                <div class="flex items-center justify-between max-lg:w-full">
+                <div class="flex items-center justify-between w-full lg:w-max">
                     <a href="index.html"
                         class="text-black relative z-10 bg-transparent max-w-[180px] inline-block py-[5px] mr-4 max-lg:z-[1000] leading-normal whitespace-nowrap ">
                         <img loading="lazy" loading="lazy" src="assets/images/brand_logo.webp" alt="" class="w-full ">
                     </a>
                     <button id="toggle-button"
-                        class=" relative z-10 bg-transparent right-6 w-8 h-8 block lg:hidden max-lg:z-[1000]">
+                        class=" relative z-10 bg-transparent right-2  block lg:hidden max-lg:z-[1000]">
                         <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.5 12.5C0.5 6.14873 5.64873 1 12 1C18.3513 1 23.5 6.14873 23.5 12.5V31H0.5V12.5Z"
                                 stroke="white" />
@@ -44,7 +44,7 @@
                     </button>
                 </div>
                 <ul id="toggle-menu"
-                    class="main-link max-lg:w-full max-lg:z-20 lg:top-0 max-lg:bg-transparent transform transition duration-500 lg:relative max-lg:gap-8 flex flex-col lg:flex-row gap-8 lg:gap-14 max-lg:py-4 max-lg:p-10 lg:min-h-0 lg:px-0 lg:py-0 -translate-y-[200%] lg:translate-y-0">
+                    class="main-link lg:w-max w-full lg:ml-auto ml-0 max-lg:z-20 lg:top-0 max-lg:bg-transparent transform transition duration-500 lg:relative max-lg:gap-8 flex flex-col lg:flex-row gap-8 lg:gap-14 max-lg:py-4 max-lg:p-10 lg:min-h-0 lg:px-0 lg:py-0 -translate-y-[200%] lg:translate-y-0">
                     <li>
                         <a href="#HOME" class="nav_link ">HOME</a>
                     </li>
@@ -64,10 +64,11 @@
                         <button class="lg:hidden block btn-white">GET IN TOUCH</button>
                     </li>
                 </ul>
-                <button class="hidden lg:block btn-white">GET IN TOUCH</button>
+                <button class="hidden lg:block btn-white ml-auto whitespace-nowrap">GET IN TOUCH</button>
             </div>
         </div>
     </nav>
+   
     <!-- navbar end  -->
     <!-- hero-section start  -->
     <div class="hero-sec fixed top-0 bg-center bg-no-repeat md:bg-cover bg-auto md:bg-fixed bg-scroll z-0  w-full h-screen xl:bg-[url('../images/hero-img.webp')] bg-[url('../images/hero-img-mobile.png')]"
@@ -533,7 +534,7 @@
                                         The Iconics.
                                     </h2>
                                 </div>
-                                <div class="flex md:items-start items-end  gap-[15px] lg:gap-[60px]">
+                                <div class="flex items-start  gap-[15px] lg:gap-[60px]">
                                     <div class="img-wrapper">
                                         <div class="reveal">
                                             <img src="assets/images/iconic-slide1-img1.webp" loading="lazy" alt="image"
@@ -541,7 +542,7 @@
                                         </div>
                                     </div>
                                     <div class="img-wrapper">
-                                        <div class="reveal translate-y-0 md:translate-y-40">
+                                        <div class="reveal translate-y-28 md:translate-y-40">
                                             <img src="assets/images/iconic-slide1-img2.webp" loading="lazy" alt="image"
                                                 class="w-full h-full object-cover" />
                                         </div>
@@ -570,7 +571,7 @@
                                         Last Pieces
                                     </h2>
                                 </div>
-                                <div class="flex md:items-start items-end gap-[15px] lg:gap-[60px]">
+                                <div class="flex items-start  gap-[15px] lg:gap-[60px]">
                                     <div class="img-wrapper">
                                         <div class="reveal">
                                             <img src="assets/images/iconic-slide1-img4.webp" loading="lazy" alt="image"
@@ -578,7 +579,7 @@
                                         </div>
                                     </div>
                                     <div class="img-wrapper">
-                                        <div class="reveal translate-y-0 md:translate-y-40">
+                                        <div class="reveal translate-y-28 md:translate-y-40">
                                             <img src="assets/images/iconic-slide1-img2.webp" loading="lazy" alt="image"
                                                 class="w-full h-full object-cover" />
                                         </div>
@@ -607,7 +608,7 @@
                                         The New seasons
                                     </h2>
                                 </div>
-                                <div class="flex md:items-start items-end gap-[15px] lg:gap-[60px]">
+                                <div class="flex items-start  gap-[15px] lg:gap-[60px]">
                                     <div class="img-wrapper">
                                         <div class="reveal">
                                             <img src="assets/images/iconic-slide-3-1.webp" loading="lazy" alt="image"
@@ -615,7 +616,7 @@
                                         </div>
                                     </div>
                                     <div class="img-wrapper">
-                                        <div class="reveal translate-y-0 md:translate-y-40">
+                                        <div class="reveal translate-y-28 md:translate-y-40">
                                             <img src="assets/images/iconic-slide1-img2.webp" loading="lazy" alt="image"
                                                 class="w-full h-full object-cover" />
                                         </div>
@@ -909,8 +910,12 @@
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-1.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="sm:col-span-2 row-span-2">
+                <div class="cycle-slideshow sm:col-span-2 row-span-2">
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-2.webp" alt=""
+                        loading="lazy" />
+                        <img class="h-full w-full object-cover" src="assets/images/book-cover-2-2.webp" alt=""
+                        loading="lazy" />
+                        <img class="h-full w-full object-cover" src="assets/images/book-cover-2-3.webp" alt=""
                         loading="lazy" />
                 </div>
                 <div class="block sm:hidden w-full h-32"></div>
@@ -931,17 +936,24 @@
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-9.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="max-sm:col-span-2 max-sm:row-span-1">
+                <div class="cycle-slideshow max-sm:col-span-2 max-sm:row-span-1">
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-6.webp" alt=""
+                    loading="lazy" />
+                    <img class="h-full w-full object-cover" src="assets/images/book-cover-6-1.webp" alt=""
+                        loading="lazy" />
+                        <img class="h-full w-full object-cover" src="assets/images/book-cover-6-2.webp" alt=""
                         loading="lazy" />
                 </div>
+               
                 <div class="hidden sm:block w-full h-full"></div>
                 <div class="sm:hidden">
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-10.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="max-sm:aspect-[1/2] sm:col-span-2 row-span-2">
+                <div class="cycle-slideshow max-sm:aspect-[1/2] sm:col-span-2 row-span-2">
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-7.webp" alt=""
+                    loading="lazy" />
+                    <img class="h-full w-full object-cover" src="assets/images/book-cover-7-2.webp" alt=""
                         loading="lazy" />
                 </div>
                 <div class="w-full h-full "></div>
@@ -949,18 +961,27 @@
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-9.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="hidden sm:block">
+                <div class="cycle-slideshow !hidden sm:block">
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-8.webp" alt=""
+                        loading="lazy" />
+                        <img class="h-full w-full object-cover" src="assets/images/book-cover-8-2.webp" alt=""
+                        loading="lazy" />
+                        <img class="h-full w-full object-cover" src="assets/images/book-cover-8-3.webp" alt=""
+                        loading="lazy" />
+                </div>
+                <div class="cycle-slideshow sm:hidden block">
+                    <img class="h-full w-full object-cover" src="assets/images/book-cover-8.webp" alt=""
+                        loading="lazy" />
+                        <img class="h-full w-full object-cover" src="assets/images/book-cover-8-2.webp" alt=""
+                        loading="lazy" />
+                        <img class="h-full w-full object-cover" src="assets/images/book-cover-8-3.webp" alt=""
                         loading="lazy" />
                 </div>
                 <div class="hidden sm:block">
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-10.webp" alt=""
                         loading="lazy" />
                 </div>
-                <div class="sm:hidden">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-8.webp" alt=""
-                        loading="lazy" />
-                </div>
+                
                 <div class="sm:col-span-2">
                     <img class="h-full w-full object-cover" src="assets/images/book-cover-11.webp" alt=""
                         loading="lazy" />
