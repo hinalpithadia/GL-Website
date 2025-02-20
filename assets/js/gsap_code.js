@@ -171,27 +171,42 @@ function inconictext() {
 }
 function titletext() {
     const headlines = document.querySelectorAll('.title');
+
     headlines.forEach(hl => {
         let newHtml = '';
-        // Wrap each letter in a span
-        for (let i = 0; i < hl.innerHTML.length; i++) {
-            let ts = hl.innerHTML[i];
+        let text = hl.innerHTML.trim(); // Remove extra spaces
+
+        for (let i = 0; i < text.length; i++) {
+            let ts = text[i];
+
+            // ✅ If it's an HTML tag, add it without wrapping in a span
             if (ts === '<') {
-                const tmpTxt = hl.innerHTML.substring(i);
-                ts = tmpTxt.match(/<.*?>/)[0];
-                i += ts.length - 1;
-            } else if (ts === ' ') {
+                const tmpTxt = text.substring(i);
+                const tagMatch = tmpTxt.match(/<.*?>/);
+                if (tagMatch) {
+                    ts = tagMatch[0];
+                    i += ts.length - 1;
+                }
+            } 
+            // ✅ If it's a space, keep it as is
+            else if (ts === ' ') {
                 ts = ' ';
-            } else {
+            } 
+            // ✅ Only wrap actual text characters in a <span>
+            else {
                 ts = `<span style="opacity: 0; display: inline-block;">${ts}</span>`;
             }
+
             newHtml += ts;
         }
+
         hl.innerHTML = newHtml;
+
         const letters = hl.querySelectorAll('span');
-        // GSAP Timeline Animation
+        
+        // ✅ GSAP Timeline Animation
         gsap.timeline()
-            .set(letters, { opacity: 0, x: 40, skewX: -40 }) // Initial State
+            .set(letters, { opacity: 0, x: 0, skewX: -40 }) // Initial State
             .to(letters, {
                 opacity: 1,
                 x: 0,

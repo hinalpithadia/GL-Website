@@ -334,7 +334,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let odometerElement = activeSlide.querySelector(".odometer");
         if (odometerElement) {
             let value = parseInt(odometerElement.getAttribute("data-value")) || 0;
-            odometerElement.innerHTML = "0";
+            odometerElement.innerHTML = "0000";
+
+             // Ensure consistent text alignment
+        odometerElement.style.textAlign = "center";
+        odometerElement.style.display = "inline-block";
+        odometerElement.style.minWidth = "4ch"; // Ensures width stability
 
             setTimeout(() => {
             let odometer = new Odometer({
@@ -344,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 theme: "minimal" // Use minimal theme for clean look
             });
             odometer.update(value);
-        }); // Delay ensures proper execution
+        }, 50); // Delay ensures proper execution
         }
     }
 
@@ -357,32 +362,51 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // timeline card hover
-document.querySelectorAll('.card').forEach((card, index) => {
+document.querySelectorAll('.card').forEach((card) => {
+    let isHovered = false;
+    let hoverTimeout;
+
     card.addEventListener('mouseenter', function () {
-        // Get the max z-index of all cards
-        let maxZIndex = Math.max(...Array.from(document.querySelectorAll('.card'))
-            .map(sibling => parseInt(window.getComputedStyle(sibling).zIndex) || 0));
-        // Set the hovered card to the highest z-index + 1
-        card.style.zIndex = maxZIndex + 1;
-        card.style.transform = "scale(1.2)"; // Smooth scaling effect
-        // Apply grayscale effect to all other cards
-        document.querySelectorAll('.card').forEach(sibling => {
-            if (sibling !== card) {
-                sibling.querySelector('img').style.filter = 'grayscale(100%)';
-            }
+        clearTimeout(hoverTimeout); // Stop any pending mouseleave event
+
+        if (isHovered) return;
+        isHovered = true;
+
+        requestAnimationFrame(() => {
+            let maxZIndex = Math.max(
+                ...Array.from(document.querySelectorAll('.card'))
+                    .map(sibling => parseInt(window.getComputedStyle(sibling).zIndex) || 0)
+            );
+
+            card.style.zIndex = maxZIndex + 1;
+            card.style.transform = "scale(1.2)";
+            card.style.transition = "transform 0.3s ease-out";
+
+            document.querySelectorAll('.card').forEach(sibling => {
+                if (sibling !== card) {
+                    sibling.querySelector('img').style.filter = 'grayscale(100%)';
+                }
+            });
         });
     });
+
     card.addEventListener('mouseleave', function () {
-        // Reset grayscale effect
-        document.querySelectorAll('.card img').forEach(img => {
-            img.style.filter = 'grayscale(0%)';
-        });
-        // Reset scaling and z-index after mouse leaves (optional)
-        card.style.transform = "scale(1)";
-        card.style.zIndex = "";
-        // Set rotate to a random value between -7deg and 7deg
-        const randomRotation = (Math.random() * 14 - 7).toFixed(2); // Random number between -7 and 7 degrees
-        card.style.rotate = `${randomRotation}deg`;
+        hoverTimeout = setTimeout(() => {
+            isHovered = false;
+
+            requestAnimationFrame(() => {
+                document.querySelectorAll('.card img').forEach(img => {
+                    img.style.filter = 'grayscale(0%)';
+                });
+
+                card.style.transform = "scale(1)";
+                card.style.zIndex = "";
+
+                const randomRotation = (Math.random() * 10 - 5).toFixed(2);
+                card.style.rotate = `${randomRotation}deg`;
+                card.style.transition = "transform 0.3s ease-in-out, rotate 0.5s ease-in-out";
+            });
+        }, 50); // Small delay prevents flicker
     });
 });
 
