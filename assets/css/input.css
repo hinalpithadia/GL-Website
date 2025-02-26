@@ -592,9 +592,30 @@
     .btn-share {
         @apply w-20 h-20 flex items-center justify-center rounded-full bg-neutral-50 transition-all duration-500 hover:bg-neutral-100
     }
-    /* .hero-sec{
-        background-image: url('../images/hero-img.webp');
-    } */
+    .swiper-blog .swiper-slide {
+        width: 100%;
+        max-width: 300px;
+    }
+    @media (min-width: 768px) {
+        .swiper-blog .swiper-slide  {
+            /* upping it to a 3 column layout */
+            width: 32.5%;
+            max-width: 100%;
+        }
+        .swiper-blog .swiper-wrapper {
+            justify-content: space-between;
+        }
+    }
+    @media (min-width: 767px) {
+        .swiper-blog .swiper-wrapper {
+
+            /* swiper is disabled at this breakpoint */
+            /* wrap slides  */
+            flex-wrap: wrap;
+
+            width: 100%;
+        }
+    }
     @media(max-width:1300px) {
         .photo-slider-thumb {
             width: 350px;
@@ -643,17 +664,11 @@
             line-height: 30px;
         }
 
-        .iconic-slider-container .swiper-wrapper {
-            /* width: 230%; */
-        }
 
         .iconic-slider-container .swiper-wrapper .swiper-slide {
             width: 100% !important;
         }
 
-        .iconic-slider-container .swiper-wrapper .swiper-slide {
-            /* width: 80% !important;*/
-        }
 
         .swiper-Timeline .swiper-wrapper {
             flex-direction: row;
@@ -667,12 +682,12 @@
         .news-slider .swiper-slide {
             padding: 20px 20px 140px;
         }
-        /* .hero-sec{
-            background-image: url('../images/hero-img-mobile.png')!important;
-        } */
     }
 
     @media(max-width:767px) {
+        .btn-share {
+            @apply w-14 h-14;
+        }
         .card {
             width: 100%;
             max-width: 200px;

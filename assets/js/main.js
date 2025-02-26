@@ -1,3 +1,65 @@
+    /*=======blog detail slider in mobile========*/
+    (function () {
+        'use strict';
+      
+        // Define breakpoint
+        const breakpoint = window.matchMedia('(max-width: 767px)');
+        let mySwiper;
+      
+        // Function to initialize Swiper
+        const enableSwiper = () => {
+          if (!mySwiper) {
+            mySwiper = new Swiper('.swiper-blog', {
+              loop: true,
+              slidesPerView: 'auto',
+              centeredSlides: false,
+              speed:1500,
+              a11y: true,
+              keyboard: {
+                enabled: true,
+              },
+              grabCursor: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+              autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+              },
+            });
+          }
+        };
+      
+        // Function to destroy Swiper
+        const destroySwiper = () => {
+          if (mySwiper) {
+            mySwiper.destroy(true, true);
+            mySwiper = null;  // Reset swiper instance
+          }
+        };
+      
+        // Function to check breakpoint and initialize/destroy Swiper accordingly
+        const breakpointChecker = () => {
+          if (breakpoint.matches) {
+            // If screen size is below 767px and swiper is not initialized, enable it
+            enableSwiper();
+          } else {
+            // If screen size is above 767px, destroy Swiper if it's initialized
+            destroySwiper();
+          }
+        };
+      
+        // Listen for breakpoint changes
+        breakpoint.addEventListener('change', breakpointChecker);
+      
+        // Listen for window resize events to handle resizing dynamically
+        window.addEventListener('resize', breakpointChecker);
+      
+        // Initial check
+        breakpointChecker();
+      })();
+      
 /* ====== mobile menu ========*/
 
 const burger = document.getElementById("toggle-button");
@@ -143,8 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
 /*============photo slider===============*/
 // JavaScript for Swiper Sliders
 $(document).ready(function () {
@@ -253,9 +313,7 @@ $(document).ready(function () {
     });
 });
 
-
-
-//timeline slider 
+/*========timeline slider ===========*/
 document.addEventListener("DOMContentLoaded", function () {
     let swiper;
 
@@ -429,3 +487,81 @@ document.querySelectorAll(".switcher-container").forEach((switcher) => {
         }
     });
 });
+/*====search input=========*/
+$('.js-clearSearchBox').css('opacity', '0');
+
+$('.js-searchBox-input').focus(function () {
+    $('.searchBox-fakeInput').toggleClass("is-focussed");
+});
+
+$('.js-searchBox-input').keyup(function () {
+    if ($(this).val() != '') {
+        $('.js-clearSearchBox').css('opacity', '1');
+    } else {
+        $('.js-clearSearchBox').css('opacity', '0');
+    };
+
+    $(window).bind('keydown', function (e) {
+        if (e.keyCode === 27) {
+            $('.js-searchBox-input').val('');
+        };
+    });
+});
+// click the button 
+$('.js-clearSearchBox').click(function () {
+    $('.js-searchBox-input').val('');
+    $('.js-searchBox-input').focus();
+    $('.js-clearSearchBox').css('opacity', '0');
+});
+
+/*====social modal popup=====*/
+function toggleModal() {
+    document.getElementById('modal').classList.toggle('hidden')
+}
+
+/*=======load more==========*/
+document.getElementById("loadMoreBtn").addEventListener("click", function () {
+    const hiddenCards = document.querySelectorAll(".press-card.hidden");
+
+    hiddenCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.remove("hidden");
+            card.classList.add("opacity-100");
+        }, index * 300); // Stagger effect
+    });
+
+    this.style.display = "none"; // Hide button after showing cards
+});
+
+ /*========news slider===========*/
+ $(document).ready(function () {
+    const newsswiper = new Swiper('.news-slider', {
+        // loop: true,
+       
+        navigation: {
+            nextEl: "#news-btn-next",
+            prevEl: "#news-btn-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination3", // Pagination container
+            type: "custom", // Use custom pagination
+            renderCustom: function (swiper, current, total) {
+                // Add leading zero to current and total
+                const formattedCurrent = current < 10 ? `0${current}` : current;
+                const formattedTotal = total < 10 ? `0${total}` : total;
+                return `<span class="swiper-pagination-current">${formattedCurrent}</span>/<span class="swiper-pagination-total">${formattedTotal}</span>`;
+            },
+        },
+        on: {
+
+            slideChange: function () {
+                bloglines()
+                opline()
+            },
+        },
+        slidesPerView: 1,
+        speed: 1000
+    });
+});
+
+

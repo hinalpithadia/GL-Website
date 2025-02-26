@@ -1270,9 +1270,31 @@ p {
   background-color: rgb(245 245 245 / var(--tw-bg-opacity, 1));
 }
 
-/* .hero-sec{
-        background-image: url('../images/hero-img.webp');
-    } */
+.swiper-blog .swiper-slide {
+  width: 100%;
+  max-width: 300px;
+}
+
+@media (min-width: 768px) {
+  .swiper-blog .swiper-slide  {
+    /* upping it to a 3 column layout */
+    width: 32.5%;
+    max-width: 100%;
+  }
+
+  .swiper-blog .swiper-wrapper {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 767px) {
+  .swiper-blog .swiper-wrapper {
+    /* swiper is disabled at this breakpoint */
+    /* wrap slides  */
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
 
 @media(max-width:1300px) {
   .photo-slider-thumb {
@@ -1321,13 +1343,8 @@ p {
     line-height: 30px;
   }
 
-  .iconic-slider-container .swiper-wrapper {
-    /* width: 230%; */
-  }
-
   .iconic-slider-container .swiper-wrapper .swiper-slide {
     width: 100% !important;
-    /* width: 80% !important;*/
   }
 
   .swiper-Timeline .swiper-wrapper {
@@ -1342,13 +1359,14 @@ p {
   .news-slider .swiper-slide {
     padding: 20px 20px 140px;
   }
-
-  /* .hero-sec{
-            background-image: url('../images/hero-img-mobile.png')!important;
-        } */
 }
 
 @media(max-width:767px) {
+  .btn-share {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
   .card {
     width: 100%;
     max-width: 200px;
@@ -1427,8 +1445,8 @@ p {
   bottom: 2.5rem;
 }
 
-.bottom-\[-18px\] {
-  bottom: -18px;
+.bottom-\[10\%\] {
+  bottom: 10%;
 }
 
 .bottom-\[40px\] {
@@ -1447,8 +1465,16 @@ p {
   right: 0px;
 }
 
+.right-1 {
+  right: 0.25rem;
+}
+
 .right-2 {
   right: 0.5rem;
+}
+
+.right-3 {
+  right: 0.75rem;
 }
 
 .right-32 {
@@ -1461,10 +1487,6 @@ p {
 
 .right-5 {
   right: 1.25rem;
-}
-
-.right-6 {
-  right: 1.5rem;
 }
 
 .right-8 {
@@ -1768,10 +1790,6 @@ p {
   max-width: 320px;
 }
 
-.max-w-\[527px\] {
-  max-width: 527px;
-}
-
 .max-w-\[698px\] {
   max-width: 698px;
 }
@@ -1876,10 +1894,6 @@ p {
 
 .list-disc {
   list-style-type: disc;
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-2 {
@@ -2167,6 +2181,10 @@ p {
   padding: 0.25rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .p-px {
   padding: 1px;
 }
@@ -2261,8 +2279,8 @@ p {
   padding-bottom: 50px;
 }
 
-.pl-10 {
-  padding-left: 2.5rem;
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .pl-6 {
@@ -2283,10 +2301,6 @@ p {
 
 .pr-4 {
   padding-right: 1rem;
-}
-
-.pr-6 {
-  padding-right: 1.5rem;
 }
 
 .pr-7 {
@@ -2646,10 +2660,6 @@ p {
   opacity: 0;
 }
 
-.opacity-100 {
-  opacity: 1;
-}
-
 .opacity-\[0\.03\] {
   opacity: 0.03;
 }
@@ -2866,6 +2876,10 @@ p {
 }
 
 @media not all and (min-width: 768px) {
+  .max-md\:max-w-\[272px\] {
+    max-width: 272px;
+  }
+
   .max-md\:tracking-\[-0\.64px\] {
     letter-spacing: -0.64px;
   }
@@ -2972,10 +2986,6 @@ p {
 
   .sm\:max-w-\[540px\] {
     max-width: 540px;
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:grid-cols-\[repeat\(auto-fit\2c minmax\(224px\2c 1fr\)\)\] {
@@ -3092,6 +3102,14 @@ p {
     bottom: 1.25rem;
   }
 
+  .md\:right-0 {
+    right: 0px;
+  }
+
+  .md\:right-24 {
+    right: 6rem;
+  }
+
   .md\:right-44 {
     right: 11rem;
   }
@@ -3130,6 +3148,10 @@ p {
 
   .md\:max-w-\[296px\] {
     max-width: 296px;
+  }
+
+  .md\:max-w-\[527px\] {
+    max-width: 527px;
   }
 
   .md\:max-w-\[650px\] {
@@ -3173,6 +3195,10 @@ p {
     background-attachment: fixed;
   }
 
+  .md\:p-0 {
+    padding: 0px;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -3211,6 +3237,14 @@ p {
   .md\:py-\[80px\] {
     padding-top: 80px;
     padding-bottom: 80px;
+  }
+
+  .md\:pl-10 {
+    padding-left: 2.5rem;
+  }
+
+  .md\:pr-6 {
+    padding-right: 1.5rem;
   }
 
   .md\:font-helvetica-light {
@@ -3369,10 +3403,6 @@ p {
   .lg\:translate-y-0 {
     --tw-translate-y: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:flex-row {

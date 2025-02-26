@@ -31,7 +31,7 @@
                             class="w-full ">
                     </a>
                     <button id="toggle-button"
-                        class=" relative z-10 bg-transparent right-6 w-8 h-8 block lg:hidden max-lg:z-[1000]">
+                        class=" relative z-10 bg-transparent right-1 w-8 h-8 block lg:hidden max-lg:z-[1000]">
                         <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.5 12.5C0.5 6.14873 5.64873 1 12 1C18.3513 1 23.5 6.14873 23.5 12.5V31H0.5V12.5Z"
                                 stroke="black" />
@@ -1097,7 +1097,7 @@
                             d="M6.7187 7.2387C6.75203 7.0187 6.82536 6.82536 6.9187 6.66536C7.1187 6.29203 7.4587 6.0987 7.9187 6.09203C8.2187 6.09203 8.49203 6.22536 8.68536 6.4187C8.87203 6.62536 8.9987 6.91203 8.9987 7.1987H10.1987C10.1854 6.88537 10.1254 6.5987 9.9987 6.33203C9.8987 6.0787 9.74536 5.85203 9.54536 5.66536C8.5787 4.77203 6.78536 4.8987 5.96536 5.91203C5.10536 7.02536 5.08536 8.97203 5.9587 10.0854C6.76536 11.0787 8.53203 11.2187 9.49203 10.332C9.6987 10.1654 9.86536 9.9587 9.9987 9.7187C10.1054 9.4787 10.1787 9.22537 10.1854 8.95203H8.9987C8.9987 9.09203 8.95203 9.2187 8.89203 9.33203C8.83203 9.4587 8.75203 9.5587 8.66536 9.64536C8.44536 9.8187 8.18536 9.91203 7.90536 9.91203C7.66536 9.90536 7.46536 9.8587 7.31203 9.7587C7.13891 9.66188 7.00114 9.51244 6.9187 9.33203C6.58536 8.73203 6.6387 7.8987 6.7187 7.2387ZM7.9987 1.33203C4.33203 1.33203 1.33203 4.33203 1.33203 7.9987C1.68536 16.8454 14.332 16.8387 14.6654 7.9987C14.6654 4.33203 11.6654 1.33203 7.9987 1.33203ZM7.9987 13.332C5.0587 13.332 2.66536 10.9387 2.66536 7.9987C2.9587 0.925365 13.0387 0.925365 13.332 7.9987C13.332 10.9387 10.9387 13.332 7.9987 13.332Z"
                             fill="#C6C6C6" />
                     </svg>
-                    An Adita Birla Venture
+                    Lorem ipsum
                 </p>
                 <div class="flex items-center gap-3 sm:justify-start justify-center">
                     <a href="#"
@@ -1147,81 +1147,7 @@
     <script src="assets/js/gsap_code.js"></script>
     <script src="https://malsup.github.io/jquery.cycle2.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        $('.js-clearSearchBox').css('opacity', '0');
-
-        $('.js-searchBox-input').focus(function () {
-            $('.searchBox-fakeInput').toggleClass("is-focussed");
-        });
-
-        $('.js-searchBox-input').keyup(function () {
-            if ($(this).val() != '') {
-                $('.js-clearSearchBox').css('opacity', '1');
-            } else {
-                $('.js-clearSearchBox').css('opacity', '0');
-            };
-
-            $(window).bind('keydown', function (e) {
-                if (e.keyCode === 27) {
-                    $('.js-searchBox-input').val('');
-                };
-            });
-        });
-        // click the button 
-        $('.js-clearSearchBox').click(function () {
-            $('.js-searchBox-input').val('');
-            $('.js-searchBox-input').focus();
-            $('.js-clearSearchBox').css('opacity', '0');
-        });
-
-    </script>
-    <script>
-        /*========story slider===========*/
-        $(document).ready(function () {
-            const newsswiper = new Swiper('.news-slider', {
-                // loop: true,
-               
-                navigation: {
-                    nextEl: "#news-btn-next",
-                    prevEl: "#news-btn-prev",
-                },
-                pagination: {
-                    el: ".swiper-pagination3", // Pagination container
-                    type: "custom", // Use custom pagination
-                    renderCustom: function (swiper, current, total) {
-                        // Add leading zero to current and total
-                        const formattedCurrent = current < 10 ? `0${current}` : current;
-                        const formattedTotal = total < 10 ? `0${total}` : total;
-                        return `<span class="swiper-pagination-current">${formattedCurrent}</span>/<span class="swiper-pagination-total">${formattedTotal}</span>`;
-                    },
-                },
-                on: {
-
-                    slideChange: function () {
-                        bloglines()
-                        opline()
-                    },
-                },
-                slidesPerView: 1,
-                speed: 1000
-            });
-        });
-    </script>
-    <script>
-        document.getElementById("loadMoreBtn").addEventListener("click", function () {
-            const hiddenCards = document.querySelectorAll(".press-card.hidden");
-
-            hiddenCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.remove("hidden");
-                    card.classList.add("opacity-100");
-                }, index * 300); // Stagger effect
-            });
-
-            this.style.display = "none"; // Hide button after showing cards
-        });
-    </script>
-
+   
 </body>
 
 </html>
