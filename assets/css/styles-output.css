@@ -3362,6 +3362,11 @@ p {
     display: none;
   }
 
+  .lg\:h-max {
+    height: -moz-max-content;
+    height: max-content;
+  }
+
   .lg\:min-h-0 {
     min-height: 0px;
   }

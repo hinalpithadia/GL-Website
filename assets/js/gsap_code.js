@@ -16,7 +16,27 @@ tl.from(".home-header", {
         duration: 1.4,
     }, "-=1.4") // Starts at the same time
     ;
+// Scroll Hide/Show Effect
+let lastScrollTop = 0;
+window.addEventListener("scroll", function () {
+    let navbar = document.querySelector(".home-navbar");
+    let header = document.querySelector(".home-header");
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    if (scrollTop === 0) {
+        gsap.to(navbar, { background: "transparent", backdropFilter: "blur(0px)",  webkitBackdropFilter: "blur(0px)", duration: 0.3 });
+    } else {
+        gsap.to(navbar, { background: "rgba(0, 0, 0, 0.6)", backdropFilter: "blur(10px)", webkitBackdropFilter: "blur(10px)", duration: 0.3 });
+    }
+
+    if (scrollTop > lastScrollTop) {
+        gsap.to([header, navbar], { y: "-100%", opacity: 0, duration: 0.5, ease: "power1.out" });
+    } else {
+        gsap.to([header, navbar], { y: "0%", opacity: 1, duration: 0.5, ease: "power1.out" });
+    }
+
+    lastScrollTop = scrollTop;
+});
 window.addEventListener("load", function () {
     gsap.killTweensOf("#efforts-section .efforts"); // Kill any existing animation
     triggerGSAPAnimation3(); // Restart GSAP animation

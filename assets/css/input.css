@@ -596,6 +596,8 @@
         width: 100%;
         max-width: 300px;
     }
+   
+    
     @media (min-width: 768px) {
         .swiper-blog .swiper-slide  {
             /* upping it to a 3 column layout */
