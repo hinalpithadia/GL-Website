@@ -14,29 +14,61 @@ tl.from(".home-header", {
         y: 220,
         opacity: 0,
         duration: 1.4,
-    }, "-=1.4") // Starts at the same time
-    ;
-// Scroll Hide/Show Effect
+    }, "-=1.4"); // Starts at the same time
+
 let lastScrollTop = 0;
+let scrollTimeout;
+
 window.addEventListener("scroll", function () {
     let navbar = document.querySelector(".home-navbar");
     let header = document.querySelector(".home-header");
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    // Toggle transparent background when at the top
     if (scrollTop === 0) {
-        gsap.to(navbar, { background: "transparent", backdropFilter: "blur(0px)",  webkitBackdropFilter: "blur(0px)", duration: 0.3 });
+        navbar.classList.remove("scrolled");  // Remove 'scrolled' class when at the top
     } else {
-        gsap.to(navbar, { background: "rgba(0, 0, 0, 0.6)", backdropFilter: "blur(10px)", webkitBackdropFilter: "blur(10px)", duration: 0.3 });
+        navbar.classList.add("scrolled");  // Add 'scrolled' class when scrolled
     }
 
+    // Remove any previous timeout to reset the auto-show feature
+    clearTimeout(scrollTimeout);
+
+    // GSAP animations for hiding or showing navbar and header when scrolling
     if (scrollTop > lastScrollTop) {
-        gsap.to([header, navbar], { y: "-100%", opacity: 0, duration: 0.5, ease: "power1.out" });
+        // Scrolling down - Hide both navbar and header
+        gsap.to([navbar, header], { 
+            y: -100, 
+            opacity: 0, 
+            duration: 0.5, 
+            ease: "power1.out" 
+        });
     } else {
-        gsap.to([header, navbar], { y: "0%", opacity: 1, duration: 0.5, ease: "power1.out" });
+        // Scrolling up - Show both navbar and header
+        gsap.to([navbar, header], { 
+            y: 0, 
+            opacity: 1, 
+            duration: 0.5, 
+            ease: "power1.out" 
+        });
     }
 
+    // Set a timeout to automatically show navbar and header after a period of no scrolling
+    scrollTimeout = setTimeout(() => {
+        gsap.to([navbar, header], { 
+            y: 0, 
+            opacity: 1, 
+            duration: 0.5, 
+            ease: "power1.out" 
+        });
+        navbar.classList.add("scrolled");  // Ensure scrolled class is added after timeout
+        header.classList.add("scrolled");  // Ensure scrolled class is added after timeout
+    }, 2500);  // Adjust the time (in ms) based on how long you want to wait after scrolling stops
+
+    // Update the last scroll position
     lastScrollTop = scrollTop;
 });
+
 window.addEventListener("load", function () {
     gsap.killTweensOf("#efforts-section .efforts"); // Kill any existing animation
     triggerGSAPAnimation3(); // Restart GSAP animation

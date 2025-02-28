@@ -100,43 +100,6 @@ window.addEventListener("load", checkScrollAndAnimate);
 window.addEventListener("scroll", checkScrollAndAnimate);
 
 
-//add white bg
-// document.addEventListener("DOMContentLoaded", function () {
-//     const navbar = document.getElementById("navbar");
-
-//     window.addEventListener("scroll", function () {
-//         if (window.scrollY > 50) {
-//             navbar.classList.add("nav-white");
-//         } else {
-//             navbar.classList.remove("nav-white");
-//         }
-//     });
-// });
-
-// let lastScrollTop = 0;
-//         window.addEventListener("scroll", function() {
-//             let navbar = document.getElementById("navbar");
-//             let header = document.getElementById("header");
-//             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//             if (scrollTop > lastScrollTop) {
-//                 header.style.transform = "translateY(-100%)";
-//                 navbar.style.transform = "translateY(-100%)";
-//                 navbar.style.background = "!important";
-//                 navbar.style.backdropfilter = "blur(5px)";
-//                 navbar.style.opacity = "0";
-//                 header.style.opacity = "0";
-//             } else {
-//                 navbar.style.transform = "translateY(0)";
-//                 navbar.style.background = "rgba(0,0,0,0.6)";
-//                 navbar.style.backdropFilter  = "blur(5px)";
-//                 navbar.style.opacity = "1";
-//                 header.style.transform = "translateY(0)";
-                
-//                 header.style.opacity = "1";
-                
-//             }
-//             lastScrollTop = scrollTop;
-//         });
 
 //   gallery slideshow  
 $(document).ready(function () {

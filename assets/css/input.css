@@ -597,7 +597,35 @@
         max-width: 300px;
     }
    
+    .home-navbar.scrolled{
+        background: #fff;
+        border-bottom: 1px solid #E0E0E0;
+    }
     
+    .home-navbar.scrolled .nav_link {
+        color: #000;
+    }
+    .home-navbar.scrolled .nav_link:hover {
+        color: #b2811f;
+    }
+    .home-navbar.scrolled #navwrapper button{
+        background: #000;
+        color: #fff;
+    }
+    .home-navbar.scrolled #navwrapper button:hover{
+        box-shadow:0px 10px 20px 0px rgba(0,0,0,0.1);
+    }
+    .logo-img-black{
+        display: none;
+    }
+    .home-navbar.scrolled #navwrapper .logo-img-black{
+        display: block;
+    }
+    .home-navbar.scrolled #navwrapper .logo-img-white{
+        display: none;
+    }
+   
+ 
     @media (min-width: 768px) {
         .swiper-blog .swiper-slide  {
             /* upping it to a 3 column layout */
