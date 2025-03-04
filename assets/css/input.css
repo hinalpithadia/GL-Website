@@ -138,7 +138,7 @@
     }
 
     .timeline-container .year .tringle {
-        @apply opacity-0 w-0 h-0 border-l-[10px] border-l-transparent border-b-[15px] border-b-black border-r-[10px] border-r-transparent;
+        @apply absolute opacity-0 w-0 h-0 border-l-[10px] border-l-transparent border-b-[15px] border-b-black border-r-[10px] border-r-transparent;
     }
 
     .year.active {
@@ -404,8 +404,13 @@
             padding-left: 50px;
         }
     }
-
+    @media(max-width:990px) {
+        .timeline-container .year .tringle{
+            position: relative;
+        }
+    }
     @media(max-width:767px) {
+       
         .iconic-slider-container .swiper-container {
             padding-left: 24px;
         }
@@ -715,6 +720,12 @@
     }
 
     @media(max-width:767px) {
+        .home-navbar.scrolled #navwrapper #toggle-button{
+            background: transparent;
+        }
+        .home-navbar.scrolled #navwrapper button svg path{
+            stroke: #000;
+        }
         .btn-share {
             @apply w-14 h-14;
         }

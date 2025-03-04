@@ -24,10 +24,28 @@ window.addEventListener("scroll", function () {
     let header = document.querySelector(".home-header");
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Toggle transparent background when at the top
+    // If we're at the top of the page, stop all scroll effects
     if (scrollTop === 0) {
-        navbar.classList.remove("scrolled");  // Remove 'scrolled' class when at the top
-    } else {
+        navbar.classList.remove("scrolled");
+        header.classList.remove("scrolled");
+
+        // Reset any GSAP animations and prevent further scroll effects from running
+        gsap.to([navbar, header], { 
+            y: 0, 
+            opacity: 1, 
+            duration: 0.5, 
+            ease: "power1.out" 
+        });
+
+        // Clear the timeout to prevent automatic reappearance after inactivity
+        clearTimeout(scrollTimeout);
+
+        // Return early to avoid any other code execution when at the top
+        return;
+    }
+
+    // Toggle transparent background when at the top
+    if (scrollTop !== 0) {
         navbar.classList.add("scrolled");  // Add 'scrolled' class when scrolled
     }
 
@@ -63,11 +81,12 @@ window.addEventListener("scroll", function () {
         });
         navbar.classList.add("scrolled");  // Ensure scrolled class is added after timeout
         header.classList.add("scrolled");  // Ensure scrolled class is added after timeout
-    }, 2500);  // Adjust the time (in ms) based on how long you want to wait after scrolling stops
+    }, 1500);  // Adjust the time (in ms) based on how long you want to wait after scrolling stops
 
     // Update the last scroll position
     lastScrollTop = scrollTop;
 });
+
 
 window.addEventListener("load", function () {
     gsap.killTweensOf("#efforts-section .efforts"); // Kill any existing animation
@@ -154,7 +173,7 @@ function triggerGSAPAnimation2() {
         .from(".card-1", {
             y: -0,
             x: 40,
-            scale: 1.3,
+            scale: 1.2,
             opacity: 0,
             duration: 0.8,
             ease: "power4.out"
@@ -162,7 +181,7 @@ function triggerGSAPAnimation2() {
         .from(".card-2", {
             y: -0,
             x: 40,
-            scale: 1.1,
+            scale: 1.05,
             opacity: 0,
             duration: 0.8,
             ease: "power4.out"
@@ -170,7 +189,7 @@ function triggerGSAPAnimation2() {
         .from(".card-3", {
             y: -0,
             x: 40,
-            scale: 1.3,
+            scale: 1.2,
             opacity: 0,
             duration: 0.8,
             ease: "power4.out"
@@ -187,7 +206,7 @@ gsap.timeline({
     .from(".card-1", {
         y: -0,
         x: 40,
-        scale: 1.2,
+        scale: 1.1,
         opacity: 0,
         duration: 0.8,
         ease: "power4.out"
@@ -195,7 +214,7 @@ gsap.timeline({
     .from(".card-2", {
         y: -0,
         x: 40,
-        scale: 1.1,
+        scale: 1.05,
         opacity: 0,
         duration: 0.8,
         ease: "power4.out"
@@ -203,7 +222,7 @@ gsap.timeline({
     .from(".card-3", {
         y: -0,
         x: 40,
-        scale: 1.2,
+        scale: 1.1,
         opacity: 0,
         duration: 0.8,
         ease: "power4.out"
@@ -299,33 +318,34 @@ gsap.utils.toArray("#press .presscard, #press .carddetail").forEach((element) =>
     });
 });
 
-
-function bloglines() {
-    let tl = new TimelineMax({});
-    tl.staggerFrom(
-        ".lines span",
-        1,
-        {
-            y: 40, ease: "power4.easeOut", opacity: 0,
-            delay: 1
-        },
-        0.35
-    );
+function bloglines(activeSlide) {
+    // Kill any previous animations to prevent overlap
+    gsap.killTweensOf(".lines span");
+    // Select only elements inside the active slide
+    let lines = $(activeSlide).find(".lines span");
+    // Animate only the active slide's elements
+    gsap.from(lines, {
+        y: 25,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out",
+        stagger: 0.2,
+        delay: 0.5 // Adjust delay if needed
+    });
 }
 function opline() {
     let tl = new TimelineMax({});
     tl.from(
         ".opacityline",
-        2.0, // Increased from 1.5 to 2.0
+        0.5, // Increased from 1.5 to 2.0
         {
             ease: "power4.easeOut",
             opacity: 0,
-            delay: 1
+            delay: 0.4
         },
-        0.15
+        0.35
     );
 }
-
 document.addEventListener("DOMContentLoaded", function () {
     let time = gsap.timeline(); // Correct timeline initialization
     

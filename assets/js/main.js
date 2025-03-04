@@ -70,7 +70,7 @@ burger.addEventListener("click", () => {
     menumobile.classList.toggle("-translate-y-[200%]");
 
     // Use a normal class for backdrop blur instead of the responsive variant
-    wrapper.classList.toggle("h-[76px]")
+    wrapper.classList.toggle("h-[80px]")
     nav.classList.toggle("max-lg:backdrop-blur-lg");
 });
 
@@ -474,6 +474,26 @@ document.querySelectorAll(".switcher-container").forEach((switcher) => {
         }
     });
 });
+/*=======load more==========*/
+document.getElementById("loadMoreBtn").addEventListener("click", function () {
+    const hiddenCards = document.querySelectorAll(".press-card");
+
+    hiddenCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.remove("hidden");
+            card.classList.remove("opacity-0");
+            
+            gsap.fromTo(card, 
+                { y: 50, opacity: 0 },  // Starting position (below) and opacity 0
+                { y: 0, opacity: 1, duration: 1 } // End position (normal) and opacity 1
+            );
+
+        }, index * 300); // Stagger effect
+    });
+
+    this.style.display = "none"; // Hide button after showing cards
+});
+
 /*====search input=========*/
 $('.js-clearSearchBox').css('opacity', '0');
 
@@ -506,49 +526,33 @@ function toggleModal() {
     document.getElementById('modal').classList.toggle('hidden')
 }
 
-/*=======load more==========*/
-document.getElementById("loadMoreBtn").addEventListener("click", function () {
-    const hiddenCards = document.querySelectorAll(".press-card.hidden");
-
-    hiddenCards.forEach((card, index) => {
-        setTimeout(() => {
-            card.classList.remove("hidden");
-            card.classList.add("opacity-100");
-        }, index * 300); // Stagger effect
-    });
-
-    this.style.display = "none"; // Hide button after showing cards
-});
 
  /*========news slider===========*/
  $(document).ready(function () {
     const newsswiper = new Swiper('.news-slider', {
-        // loop: true,
-       
         navigation: {
             nextEl: "#news-btn-next",
             prevEl: "#news-btn-prev",
         },
         pagination: {
-            el: ".swiper-pagination3", // Pagination container
-            type: "custom", // Use custom pagination
+            el: ".swiper-pagination3",
+            type: "custom",
             renderCustom: function (swiper, current, total) {
-                // Add leading zero to current and total
                 const formattedCurrent = current < 10 ? `0${current}` : current;
                 const formattedTotal = total < 10 ? `0${total}` : total;
                 return `<span class="swiper-pagination-current">${formattedCurrent}</span>/<span class="swiper-pagination-total">${formattedTotal}</span>`;
             },
         },
         on: {
-
             slideChange: function () {
-                bloglines()
-                opline()
+                let activeSlide = this.slides[this.activeIndex]; // Get active slide
+                if (activeSlide) {
+                    bloglines(activeSlide);
+                    opline(activeSlide);
+                }
             },
         },
         slidesPerView: 1,
         speed: 1000
     });
 });
-
-
