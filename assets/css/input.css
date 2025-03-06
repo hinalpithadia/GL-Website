@@ -108,7 +108,7 @@
         align-items: center;
         gap: 50px;
         position: relative;
-        @apply flex flex-col lg:flex-row px-4 lg:px-[70px];
+        @apply flex flex-col lg:flex-row px-4 lg:px-[32px];
     }
 
 
@@ -246,7 +246,7 @@
     /* iconic Swiper */
     .iconic-slider-container .swiper-container {
         position: relative;
-        padding-left: 320px;
+        padding-left: 270px;
         overflow: visible;
         max-width: 1440px;
     }
@@ -401,7 +401,7 @@
 
     @media(max-width:1300px) {
         .iconic-slider-container .swiper-container {
-            padding-left: 50px;
+            padding-left: 30px;
         }
     }
     @media(max-width:990px) {
@@ -452,7 +452,8 @@
     .photo-slider-thumb {
         width: 510px;
         height: 100%;
-        margin: auto;
+        margin-left: 14%;
+        margin-right: auto;
         display: flex;
         flex-direction: column;
         gap: 32px;
@@ -651,9 +652,20 @@
             width: 100%;
         }
     }
+    @media(max-width:1500px) {
+        .photo-slider-thumb {
+            width: 450px;
+            margin-left: 4%;
+        }
+        .photo-slider-container .main-slider {
+            width: 600px;
+        }
+
+    }
     @media(max-width:1300px) {
         .photo-slider-thumb {
-            width: 350px;
+            width: 450px;
+            margin-left: 3%;
         }
 
         .photo-slider-container .main-slider {
@@ -672,6 +684,17 @@
     }
 
     @media(max-width:900px) {
+        .home-navbar.scrolled #navwrapper button{
+            background: transparent;
+            color: #fff;
+        }
+        .home-navbar.scrolled #navwrapper button svg path{
+            stroke:black;
+        }
+        .home-navbar.scrolled #navwrapper .btn-white{
+            background: #000;
+            color: #fff;
+        }
         .swiper-Timeline .odometer {
             font-size: 130px;
         }
@@ -692,6 +715,8 @@
             position: relative;
             z-index: 100;
             gap: 16px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .photo-nav-main .swiper-pagination-fraction {

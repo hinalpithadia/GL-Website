@@ -18,11 +18,16 @@ tl.from(".home-header", {
 
 let lastScrollTop = 0;
 let scrollTimeout;
+let addScrolledTimeout;
 
 window.addEventListener("scroll", function () {
     let navbar = document.querySelector(".home-navbar");
     let header = document.querySelector(".home-header");
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+     // Clear any previous timeouts
+     clearTimeout(addScrolledTimeout);
+     clearTimeout(scrollTimeout);
 
     // If we're at the top of the page, stop all scroll effects
     if (scrollTop === 0) {
@@ -37,17 +42,15 @@ window.addEventListener("scroll", function () {
             ease: "power1.out" 
         });
 
-        // Clear the timeout to prevent automatic reappearance after inactivity
-        clearTimeout(scrollTimeout);
-
         // Return early to avoid any other code execution when at the top
         return;
     }
 
-    // Toggle transparent background when at the top
-    if (scrollTop !== 0) {
-        navbar.classList.add("scrolled");  // Add 'scrolled' class when scrolled
-    }
+     // Delay adding 'scrolled' class
+     addScrolledTimeout = setTimeout(() => {
+        navbar.classList.add("scrolled");
+        header.classList.add("scrolled");
+    }, 300); // Delay of 500ms
 
     // Remove any previous timeout to reset the auto-show feature
     clearTimeout(scrollTimeout);
@@ -81,7 +84,7 @@ window.addEventListener("scroll", function () {
         });
         navbar.classList.add("scrolled");  // Ensure scrolled class is added after timeout
         header.classList.add("scrolled");  // Ensure scrolled class is added after timeout
-    }, 1500);  // Adjust the time (in ms) based on how long you want to wait after scrolling stops
+    }, 3500);  // Adjust the time (in ms) based on how long you want to wait after scrolling stops
 
     // Update the last scroll position
     lastScrollTop = scrollTop;
