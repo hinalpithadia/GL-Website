@@ -20,14 +20,14 @@ let lastScrollTop = 0;
 let scrollTimeout;
 let addScrolledTimeout;
 
-window.addEventListener("scroll", function () {
+function debounceScroll() {
     let navbar = document.querySelector(".home-navbar");
     let header = document.querySelector(".home-header");
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-     // Clear any previous timeouts
-     clearTimeout(addScrolledTimeout);
-     clearTimeout(scrollTimeout);
+    // Clear any previous timeouts
+    clearTimeout(addScrolledTimeout);
+    clearTimeout(scrollTimeout);
 
     // If we're at the top of the page, stop all scroll effects
     if (scrollTop === 0) {
@@ -46,14 +46,11 @@ window.addEventListener("scroll", function () {
         return;
     }
 
-     // Delay adding 'scrolled' class
-     addScrolledTimeout = setTimeout(() => {
+    // Delay adding 'scrolled' class
+    addScrolledTimeout = setTimeout(() => {
         navbar.classList.add("scrolled");
         header.classList.add("scrolled");
     }, 300); // Delay of 500ms
-
-    // Remove any previous timeout to reset the auto-show feature
-    clearTimeout(scrollTimeout);
 
     // GSAP animations for hiding or showing navbar and header when scrolling
     if (scrollTop > lastScrollTop) {
@@ -88,8 +85,10 @@ window.addEventListener("scroll", function () {
 
     // Update the last scroll position
     lastScrollTop = scrollTop;
-});
+}
 
+// Throttle the scroll event handler to prevent too many calls
+window.addEventListener("scroll", debounceScroll, { passive: true });
 
 window.addEventListener("load", function () {
     gsap.killTweensOf("#efforts-section .efforts"); // Kill any existing animation

@@ -21,7 +21,7 @@
     <!--header end-->
     <!--navbar-->
     <nav id="navbar"
-        class="fixed z-[1000] top-12 w-full bg-white flex justify-between items-center border-b border-[#E0E0E0] px-2.5 md:px-6 lg:px-12 2xl:px-12 ">
+        class="fixed z-[1000] top-12 w-full bg-white flex justify-between items-center border-b border-[#E0E0E0] ">
         <div id="navwrapper" class=" w-full mx-auto px-2.5 md:px-6 lg:px-8 2xl:px-8 max-w-8xl py-1.5 lg:py-[21px] h-[80px] lg:h-max">
             <div class="flex flex-col lg:flex-row justify-between items-center">
                 <div class="flex items-center justify-between max-lg:w-full">
@@ -43,7 +43,7 @@
                     </button>
                 </div>
                 <ul id="toggle-menu"
-                    class="main-link max-lg:w-full max-lg:z-20 lg:top-0 max-lg:bg-transparent transform transition duration-500 lg:relative max-lg:gap-8 flex flex-col lg:flex-row gap-8 lg:gap-14 max-lg:py-4 max-lg:p-10 lg:min-h-0 lg:px-0 lg:py-0 -translate-y-[200%] lg:translate-y-0">
+                    class="main-link max-lg:w-full max-lg:z-20 lg:top-0 max-lg:bg-transparent transform transition duration-500 lg:relative max-lg:gap-8 flex flex-col lg:flex-row gap-4 lg:gap-10 max-lg:py-4 max-lg:p-10 lg:min-h-0 lg:px-0 lg:py-0 -translate-y-[200%] lg:translate-y-0">
                     <li>
                         <a href="#about" class="nav_link text-black">HOME</a>
                     </li>
@@ -69,9 +69,9 @@
     </nav>
     <!-- navbar end  -->
     <!-- detail Start -->
-    <div class="md:py-20 pt-0 pb-[50px] mt-[175px] relative px-4 z-10 bg-white ">
+    <div class="md:py-20 pt-0 pb-[50px] mt-[175px] relative  z-10 bg-white ">
         <div class="w-full">
-            <div class="flex items-center justify-start mb-[60px] max-w-6xl mx-auto">
+            <div class="flex items-center justify-start mb-[60px] max-w-8xl mx-auto  2xl:px-4 xl:px-8 px-4">
                 <button class="btn-back">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M12.5 15.8346L7.5 10.0013L12.5 4.16797" stroke="black" stroke-width="1.25"
@@ -93,7 +93,7 @@
                     NOVEMBER 2024 IN VOGUE</p>
             </div>
 
-            <div class="flex items-center justify-center flex-col gap-6 mb-[60px]">
+            <div class="flex items-center justify-center flex-col gap-6 mb-[60px] lg:px-0 px-4">
                 <h2
                     class="text-[32px] md:text-[56px] font-helvetica-medium font-medium text-[#070707] leading-[120%] max-md:tracking-[-0.64px] md:leading-[56px] text-center max-w-6xl mx-auto longTitle">
                     Paris’s iconic department store Galeries Lafayette is coming to Mumbai and Delhi
@@ -110,8 +110,8 @@
             </div>
             <!-- Blog image and desc...  -->
             <div
-                class="w-full max-w-7xl  mx-auto flex items-center justify-center flex-col gap-8 md:gap-[100px]">
-                <div class="flex flex-col gap-2 imgloder">
+                class="w-full max-w-8xl px-4 md:px-10 mx-auto flex items-center justify-center flex-col gap-8 md:gap-[100px]">
+                <div class="flex flex-col gap-2 imgloder w-full">
                     <img src="assets/images/blog-image-1.png" alt="" class="w-full h-auto">
                     <p
                         class="text-xs max-sm:tracking-[0.06px] sm:text-sm font-helvetica-light font-light leading-[140%] text-neutral-800 ">
@@ -189,7 +189,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-2  w-full max-w-8xl  mx-auto">
                     <div class="swiper-blog">
                         <!-- additional required wrapper -->
                         <div class="swiper-wrapper">
@@ -231,7 +231,7 @@
                             is set to open doors in 2024.
                         </p>
                     </div>
-                    <button onclick="toggleModal()" class="btn-share fixed lg:bottom-[400px] bottom-[100px] right-4 md:right-24 md:right-0 ">
+                    <button onclick="toggleModal()" class="btn-share fixed bottom-[100px] right-3 md:right-20 ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path
                                 d="M9 12C9 13.3807 7.88071 14.5 6.5 14.5C5.11929 14.5 4 13.3807 4 12C4 10.6193 5.11929 9.5 6.5 9.5C7.88071 9.5 9 10.6193 9 12Z"
@@ -285,7 +285,7 @@
                         technology and engagement.
                     </p>
                 </div>
-                <div class="flex flex-col gap-2 sm:pb-[60px] border-b border-neutral-200">
+                <div class="flex flex-col gap-2 sm:pb-[60px] border-b border-neutral-200 w-full">
                     <img src="assets/images/blog-image-1.png" alt="" class="w-full h-auto">
                     <p class="text-sm font-helvetica-light font-light leading-[140%] text-neutral-800 max-sm:hidden">
                         Capturing the moment – a glimpse into our latest insights and stories!
@@ -299,7 +299,7 @@
     <!-- detail  End-->
     <!-- related blogs Start -->
     <div class="w-full pt-[50px] md:pb-[100px] pb-[20px]">
-        <div class="w-full max-w-7xl px-4 md:px-10 mx-auto">
+        <div class="w-full max-w-8xl px-4 md:px-10 mx-auto">
             <div class="flex flex-col sm:flex-row items-center justify-between mb-[70px] max-sm:gap-5">
                 <h2
                     class="text-[32px] sm:text-[56px] font-helvetica-bold max-sm:text-center font-bold leading-[100%] uppercase text-[#141414]">
