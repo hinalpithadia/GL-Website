@@ -365,3 +365,22 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "power3.out"
     }); // Runs after .longTitle animation finishes
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".para", {
+    y: 70,
+    opacity: 0,
+    duration: 1.5,
+    delay: 0.5, 
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".para", // The element that triggers the animation
+      start: "top 80%", // Trigger the animation when the top of the element reaches 80% of the viewport height
+      end: "top top", // Ends when the top of the element reaches the top of the viewport
+      once: true, // Ensures the animation happens only once
+      scrub: false // Disables scrub so the animation doesn't happen continuously while scrolling
+    }
+  });
+});

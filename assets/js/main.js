@@ -68,7 +68,6 @@ const nav = document.getElementById("navbar");
 const wrapper = document.getElementById("navwrapper");
 burger.addEventListener("click", () => {
     menumobile.classList.toggle("-translate-y-[200%]");
-
     // Use a normal class for backdrop blur instead of the responsive variant
     wrapper.classList.toggle("h-[80px]")
     nav.classList.toggle("max-lg:backdrop-blur-lg");
