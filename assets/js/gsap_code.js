@@ -384,3 +384,29 @@ gsap.from(".para", {
     }
   });
 });
+
+
+/*=======starting window========*/
+function checkScrollAndAnimate() {
+    const windowImages = document.querySelectorAll(".window"); // Select all elements with .window class
+
+    if (window.scrollY > 150) {
+        // Hide images when scrolled beyond 150px
+        windowImages.forEach((image) => {
+            image.style.display = "none";
+        });
+    } else {
+        // Show images and add animation when within 0-150px
+        windowImages.forEach((image) => {
+            // image.style.display = "block"; // Ensure it's visible
+            image.classList.add("animate-scale_first");
+            setTimeout(() => {
+                            image.style.display = "none";
+                        }, 1500);
+        });
+    }
+}
+
+// Run on page load and also listen to scroll events
+window.addEventListener("load", checkScrollAndAnimate);
+window.addEventListener("scroll", checkScrollAndAnimate);
