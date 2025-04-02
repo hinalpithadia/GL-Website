@@ -1321,6 +1321,10 @@ p {
   max-width: 1345px;
 }
 
+.press-list .group:last-child{
+  border-bottom: 0px;
+}
+
 @media (min-width: 768px) {
   .swiper-blog .swiper-slide  {
     /* upping it to a 3 column layout */
@@ -1818,8 +1822,8 @@ p {
   margin-top: 0.5rem;
 }
 
-.mt-\[160px\] {
-  margin-top: 160px;
+.mt-\[120px\] {
+  margin-top: 120px;
 }
 
 .mt-\[175px\] {
@@ -1830,8 +1834,8 @@ p {
   margin-top: 48px;
 }
 
-.mt-\[72px\] {
-  margin-top: 72px;
+.mt-\[50px\] {
+  margin-top: 50px;
 }
 
 .mt-auto {
@@ -1867,10 +1871,6 @@ p {
 
 .hidden {
   display: none;
-}
-
-.aspect-square {
-  aspect-ratio: 1 / 1;
 }
 
 .h-0 {
@@ -1990,6 +1990,10 @@ p {
   max-width: 200px;
 }
 
+.max-w-\[260px\] {
+  max-width: 260px;
+}
+
 .max-w-\[320px\] {
   max-width: 320px;
 }
@@ -2029,6 +2033,10 @@ p {
 
 .max-w-xs {
   max-width: 20rem;
+}
+
+.max-w-\[987px\] {
+  max-width: 987px;
 }
 
 .shrink-0 {
@@ -2391,11 +2399,6 @@ p {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 
 .p-1 {
@@ -3298,18 +3301,6 @@ p {
     aspect-ratio: 1/2;
   }
 
-  .max-sm\:max-h-\[150px\] {
-    max-height: 150px;
-  }
-
-  .max-sm\:max-h-\[161px\] {
-    max-height: 161px;
-  }
-
-  .max-sm\:min-h-\[246px\] {
-    min-height: 246px;
-  }
-
   .max-sm\:gap-5 {
     gap: 1.25rem;
   }
@@ -3518,6 +3509,10 @@ p {
     margin-bottom: 1.5rem;
   }
 
+  .md\:mt-\[72px\] {
+    margin-top: 72px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -3558,8 +3553,17 @@ p {
     max-width: 650px;
   }
 
+  .md\:max-w-max {
+    max-width: -moz-max-content;
+    max-width: max-content;
+  }
+
   .md\:max-w-\[987px\] {
     max-width: 987px;
+  }
+
+  .md\:max-w-\[500px\] {
+    max-width: 500px;
   }
 
   .md\:translate-y-40 {
@@ -3829,6 +3833,10 @@ p {
     max-width: 490px;
   }
 
+  .lg\:max-w-\[700px\] {
+    max-width: 700px;
+  }
+
   .lg\:max-w-\[940px\] {
     max-width: 940px;
   }
@@ -3836,6 +3844,10 @@ p {
   .lg\:max-w-max {
     max-width: -moz-max-content;
     max-width: max-content;
+  }
+
+  .lg\:max-w-\[987px\] {
+    max-width: 987px;
   }
 
   .lg\:translate-y-0 {
@@ -3949,6 +3961,10 @@ p {
     max-width: 550px;
   }
 
+  .xl\:max-w-\[987px\] {
+    max-width: 987px;
+  }
+
   .xl\:flex-row {
     flex-direction: row;
   }
@@ -3966,11 +3982,6 @@ p {
 @media (min-width: 1536px) {
   .\32xl\:max-w-\[1280px\] {
     max-width: 1280px;
-  }
-
-  .\32xl\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .\32xl\:px-8 {

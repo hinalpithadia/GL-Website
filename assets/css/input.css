@@ -652,7 +652,9 @@
     .iconic-slider-pagination{
         max-width: 1345px;
     }
- 
+    .press-list .group:last-child{
+        border-bottom: 0px;
+    }
     @media (min-width: 768px) {
         .swiper-blog .swiper-slide  {
             /* upping it to a 3 column layout */
