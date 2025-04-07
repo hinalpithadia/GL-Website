@@ -44,7 +44,7 @@
                     </button>
                 </div>
                 <ul id="toggle-menu"
-                    class="main-link lg:w-max w-full lg:ml-auto ml-0 max-lg:z-20 lg:top-0 max-lg:bg-transparent transform transition duration-500 lg:relative max-lg:gap-8 flex flex-col lg:flex-row gap-8 lg:gap-14 max-lg:py-4 max-lg:p-10 lg:min-h-0 lg:px-0 lg:py-0 -translate-y-[200%] lg:translate-y-0">
+                    class="main-link lg:w-max w-full lg:ml-auto ml-0 max-lg:z-20 lg:top-0 max-lg:bg-transparent transform transition duration-500 lg:relative max-lg:gap-8 flex flex-col lg:flex-row gap-8 lg:gap-12 max-lg:py-4 max-lg:p-10 lg:min-h-0 lg:px-0 lg:py-0 -translate-y-[200%] lg:translate-y-0">
                     <li>
                         <a href="#HOME" class="nav_link ">HOME</a>
                     </li>
@@ -71,925 +71,352 @@
    
     <!-- navbar end  -->
     <!-- hero-section start  -->
-    <div class="hero-sec fixed top-0 bg-center bg-no-repeat md:bg-cover bg-auto md:bg-fixed bg-scroll z-0  w-full h-screen xl:bg-[url('../images/hero-img.webp')] bg-[url('../images/hero-img-mobile.png')]"
+    <div class="home-hero-sec fixed top-0 bg-center bg-no-repeat md:bg-cover bg-auto md:bg-fixed bg-scroll z-0  w-full h-screen"
         >
-        <div id="hero-Bottom" class="absolute bottom-0 bg-black py-6 w-full">
-            <div class=" w-full mx-auto px-2.5 md:px-6 lg:px-8 2xl:px-8 max-w-8xl">
-                <div class="flex items-end justify-between gap-14">
-                    <img src="assets/images/bash-logo.webp" alt="image" loading="lazy"
-                        class="lg:max-w-max max-w-[170px]">
-                    <span class="lg:text-lg text-xs font-normal text-white leading-6">Made for women, by women.</span>
-                </div>
-            </div>
+        <div class="relative h-full">
+            <video class="w-full h-full min-w-full min-h-[360px] h-auto md:max-h-[100vh] object-cover" preload="none" autoplay="autoplay" loop="true" muted="muted" webkit-playsinline="" playsinline="" id="theplayer" type="video/mp4" width="100%" height="auto" style="display:block; margin:0 ; padding: 0;">
+                <source src="assets/images/story-video.mp4" type="video/mp4">
+            </video>
+            <!-- volume on/off -->
+            <input type="checkbox" class="volume-switcher ">
+            <label class="switcher-container " for="volume-switcher">
+                <img class="volume" src="assets/images/volume.svg" alt="Volume">
+                <img class="volume-mute" src="assets/images/volume-mute.svg" alt="Muted" style="display:none;">
+            </label>
         </div>
 
     </div>
     <!-- hiro section end -->
     <div class="animate-scale_first max-lg:backdrop-blur-lg"></div>
-    <img src="assets/images/window.webp" alt="" class="hidden md:block w-full h-screen window z-[10101] fixed top-0">
-    <img src="assets/images/window-small.webp" alt=""
+    <img src="assets/images/brand-window-desktop.png" alt="" class="hidden md:block w-full h-screen window z-[10101] fixed top-0">
+    <img src="assets/images/brand-window-small.webp" alt=""
         class="sm:block hidden md:hidden w-full h-screen window z-[10101] fixed top-0">
-    <img src="assets/images/window-small-2.webp" alt="" class="sm:hidden w-full h-screen window z-[10101] fixed top-0">
+    <img src="assets/images/brand-window-small-2.webp" alt="" class="sm:hidden w-full h-screen window z-[10101] fixed top-0">
     <!-- efforts-section start  -->
     <div id="efforts-section"
         class="bg-transparent w-full h-auto min-h-[1080px] flex  items-center justify-end flex-col">
         <div class="h-[75vh] sm:h-[85vh] md:h-[100vh] bg-transparent"></div>
-        <div class="efforts relative py-[120px] z-20 w-full scale-0 rounded-t-[750px] bg-white">
-            <div class=" w-full mx-auto px-6 md:px-6 lg:px-8 2xl:px-8 max-w-8xl">
-                <div class="flex flex-col sm:gap-[100px] gap-6">
-                    <div class="flex flex-col gap-9 sm:max-w-4xl">
+        <div class="efforts relative md:py-[120px] py-[60px] z-20 w-full scale-0 rounded-t-[750px] bg-white">
+            <div class=" w-full mx-auto px-4 md:px-4 lg:px-6 2xl:px-6 max-w-8xl">
+                <div class="flex xl:flex-row flex-col sm:gap-[0px] gap-6">
+                    <div class="flex flex-col gap-5 sm:max-w-4xl shrink-0">
                         <div class="">
                             <h1 id="text-anim"
-                                class="font-helvetica-medium text-3xl min-[384px]:text-4xl md:text-[75px] lg:text-[92px] text-anim font-medium text-black_neutral leading-[50px] md:leading-[85px] lg:leading-[100px] tracking-[-0.92px]">
-                                Effortlessly
+                                class="font-helvetica-condensed-bold text-3xl min-[384px]:text-4xl md:text-[52px] lg:text-[72px] text-anim font-medium text-black_neutral  md:leading-[52px] lg:leading-[70px] tracking-[-0.92px]">
+                                INDIA’s FIRST LUXURY 
+
                             </h1>
                             <h1 id="text-anim"
-                                class="font-helvetica-medium text-3xl min-[384px]:text-4xl md:text-[75px] lg:text-[92px] text-anim font-medium text-black_neutral leading-[50px] md:leading-[85px] lg:leading-[100px] tracking-[-0.92px]">
-                                Inspiring Parisian
+                                class="font-helvetica-condensed-bold text-3xl min-[384px]:text-4xl md:text-[52px] lg:text-[72px] text-anim font-medium text-black_neutral  md:leading-[52px] lg:leading-[70px] tracking-[-0.92px]">
+                                DEPARTMENT STORE
                             </h1>
-                            <h1 id="text-anim"
-                                class="font-helvetica-medium text-3xl min-[384px]:text-4xl md:text-[75px] lg:text-[92px] text-anim font-medium text-black_neutral leading-[50px] md:leading-[85px] lg:leading-[100px] tracking-[-0.92px]">
-                                Confidence in 400+
-                            </h1>
-                            <h1 id="text-anim"
-                                class="font-helvetica-medium text-3xl min-[384px]:text-4xl md:text-[75px] lg:text-[92px] text-anim font-medium text-black_neutral leading-[50px] md:leading-[85px] lg:leading-[100px] tracking-[-0.92px]">
-                                Stores Since 1981
-                            </h1>
+                           
                         </div>
-                        <div class="flex sm:flex-row flex-col sm:gap-[70px] gap-5 sm:ml-0 ml-[40px]">
-                            <div class="block">
-                                <span class="text-sm font-medium text-gray uppercase tracking-[1.68px]">FOUNDED
-                                    BY</span>
-                                <h4
-                                    class="text-xl sm:text-[32px] text-skin font-helvetica-medium tracking-[-0.4px] leading-8">
-                                    Sarah and Nichole</h4>
-                            </div>
-                            <div class="block">
-                                <span class="text-sm font-medium text-gray uppercase tracking-[1.68px]">ORIGINATED
-                                    IN</span>
-                                <h4
-                                    class="text-xl sm:text-[32px] text-skin font-helvetica-medium tracking-[-0.4px] leading-8">
-                                    Paris, France</h4>
-                            </div>
+                        <div class="block">
+                            <span class="font-helvetica-light text-base font-light text-gray uppercase tracking-[1.68px]">COMING SOON TO MUMBAI</span>
                         </div>
                     </div>
-                    <div class="block sm:max-w-[540px] sm:ml-auto ml-[40px] max-w-max">
-                        <p class="text-sm sm:text-xl text-darkgray font-normal leading-5 font-helvetica-light">A shared
-                            love
-                            for fashion led best friends to create ba&sh.
-                            Their idea? To bring their dream wardrobe to life so that they could share it with other
-                            women.
-                            Distinctly Parisian, it unites an expression of freedom with an easy, joyful elegance.</p>
+                    <div class="block rounded-[20px] bg-[#E9E5DB] shadow-[8px_8px_16px_0px_rgba(0,0,0,0.25)] p-3 w-full xl:max-w-[900px] lg:max-w-[700px] md:max-w-[600px] max-w-[300px] h-[300px] md:h-[510px] z-[-1] rotate-[-6deg] -translate-x-20 translate-y-6 xl:m-0 m-auto  xl:left-0 left-20 relative ">
+                        <img src="assets/images/store-img.png" alt="image" class="h-full"/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- efforts section end -->
-
-    <!-- TimeLine section start  -->
-    <div class=" relative z-20 bg-white w-full">
-        <div class="timeline-container">
-            <div class=" swiper-Timeline w-full h-auto overflow-hidden ">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-
-                    <div class="swiper-slide">
-                        <div
-                            class="flex flex-col gap-8 lg:gap-0 lg:flex-row items-center justify-center w-full overflow-visible">
-                            <div
-                                class="lg:w-1/2 relative h-full min-h-[517px] lg:min-h-[717px] pl-[60px] flex items-center overflow-visible">
-                                <!-- card-1 -->
-                                <div
-                                    class="card group card-2 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 relative z-[1] lg:right-0 md:right-44 right-32  rotate-[-4.97deg]">
-                                    <img src="assets/images/time-line-1.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100 ">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card-2 -->
-                                <div
-                                    class="card group card-1 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute top-12 -right-8 md:-right-14 lg:right-12 z-0 rotate-[4.47deg] hover:top-16">
-                                    <img src="assets/images/time-line-2.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card-3 -->
-                                <div
-                                    class="card group card-3 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute lg:bottom-0 md:bottom-5 bottom-10 lg:right-5 md:-right-1 right-4  z-[2] rotate-[5.03deg]">
-                                    <img src="assets/images/time-line-3.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <span class=" odometer" data-value="1963">0</span>
-                                <div class="lg:w-full w-2/4 mx-auto p-px bg-[#A8A8A8]"></div>
-                                <div class="w-full xl:max-w-[490px] md:max-w-[420px] ml-auto max-lg:text-center">
-                                    <p class="small_Title max-lg:!text-center">THE BEGINNING </p>
-                                    <p class="counter-pera max-lg:!text-center">ba&sh was founded in 2003 and has
-                                        continued to evolve
-                                        through
-                                        the
-                                        opening of boutiques and its international expansion</p>
-                                </div>
-                            </div>
-                        </div>
-
-
+   <!-- explore-section start  -->
+    <div class="relative bg-white md:pt-[120px] md:pb-[80px] pb-[40px] pt-[60px]">
+        <div class="w-full mx-auto px-4 md:px-4 lg:px-6 2xl:px-6 max-w-8xl">
+            <div class="xl:max-w-[853px] lg:ml-auto content-block">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-3">
+                        <span class="font-helvetica-light text-base font-light text-gray uppercase tracking-[1.68px]">Explore THE ALLURE OF</span>
+                        <h2 class="text-[#161616] xl:text-[92px] md:text-[72px] text-[52px] uppercase font-bold font-helvetica-condensed-bold xl:leading-[92px] md:leading-[72px] leading-[56px]">250+ curated brands & coveted categories</h2>
                     </div>
-
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <div
-                            class="flex flex-col gap-8 lg:gap-0 lg:flex-row items-center justify-center w-full overflow-visible">
-                            <div
-                                class="lg:w-1/2 relative h-full min-h-[517px] lg:min-h-[717px] pl-[60px] flex items-center card-wrapper2 overflow-visible">
-                                <!-- card-4  -->
-                                <div
-                                    class="card group card-2 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 relative z-[0] rotate-[-4.97deg]">
-                                    <img src="assets/images/time-line-4.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card 5  -->
-                                <div
-                                    class="card group card-3 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute lg:top-1/3 md:top-80 top-56 lg:left-8 md:-left-7 -left-5 z-[1] rotate-[4.47deg] hover:left-16">
-                                    <img src="assets/images/time-line-5.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <span class=" odometer" data-value="1971">0</span>
-                                <div class="lg:w-full w-2/4 mx-auto p-px bg-[#A8A8A8]"></div>
-                                <div class="w-full lg:max-w-[490px] ml-auto max-lg:text-center">
-                                    <p class="small_Title max-lg:!text-center">THE BEGINNING </p>
-                                    <p class="counter-pera max-lg:!text-center">ba&sh was founded in 2003 and has
-                                        continued to evolve
-                                        through
-                                        the
-                                        opening of boutiques and its international expansion</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <div
-                            class="flex flex-col gap-8 lg:gap-0 lg:flex-row items-center justify-center w-full overflow-visible">
-                            <div
-                                class="lg:w-1/2 relative h-full min-h-[517px] lg:min-h-[717px] pl-[60px] flex items-center overflow-visible">
-                                <!-- card-1 -->
-                                <div
-                                    class="card group card-2 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 relative z-[1] lg:right-0 md:right-44 right-32  rotate-[-4.97deg]">
-                                    <img src="assets/images/time-line-1.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100 ">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card-2 -->
-                                <div
-                                    class="card group card-1 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute top-12 -right-8 md:-right-14 lg:right-12 z-0 rotate-[4.47deg] hover:top-16">
-                                    <img src="assets/images/time-line-2.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card-3 -->
-                                <div
-                                    class="card group card-3 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute lg:bottom-0 md:bottom-5 bottom-10 lg:right-5 md:-right-1 right-4  z-[2] rotate-[5.03deg]">
-                                    <img src="assets/images/time-line-3.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <span class=" odometer" data-value="1982">0</span>
-                                <div class="lg:w-full w-2/4 mx-auto p-px bg-[#A8A8A8]"></div>
-                                <div class="w-full lg:max-w-[490px] ml-auto max-lg:text-center">
-                                    <p class="small_Title max-lg:!text-center">THE BEGINNING </p>
-                                    <p class="counter-pera max-lg:!text-center">ba&sh was founded in 2003 and has
-                                        continued to evolve
-                                        through
-                                        the
-                                        opening of boutiques and its international expansion</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="swiper-slide">
-                        <div
-                            class="flex flex-col gap-8 lg:gap-0 lg:flex-row items-center justify-center w-full overflow-visible">
-                            <div
-                                class="lg:w-1/2 relative h-full min-h-[517px] lg:min-h-[717px] pl-[60px] flex items-center card-wrapper2 overflow-visible">
-                                <!-- card-4  -->
-                                <div
-                                    class="card group card-2 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 relative z-[0] rotate-[-4.97deg]">
-                                    <img src="assets/images/time-line-4.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card 5  -->
-                                <div
-                                    class="card group card-3 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute lg:top-1/3 md:top-80 top-56 lg:left-8 md:-left-7 -left-5 z-[1] rotate-[4.47deg] hover:left-16">
-                                    <img src="assets/images/time-line-5.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <span class=" odometer" data-value="1988">0</span>
-                                <div class="lg:w-full w-2/4 mx-auto p-px bg-[#A8A8A8]"></div>
-                                <div class="w-full lg:max-w-[490px] ml-auto max-lg:text-center">
-                                    <p class="small_Title max-lg:!text-center">THE BEGINNING </p>
-                                    <p class="counter-pera max-lg:!text-center">ba&sh was founded in 2003 and has
-                                        continued to evolve
-                                        through
-                                        the
-                                        opening of boutiques and its international expansion</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 5 -->
-                    <div class="swiper-slide">
-                        <div
-                            class="flex flex-col gap-8 lg:gap-0 lg:flex-row items-center justify-center w-full overflow-visible">
-                            <div
-                                class="lg:w-1/2 relative h-full min-h-[517px] lg:min-h-[717px] pl-[60px] flex items-center overflow-visible">
-                                <!-- card-1 -->
-                                <div
-                                    class="card group card-2 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 relative z-[1] lg:right-0 md:right-44 right-32  rotate-[-4.97deg]">
-                                    <img src="assets/images/time-line-1.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100 ">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card-2 -->
-                                <div
-                                    class="card group card-1 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute top-12 -right-8 md:-right-14 lg:right-12 z-0 rotate-[4.47deg] hover:top-16">
-                                    <img src="assets/images/time-line-2.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card-3 -->
-                                <div
-                                    class="card group card-3 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] pb-0 hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute lg:bottom-0 md:bottom-5 bottom-10 lg:right-5 md:-right-1 right-4  z-[2] rotate-[5.03deg]">
-                                    <img src="assets/images/time-line-3.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <span class=" odometer" data-value="1992">0</span>
-                                <div class="lg:w-full w-2/4 mx-auto p-px bg-[#A8A8A8]"></div>
-                                <div class="w-full lg:max-w-[490px] ml-auto max-lg:text-center">
-                                    <p class="small_Title max-lg:!text-center">THE BEGINNING </p>
-                                    <p class="counter-pera max-lg:!text-center">ba&sh was founded in 2003 and has
-                                        continued to evolve
-                                        through
-                                        the
-                                        opening of boutiques and its international expansion</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 6 -->
-                    <div class="swiper-slide">
-                        <div
-                            class="flex flex-col gap-8 lg:gap-0 lg:flex-row items-center justify-center w-full overflow-visible">
-                            <div
-                                class="lg:w-1/2 relative h-full min-h-[517px] lg:min-h-[717px] pl-[60px] flex items-center card-wrapper2 overflow-visible">
-                                <!-- card-4  -->
-                                <div
-                                    class="card group card-2 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 relative z-[0] rotate-[-4.97deg]">
-                                    <img src="assets/images/time-line-4.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                                <!-- card 5  -->
-                                <div
-                                    class="card group card-3 p-1 bg-white flex flex-col gap-5 border border-[#E4E4E4] hover:p-4 md:hover:p-6 hover:pb-6 md:hover:pb-10 absolute lg:top-1/3 md:top-80 top-56 lg:left-8 md:-left-7 -left-5 z-[1] rotate-[4.47deg] hover:left-16">
-                                    <img src="assets/images/time-line-5.webp" loading="lazy" alt="" class="">
-                                    <div
-                                        class="card-body flex items-center justify-center gap-3 h-0 opacity-0 transition-all duration-500 group-hover:h-auto group-hover:opacity-100">
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                        <p class="text-xs md:text-sm lg:text-base text-[#141414]">The crystal runway
-                                            (1963)</p>
-                                        <div class="w-6 md:w-14 h-px bg-[#BCBCBC]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <span class=" odometer" data-value="2002">0</span>
-                                <div class="lg:w-full w-2/4 mx-auto p-px bg-[#A8A8A8]"></div>
-                                <div class="w-full lg:max-w-[490px] ml-auto max-lg:text-center">
-                                    <p class="small_Title max-lg:!text-center">THE BEGINNING </p>
-                                    <p class="counter-pera max-lg:!text-center">ba&sh was founded in 2003 and has
-                                        continued to evolve
-                                        through
-                                        the
-                                        opening of boutiques and its international expansion</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="left-panel">
-                <button id="time-prevSlide" class="max-lg:-rotate-90 max-sm:hidden">
-                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_8_281)">
-                            <path d="M10.9541 16.8418L10.9541 3.0918" stroke="currentcolor" stroke-width="1.23216"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M5.3291 8.7168L10.9541 3.0918L16.5791 8.7168" stroke="currentcolor"
-                                stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_8_281">
-                                <rect width="20" height="20" fill="white"
-                                    transform="matrix(4.37114e-08 1 1 -4.37114e-08 0.959961 0)" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </button> <!-- Move UP button to top -->
-
-                <div class="year-list">
-                    <div class="year active" data-index="0">1963 <div class="tringle"></div>
-                    </div>
-                    <div class="year" data-index="1">1971 <div class="tringle"></div>
-                    </div>
-                    <div class="year" data-index="2">1982 <div class="tringle"></div>
-                    </div>
-                    <div class="year" data-index="3">1988 <div class="tringle"></div>
-                    </div>
-                    <div class="year" data-index="4">1992 <div class="tringle"></div>
-                    </div>
-                    <div class="year" data-index="5">2002 <div class="tringle"></div>
-                    </div>
-
-                </div>
-
-                <button id="time-nextSlide" class="max-lg:-rotate-90 max-sm:hidden">
-                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_8_291)">
-                            <path d="M10.9541 3.1582L10.9541 16.9082" stroke="currentcolor
-                        " stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M5.3291 11.2832L10.9541 16.9082L16.5791 11.2832" stroke="currentcolor
-                        " stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_8_291">
-                                <rect width="20" height="20" fill="white"
-                                    transform="translate(0.959961 20) rotate(-90)" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </button> <!-- Move DOWN button to bottom -->
-            </div>
-        </div>
-    </div>
-    <!-- TimeLine section End  -->
-    <!-- iconic-section start  -->
-    <div class="relative md:py-[120px] py-[60px] bg-white">
-        <div class="w-full">
-            <div class="iconic-slider-container">
-                <!-- Swiper -->
-                <div class="swiper-container iconic-swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="flex flex-col gap-9">
-                                <div class="slide-title lg:absolute -top-32">
-                                    <h2
-                                        class="title text-black_neutra lg:text-[84px] sm:text-[48px]  text-[42px] font-helvetica-condensed-bold lg:leading-[92px] leading-[52px] uppercase">
-                                        The Iconics.
-                                    </h2>
-                                </div>
-                                <div class="flex items-start  gap-[15px] lg:gap-[60px]">
-                                    <div class="img-wrapper">
-                                        <div class="reveal">
-                                            <img src="assets/images/iconic-slide1-img1.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover" />
-                                        </div>
-                                    </div>
-                                    <div class="img-wrapper">
-                                        <div class="reveal translate-y-28 md:translate-y-40">
-                                            <img src="assets/images/iconic-slide1-img2.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover" />
-                                        </div>
-                                    </div>
-                                    <div class="img-wrapper max-w-[200px]">
-                                        <div class="reveal flex flex-col gap-5">
-                                            <img src="assets/images/iconic-slide1-img3.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover" />
-                                            <div
-                                                class="line lg:text-sm text-xs font-normal text-darkgray md:leading-6 leading-4">
-                                                <span class="block"> Capturing the beauty</span>
-                                                <span class="block"> & romance of the timeless</span>
-                                                <span class="block"> elegance and grace of</span>
-                                                <span class="block"> historic moments.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col gap-9">
-                                <div class="slide-title lg:absolute -top-32">
-                                    <h2
-                                        class="title text-black_neutra lg:text-[84px] sm:text-[48px]  text-[42px] font-helvetica-condensed-bold lg:leading-[92px] leading-[52px] uppercase">
-                                        Last Pieces.
-                                    </h2>
-                                </div>
-                                <div class="flex items-start  gap-[15px] lg:gap-[60px]">
-                                    <div class="img-wrapper">
-                                        <div class="reveal">
-                                            <img src="assets/images/iconic-slide1-img4.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover lg:max-w-[465px]" />
-                                        </div>
-                                    </div>
-                                    <div class="img-wrapper">
-                                        <div class="reveal translate-y-28 md:translate-y-40">
-                                            <img src="assets/images/iconic-slide1-img2.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover" />
-                                        </div>
-                                    </div>
-                                    <div class="img-wrapper max-w-[200px]">
-                                        <div class="reveal flex flex-col gap-5">
-                                            <img src="assets/images/iconic-slide1-img3.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover" />
-                                            <div
-                                                class="line lg:text-sm text-xs font-normal text-darkgray md:leading-6 leading-4">
-                                                <span class="block"> Capturing the beauty</span>
-                                                <span class="block"> & romance of the timeless</span>
-                                                <span class="block"> elegance and grace of</span>
-                                                <span class="block"> historic moments.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col gap-9">
-                                <div class="slide-title lg:absolute -top-32">
-                                    <h2
-                                        class="title text-black_neutra lg:text-[84px] sm:text-[48px]  text-[42px] font-helvetica-condensed-bold lg:leading-[92px] leading-[52px] uppercase">
-                                        The New seasons.
-                                    </h2>
-                                </div>
-                                <div class="flex items-start  gap-[15px] lg:gap-[60px]">
-                                    <div class="img-wrapper">
-                                        <div class="reveal">
-                                            <img src="assets/images/iconic-slide-3-1.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover " />
-                                        </div>
-                                    </div>
-                                    <div class="img-wrapper">
-                                        <div class="reveal translate-y-28 md:translate-y-40">
-                                            <img src="assets/images/iconic-slide1-img2.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover" />
-                                        </div>
-                                    </div>
-                                    <div class="img-wrapper max-w-[200px]">
-                                        <div class="reveal flex flex-col gap-5">
-                                            <img src="assets/images/iconic-slide1-img3.webp" loading="lazy" alt="image"
-                                                class="w-full h-full object-cover" />
-                                            <div
-                                                class="line lg:text-sm text-xs font-normal text-darkgray md:leading-6 leading-4">
-                                                <span class="block"> Capturing the beauty</span>
-                                                <span class="block"> & romance of the timeless</span>
-                                                <span class="block"> elegance and grace of</span>
-                                                <span class="block"> historic moments.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex items-center gap-8 mt-10  mx-auto iconic-slider-pagination">
-                    <!-- Slide Counter -->
-                    <!-- Fraction Pagination -->
-                    <div class="swiper-pagination swiper-pagination-fraction swiper-pagination1"></div>
-                    <!-- Progress Bar -->
-                    <div class="swiper-progress">
-                        <div class="swiper-progress-bar"></div>
-                    </div>
-                    <!-- Navigation Arrows -->
-                    <div class="swiper-buttons">
-                        <button id="prevSlide1" class="iconic-slide-btn">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_2064_14907)">
-                                    <path d="M16.8398 10.0039L3.08984 10.0039" stroke="" stroke-width="1.23216"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M8.71484 15.6328L3.08984 10.0078L8.71484 4.38281" stroke=""
-                                        stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_2064_14907">
-                                        <rect width="20" height="20" fill="white" transform="matrix(1 0 0 -1 0 20)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </button>
-                        <button id="nextSlide1" class="iconic-slide-btn">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_2064_14912)">
-                                    <path d="M3.16016 10.0039L16.9102 10.0039" stroke="" stroke-width="1.23216"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M11.2852 15.6328L16.9102 10.0078L11.2852 4.38281" stroke=""
-                                        stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_2064_14912">
-                                        <rect width="20" height="20" fill="white" transform="matrix(-1 0 0 -1 20 20)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </button>
-                    </div>
+                    <p class="lg:text-[32px] md:text-[24px] text-xl text-[#525252] font-normal">Arriving soon at <span class="text-[#161616] font-medium">Galeries Lafayette India’s 90,000 sq.ft. flagship store</span> in <span class="font-bold">Kala Ghoda</span>—Fort’s high-fashion and art district.</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- iconic-section end -->
-    <!-- photo-slider-section start  -->
-    <div class="relative bg-white">
-        <div class="photo-slider-container slider-container">
-            <div class="photo-slider-thumb">
-                <div class="photo-nav-main">
-                    <!-- Fraction Pagination -->
-                    <div class="swiper-pagination swiper-pagination-fraction swiper-pagination2"></div>
-                    <div class="photo-title">
-                        <h5
-                            class="text-black_neutral text-2xl lg:text-[40px] leading-[46px] font-helvetica-condensed-bold">
-                            NEW ARRIVALS
-                        </h5>
-                    </div>
-                </div>
-                <!-- Thumbnail Slider -->
-                <div class="swiper-container thumb-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="slide-inner" style="
-                    background-image: url(assets/images/slider0thumb-1-1.webp);
-                  "></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner" style="
-                    background-image: url(assets/images/slider0thumb-1-2.webp);
-                  "></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner" style="
-                    background-image: url(assets/images/slider0thumb-1-3.webp);
-                  "></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="photo-nav">
+<!-- explore-section end  -->
+    <!-- brand-slider-section start  -->
+    <div class="relative bg-white md:pb-[120px] pb-[60px]">
+        <div class="brand-slider-container slider-container">
+            <div class="brand-left-main">
+                <div class="brand-nav-main ">
                     <!-- Navigation buttons -->
-                    <div class="photo-swiper-button-prev swiper-arrow">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_2064_14921)">
-                                <path d="M16.8398 10.0039L3.08984 10.0039" stroke="#161616" stroke-width="1.23216"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M8.71484 15.6289L3.08984 10.0039L8.71484 4.37891" stroke="#161616"
-                                    stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round" />
+                    <div class="group brand-swiper-button-prev swiper-arrow border border-[#E0E0E0] rounded-t-[100px] md:w-[56px] w-[42px] h-[48px] md:h-[72px] flex items-center justify-center cursor-pointer hover:bg-[#eeeded] transition-all duration-500 mb-5">
+                        <svg class="transition-all duration-500 text-[#A8A8A8] group-hover:text-black" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_3004_6908)">
+                            <path d="M9.99219 16.8438L9.99219 3.09375" stroke="currentColor" stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.36719 8.71875L9.99219 3.09375L15.6172 8.71875" stroke="currentColor" stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round"/>
                             </g>
                             <defs>
-                                <clipPath id="clip0_2064_14921">
-                                    <rect width="20" height="20" fill="white" transform="matrix(1 0 0 -1 0 20)" />
-                                </clipPath>
+                            <clipPath id="clip0_3004_6908">
+                            <rect width="20" height="20" fill="white" transform="matrix(-1.19249e-08 1 1 1.19249e-08 0 0)"/>
+                            </clipPath>
                             </defs>
-                        </svg>
-                        Previous
+                            </svg>
+                            
+                        
                     </div>
-                    <div class="photo-swiper-button-next swiper-arrow">
-                        Next
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <g clip-path="url(#clip0_2064_14928)">
-                                <path d="M3.16016 10.0039L16.9102 10.0039" stroke="#161616" stroke-width="1.23216"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M11.2852 15.6289L16.9102 10.0039L11.2852 4.37891" stroke="#161616"
-                                    stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round" />
+                    <div class="brand-names-container">
+                        <div class="brand-names font-helvetica-condensed-bold">
+                            <span class=" brand-name active ">SAINT LAURENT</span>
+                            <span class=" brand-name">Balenciaga</span>
+                            <span class=" brand-name">Ba&SH</span>
+                            <span class=" brand-name">CALVIN KLEIN</span>
+                            <span class=" brand-name">CHANEL</span>
+                            <span class=" brand-name">ALDO</span>
+                        </div>
+                    </div>
+                    <div class="group brand-swiper-button-next swiper-arrow border border-[#E0E0E0] rounded-b-[100px] md:w-[56px] w-[42px] h-[48px] md:h-[72px] flex items-center justify-center cursor-pointer hover:bg-[#eeeded] transition-all duration-500 mt-5">
+                        <svg class="transition-all duration-500 text-[#A8A8A8] group-hover:text-black" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_3045_7534)">
+                            <path d="M10 3.15625L10 16.9062" stroke="currentColor" stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.375 11.2813L10 16.9063L15.625 11.2813" stroke="currentColor" stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round"/>
                             </g>
                             <defs>
-                                <clipPath id="clip0_2064_14928">
-                                    <rect width="20" height="20" fill="white" transform="matrix(-1 0 0 -1 20 20)" />
-                                </clipPath>
+                            <clipPath id="clip0_3045_7534">
+                            <rect width="20" height="20" fill="white" transform="translate(0 20) rotate(-90)"/>
+                            </clipPath>
                             </defs>
-                        </svg>
+                            </svg>
+                            
+                            
                     </div>
+                </div>
+                <div class="xl:w-auto w-full xl:block flex justify-center xl:mt-[100px] md:my-12 my-5">
+                    <a href="#" class="flex items-center gap-2 text-black/70 text-xs tracking-[1.44px] font-normal">
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.24">
+                            <circle cx="3.61335" cy="3.11335" r="3.01179" fill="black"/>
+                            <circle cx="10.3868" cy="3.11335" r="3.01179" fill="black"/>
+                            <circle cx="3.61335" cy="9.88679" r="3.01179" fill="black"/>
+                            <circle cx="10.3868" cy="9.88679" r="3.01179" fill="black"/>
+                            </g>
+                            </svg>
+                            ALL BRANDS                            
+                        </a>
                 </div>
             </div>
             <!-- Main Slider -->
-            <div class="swiper-container main-slider">
+            <div class="swiper-container main-slider-brand">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
+                        <div class="slide-inner" style="background-image: url(assets/images/brand-slider-img1.png)"></div>
+                        <div class="bg-white p-8 absolute bottom-3 md:bottom-5 md:left-0 left-3 right-3 md:right-5 max-w-full md:max-w-[562px] md:max-h-[264px] max-h-full ml-auto flex md:flex-row flex-col gap-8 overflow-hidden">
+                            <div class="flex flex-col justify-between min-w-[188px] slide-text">
+                                <img src="assets/images/logo-main-black.png" alt="image" class="w-[130px]"/>
+                                <p class="text-xs text-[#6F6F6F] leading-[16px]">Capturing the beauty & romance of the timeless elegance and grace of 
+                                    historic moments.</p>
+                            </div>
+                            <div class="nested-slider-container">
+                                <div class="swiper-container nested-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 1"></div>
+                                        <div class="swiper-slide"><img src="assets/images/brans-slider-small-img.png" alt="Image 2"></div>
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="swiper-slide">
                         <div class="slide-inner" style="background-image: url(assets/images/slider-1-1.webp)"></div>
+                        <div class="bg-white p-8 absolute bottom-3 md:bottom-5 md:left-0 left-3 right-3 md:right-5 max-w-full md:max-w-[562px] md:max-h-[264px] max-h-full ml-auto flex md:flex-row flex-col gap-8 overflow-hidden">
+                            <div class="flex flex-col justify-between min-w-[188px] slide-text">
+                                <img src="assets/images/logo-main-black.png" alt="image" class="w-[130px]"/>
+                                <p class="text-xs text-[#6F6F6F] leading-[16px]">Capturing the beauty & romance of the timeless elegance and grace of 
+                                    historic moments.</p>
+                            </div>
+                            <div class="nested-slider-container">
+                                <div class="swiper-container nested-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 1"></div>
+                                        <div class="swiper-slide"><img src="assets/images/brans-slider-small-img.png" alt="Image 2"></div>
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-inner" style="background-image: url(assets/images/slider-1-2.webp)"></div>
+                        <div class="bg-white p-8 absolute bottom-3 md:bottom-5 md:left-0 left-3 right-3 md:right-5 max-w-full md:max-w-[562px] md:max-h-[264px] max-h-full ml-auto flex md:flex-row flex-col gap-8 overflow-hidden">
+                            <div class="flex flex-col justify-between min-w-[188px] slide-text">
+                                <img src="assets/images/logo-main-black.png" alt="image" class="w-[130px]"/>
+                                <p class="text-xs text-[#6F6F6F] leading-[16px]">Capturing the beauty & romance of the timeless elegance and grace of 
+                                    historic moments.</p>
+                            </div>
+                            <div class="nested-slider-container">
+                                <div class="swiper-container nested-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 1"></div>
+                                        <div class="swiper-slide"><img src="assets/images/brans-slider-small-img.png" alt="Image 2"></div>
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-inner" style="background-image: url(assets/images/slider-1-3.webp)"></div>
+                        <div class="bg-white p-8 absolute bottom-3 md:bottom-5 md:left-0 left-3 right-3 md:right-5 max-w-full md:max-w-[562px] md:max-h-[264px] max-h-full ml-auto flex md:flex-row flex-col gap-8 overflow-hidden">
+                            <div class="flex flex-col justify-between min-w-[188px] slide-text">
+                                <img src="assets/images/logo-main-black.png" alt="image" class="w-[130px]"/>
+                                <p class="text-xs text-[#6F6F6F] leading-[16px]">Capturing the beauty & romance of the timeless elegance and grace of 
+                                    historic moments.</p>
+                            </div>
+                            <div class="nested-slider-container">
+                                <div class="swiper-container nested-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 1"></div>
+                                        <div class="swiper-slide"><img src="assets/images/brans-slider-small-img.png" alt="Image 2"></div>
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-inner" style="background-image: url(assets/images/slider-1-2.webp)"></div>
+                        <div class="bg-white p-8 absolute bottom-3 md:bottom-5 md:left-0 left-3 right-3 md:right-5 max-w-full md:max-w-[562px] md:max-h-[264px] max-h-full ml-auto flex md:flex-row flex-col gap-8 overflow-hidden">
+                            <div class="flex flex-col justify-between min-w-[188px] slide-text">
+                                <img src="assets/images/logo-main-black.png" alt="image" class="w-[130px]"/>
+                                <p class="text-xs text-[#6F6F6F] leading-[16px]">Capturing the beauty & romance of the timeless elegance and grace of 
+                                    historic moments.</p>
+                            </div>
+                            <div class="nested-slider-container">
+                                <div class="swiper-container nested-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 1"></div>
+                                        <div class="swiper-slide"><img src="assets/images/brans-slider-small-img.png" alt="Image 2"></div>
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-inner" style="background-image: url(assets/images/slider-1-2.webp)"></div>
+                        <div class="bg-white p-8 absolute bottom-3 md:bottom-5 md:left-0 left-3 right-3 md:right-5 max-w-full md:max-w-[562px] md:max-h-[264px] max-h-full ml-auto flex md:flex-row flex-col gap-8 overflow-hidden">
+                            <div class="flex flex-col justify-between min-w-[188px] slide-text">
+                                <img src="assets/images/logo-main-black.png" alt="image" class="w-[130px]"/>
+                                <p class="text-xs text-[#6F6F6F] leading-[16px]">Capturing the beauty & romance of the timeless elegance and grace of 
+                                    historic moments.</p>
+                            </div>
+                            <div class="nested-slider-container">
+                                <div class="swiper-container nested-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 1"></div>
+                                        <div class="swiper-slide"><img src="assets/images/brans-slider-small-img.png" alt="Image 2"></div>
+                                        <div class="swiper-slide"><img src="assets/images/book-cover-10.webp" alt="Image 3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- photo-slider-section end  -->
-    <!-- story of style start -->
-    <div class="md:py-32 py-16 relative z-10 bg-white"> 
+    <!-- brand-slider-section end  -->
+    <!-- info section start -->
+    <div class="md:py-[78px] py-10 relative z-10 bg-white"> 
         <div class="w-full mx-auto px-6 md:px-6 lg:px-8 2xl:px-8 max-w-8xl">
-            <p class="text-base text-center leading-[140%] tracking-[1.92px] text-[#6F6F6F] uppercase mb-2">
-                STITCHING
-            </p>
-            <h2
-                class="lg:text-[80px] text-[56px] text-center font-bold leading-[100%] text-black mb-[60px] font-helvetica-condensed-bold">
-                STORIES OF STYLE
-            </h2>
-            <div class="block">
-                <!-- Slider main container -->
-                <div class="swiper-container story-slider">
-                    <!-- Additional required wrapper -->
-
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="relative">
-                                <video class="w-full min-w-full min-h-[360px] h-auto md:max-h-[640px] object-cover"  preload="none" autoplay="autoplay" loop="true" muted="muted"
-                                    webkit-playsinline="" playsinline="" class="video" id="theplayer" type="video/mp4"
-                                    width="100%" height="auto" style="display:block; margin:0 ; padding: 0;">
-                                    <source src="assets/images/story-video.mp4" type="video/mp4">
-                                </video>
-                                <!-- volume on/off -->
-                                <input type="checkbox" class="volume-switcher">
-                                <label class="switcher-container" for="volume-switcher">
-                                    <img class="volume" src="assets/images/volume.svg" alt="Volume">
-                                    <img class="volume-mute" src="assets/images/volume-mute.svg" alt="Muted"
-                                        style="display:none;">
-                                </label>
-                            </div>
+            <div class="flex flex-col gap-8">
+                <h2 class="max-w-[720px] mx-auto text-[#000] md:text-[72px] text-[52px] text-center uppercase font-bold font-helvetica-condensed-bold md:leading-[72px] leading-[52px]">Parisian SAVOIR-FAIRE, indian expertise</h2>
+                <div class="block max-w-[887px] mx-auto md:mb-[60px] mb-8">
+                    <p class="text-lg text-[#6F6F6F] font-normal">India’s largest fashion conglomerate with a retail footprint of // space spanning 11.9 million sq.ft., joins forces with Europe’s largest department store to bring its 130-year legacy of French fashion and the 'art de vivre' to Mumbai. A fashion powerhouse with a proven expertise in world-class retail across mass, premium & high-end segments, Aditya Birla Fashion Retail Ltd. is shaping the future of luxury in India. The country’s first billion-dollar pure-play fashion leader with an annual revenue of US$ 1.7 billion, ABFRL commands a formidable presence —4,660 stores, 37,500 multi-brand outlets with presence in 900+ cities, serving 50 million+ customers.</p>
+                      <p class="text-lg text-[#6F6F6F] font-normal"> Backed by the fortune 500-listed Aditya Birla Group’s multigenerational legacy of industry leadership and Galeries Lafayette’s five generations of pioneering luxury retail, this partnership is a testament to enduring excellence. Fueled by a legacy of nation-building, it is anchored by an extraordinary force of visionaries.</p>
+                </div> 
+                <div class="flex md:flex-row flex-col items-center md:gap-[60px] gap-8 justify-center">
+                    <img src="assets/images/gallery-img.png" alt="image"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                        <path d="M32.8498 37.3471C32.7261 37.1771 32.6027 37.0067 32.4787 36.8396C30.1151 33.8148 27.3096 31.2317 24.5363 28.0183C22.6613 25.7025 20.1555 23.4188 18.0599 21.3244C22.8235 26.4927 28.1214 31.6335 32.129 37.1683C31.3858 36.9467 30.6011 36.5786 29.9299 35.9077C28.4175 34.1905 26.8954 32.5253 25.3638 30.8959C25.4753 30.7845 25.6931 30.5668 25.8027 30.4573C20.9797 26.2998 17.6714 21.2261 12.6275 17.2894C12.7282 17.5079 12.5435 17.5033 12.4389 17.5415C12.3464 17.5743 12.3162 17.6412 12.5956 17.9204C12.3162 17.6411 12.3463 17.5742 12.4389 17.5415C16.9652 21.8501 20.9902 26.0858 25.1885 30.7102C18.5438 23.6558 11.7228 17.2688 4.69985 10.2497C4.40095 9.95097 3.80188 9.35215 3.50243 9.05294C2.63606 7.52469 1.54852 6.21655 0.351562 5.02026C1.203 4.76685 1.11025 2.46541 3.28518 5.08083C3.39553 4.97055 3.61661 4.74958 3.72704 4.63921C1.88363 1.69237 2.53212 -0.751796 5.37016 1.20104C8.50656 3.45246 11.6581 7.48545 15.1721 10.556C17.6786 12.8403 20.1847 15.1241 22.3584 17.7383C25.3204 21.3615 29.0245 24.8423 31.8756 28.5754C32.9633 29.8833 35.391 31.6473 35.6587 32.5772C35.93 33.1658 35.7118 33.418 35.3837 33.6144C33.4539 31.6078 31.5034 29.6341 29.6108 27.6462C27.3537 25.143 25.1103 22.6258 22.9506 20.0281C24.9746 22.6568 27.2467 25.1629 29.6108 27.6462C31.4462 29.6821 33.2922 31.7104 35.1103 33.7642C34.8139 33.9188 34.5106 34.086 34.4106 34.422C34.4106 34.422 35.0091 35.0202 35.3086 35.3195C35.9544 37.0693 34.8805 37.5424 33.7302 37.4971C33.4653 37.4567 33.1674 37.4119 32.8498 37.3471Z" fill="black"/>
+                        <path d="M0.692137 33.4021C0.862236 33.2786 1.03272 33.1551 1.19985 33.0312C4.22629 30.6689 6.81079 27.865 10.026 25.0932C12.3431 23.2192 14.628 20.7149 16.7236 18.6204C11.5525 23.3814 6.4088 28.6764 0.870913 32.6818C1.09263 31.9389 1.46099 31.1547 2.13223 30.4838C3.85036 28.9723 5.51639 27.451 7.14676 25.9203C7.25821 26.0317 7.47601 26.2494 7.58558 26.3589C11.7454 21.5386 16.8219 18.2321 20.7608 13.191C20.5422 13.2917 20.5468 13.1071 20.5086 13.0026C16.1976 17.5263 11.9596 21.5491 7.33266 25.7451C14.3909 19.1041 20.7815 12.2868 27.8044 5.26776C28.1033 4.96902 28.7024 4.37021 29.0018 4.07101C30.5309 3.20519 31.8398 2.11817 33.0368 0.921875C33.2903 1.77284 35.593 1.68014 32.9761 3.85386C33.0865 3.96415 33.3076 4.18512 33.418 4.29549C36.3664 2.4531 38.812 3.10123 36.858 5.9377C34.6053 9.07236 30.5701 12.2221 27.4979 15.7342C25.2124 18.2393 22.9273 20.744 20.3117 22.9165C16.6865 25.877 13.2038 29.5789 9.46864 32.4285C8.15993 33.5156 6.39504 35.9419 5.46462 36.2094C4.87564 36.4807 4.62335 36.2626 4.42681 35.9346C6.43454 34.0059 8.40933 32.0564 10.3983 30.1649C12.9029 27.9091 15.4215 25.6669 18.0206 23.5084C15.3904 25.5313 12.883 27.8021 10.3983 30.1649C8.36123 31.9994 6.33185 33.8443 4.27682 35.6614C4.12212 35.3652 3.95491 35.062 3.6187 34.962C3.6187 34.962 3.02011 35.5603 2.72074 35.8596C0.970002 36.505 0.496617 35.4317 0.541977 34.2821C0.58241 34.0174 0.627304 33.7195 0.692137 33.4021Z" fill="black"/>
+                      </svg>
+                      <img src="assets/images/aditya-birla-img.png" alt="image"/>
+                </div>   
+            </div>
+            
+        </div>
+    </div>
+    <!-- info section end -->
+    <!-- spotlight section start -->
+    <div class="md:md:py-[120px] py-[60px] py-10 relative z-10 bg-white"> 
+        <div class="w-full mx-auto px-6 md:px-6 lg:px-8 2xl:px-8 max-w-8xl">
+            <div class="flex flex-row gap-[52px]">
+                <div class="flex flex-col sm:flex-row items-center justify-between md:mb-[70px] mb-8 max-sm:gap-5 w-full">
+                    <h2 class="text-[42px] sm:text-[56px] font-helvetica-condensed-bold max-sm:text-center font-bold leading-[100%] uppercase text-[#141414]">IN THE SPOTLIGHT</h2>
+                    <button class="py-6 pr-7 pl-9 rounded-full uppercase border border-[#D9D9D9] flex items-center gap-3 bg-white text-sm font-medium font-helvetica-medium leading-[140%] text-[#161616] transition-all duration-500 hover:bg-[#ececec]">VIEW
+                        ALL
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 4.16536L12.5 9.9987L7.5 15.832" stroke="black" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-[50px]">
+                <div class="border-[0.5px] border-[#B1B1B1] pt-[50px] pb-[40px] md:px-[44px] px-6 bg-white">
+                    <div class="flex flex-col gap-8">
+                        <div class="flex flex-col gap-1.5">
+                            <svg width="140" height="37" viewBox="0 0 140 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40.8352 0.156542C32.6749 0.215718 26 9.41489 26 17.4387C26 25.8824 30.893 36.1824 40.8352 36.149C50.7775 36.1155 55.9378 25.0267 55.9378 17.4387C55.9378 9.05712 48.9956 0.0973667 40.8352 0.156542ZM40.8352 0.471262C47.6651 0.471262 49.5077 8.12212 49.5077 17.4387C49.5077 29.7317 47.285 35.7965 40.8352 35.7849C34.3854 35.7734 32.2872 30.8096 32.2872 17.4387C32.2872 9.06286 34.0054 0.471262 40.8352 0.471262Z" fill="black"/>
+                                <path d="M58.633 17.6669C58.5964 8.53709 65.8005 0.449819 71.8989 0.048571C74.1017 -0.109719 76.9332 0.913441 78.5863 1.6423C79.7867 2.17156 82.2371 1.40548 82.6723 0H82.9095V12.4366H82.6723C82.6723 11.9064 80.4015 0.361246 71.8989 0.361246C65.6186 0.361246 65.0118 11.5622 65.0118 17.6669C65.0118 23.7717 65.1948 35.857 72.5237 35.857C76.074 35.857 78.7019 34.2816 79.3832 31.0943V21.403H76.4032V20.9902H87.9543V21.403H85.1052V35.5716H84.8733C84.8733 35.5716 84.4101 33.5273 82.0598 33.5341C79.0558 33.5428 76.2228 36.1899 72.7695 36.1577C63.6366 36.0725 58.6695 26.7967 58.633 17.6669Z" fill="black"/>
+                                <path d="M3.59667 1.37882H0V0.96875H12.5993V1.37882H9.43845L18.441 26.1762C21.2561 17.3854 23.4369 10.8873 26.3718 1.37882H23.2453V0.96875H29.8978V1.37882H26.8683L15.9266 35.9759L3.59667 1.37882Z" fill="black"/>
+                                <path d="M89.7148 27.5117L89.6579 1.34508H86.2344V0.953125H98.8472V1.34508H95.4257L95.5017 30.0354C96.2591 33.3207 97.6058 35.8135 102.207 35.8506C106.807 35.8877 109.935 33.0901 111.097 29.2667V1.34508H107.181L107.181 0.964671H139.236L139.302 13.5257H138.994C138.4 5.41551 135.314 2.35045 129.919 1.45626C128.062 1.14856 126.114 1.37666 123.652 1.35724V17.3884C125.796 17.5565 128.08 17.419 129.619 16.0781C131.019 14.8587 131.415 12.0414 131.517 10.8968H131.788V24.855H131.495C131.41 24.855 131.298 21.3523 129.619 19.6904C127.93 18.0177 125.778 17.6065 123.652 18.005V35.1298C126.655 35.1298 129.049 35.3878 131.128 34.8097C137.448 33.0522 139.673 27.6441 139.656 22.22H140.008V35.5352H114.865V35.1298H117.708V1.34508H111.566V29.2667C110.869 31.9383 108.325 36.3581 101.804 36.3279C95.7412 36.2999 89.7279 33.5275 89.7148 27.5117Z" fill="black"/>
+                                </svg>
+                            <span class="text-black text-[13.5px] font-normal">Editorial</span>                                
                         </div>
-                        <div class="swiper-slide">
-                            <div class="relative">
-                                <video class="w-full min-w-full min-h-[360px] h-auto md:max-h-[640px] object-cover" preload="none" autoplay="autoplay" loop="true" muted="muted"
-                                    webkit-playsinline="" playsinline="" class="video" id="theplayer" type="video/mp4"
-                                    width="100%" height="auto" style="display:block; margin:0 ; padding: 0;">
-                                    <source src="assets/images/story-video.mp4" type="video/mp4">
-                                </video>
-                                <!-- volume on/off -->
-                                <input type="checkbox" class="volume-switcher">
-                                <!-- <label class="switcher-container" for="volume-switcher">
-                                    <img class="volume" src="assets/images/volume.svg" alt="Volume">
-                                    <img class="volume-mute" src="assets/images/volume-mute.svg" alt="Muted" style="display:none;">
-                                </label> -->
-                            </div>
+                        <div class="block cursor-pointer">
+                            <img src="assets/images/gallery-store-img-day.png" alt="image" class="w-full transition-all duration-500 hover:rounded-t-[1000px]"/>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="relative">
-                                <video class="w-full min-w-full min-h-[360px] h-auto md:max-h-[640px] object-cover" preload="none" autoplay="autoplay" loop="true" muted="muted"
-                                    webkit-playsinline="" playsinline="" class="video" id="theplayer" type="video/mp4"
-                                    width="100%" height="auto" style="display:block; margin:0 ; padding: 0;">
-                                    <source src="assets/images/story-video.mp4" type="video/mp4">
-                                </video>
-                                <!-- volume on/off -->
-                                <input type="checkbox" class="volume-switcher">
-                                <!-- <label class="switcher-container" for="volume-switcher">
-                                    <img class="volume" src="assets/images/volume.svg" alt="Volume">
-                                    <img class="volume-mute" src="assets/images/volume-mute.svg" alt="Muted" style="display:none;">
-                                </label> -->
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="text-[#525252] text-base">Sustainable Fashion</span>
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="#9A9A9A" fill-opacity="0.8"/>
+                                    </svg>
+                                    <span class="text-[#525252] text-base">Press Release</span>
                             </div>
+                            <h4 class="text-[#070707] text-[28px] font-helvetica-medium leading-[35px] max-w-[390px]">Is India the Next Frontier for Luxury Department Stores?</h4>
                         </div>
                     </div>
-                    <div class="flex items-end md:flex-row flex-col justify-between md:gap-0 gap-6 mt-[48px]">
-                        <div class="flex flex-col gap-3">
-                            <div
-                                class="flex   items-center gap-3 md:text-base text-xs  uppercase font-normal leading-5 text-lightgray tracking-[1.92px]">
-                                THE ART OF CRAFTMANSHIP <span class="w-8 h-[1px] bg-[#393939]  block"></span></div>
-                            <h3
-                                class="max-w-md lg:max-w-2xl text-black_neutral text-[32px] font-helvetica-medium leading-[38px]">
-                                Handcrafted with care, embodying the essence of refined luxury</h3>
+                </div>
+                <div class="border-[0.5px] border-[#B1B1B1] pt-[50px] pb-[40px] md:px-[44px] px-6 bg-white">
+                    <div class="flex flex-col gap-8">
+                        <div class="flex flex-col gap-1.5">
+                            <svg width="140" height="37" viewBox="0 0 140 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40.8352 0.156542C32.6749 0.215718 26 9.41489 26 17.4387C26 25.8824 30.893 36.1824 40.8352 36.149C50.7775 36.1155 55.9378 25.0267 55.9378 17.4387C55.9378 9.05712 48.9956 0.0973667 40.8352 0.156542ZM40.8352 0.471262C47.6651 0.471262 49.5077 8.12212 49.5077 17.4387C49.5077 29.7317 47.285 35.7965 40.8352 35.7849C34.3854 35.7734 32.2872 30.8096 32.2872 17.4387C32.2872 9.06286 34.0054 0.471262 40.8352 0.471262Z" fill="black"/>
+                                <path d="M58.633 17.6669C58.5964 8.53709 65.8005 0.449819 71.8989 0.048571C74.1017 -0.109719 76.9332 0.913441 78.5863 1.6423C79.7867 2.17156 82.2371 1.40548 82.6723 0H82.9095V12.4366H82.6723C82.6723 11.9064 80.4015 0.361246 71.8989 0.361246C65.6186 0.361246 65.0118 11.5622 65.0118 17.6669C65.0118 23.7717 65.1948 35.857 72.5237 35.857C76.074 35.857 78.7019 34.2816 79.3832 31.0943V21.403H76.4032V20.9902H87.9543V21.403H85.1052V35.5716H84.8733C84.8733 35.5716 84.4101 33.5273 82.0598 33.5341C79.0558 33.5428 76.2228 36.1899 72.7695 36.1577C63.6366 36.0725 58.6695 26.7967 58.633 17.6669Z" fill="black"/>
+                                <path d="M3.59667 1.37882H0V0.96875H12.5993V1.37882H9.43845L18.441 26.1762C21.2561 17.3854 23.4369 10.8873 26.3718 1.37882H23.2453V0.96875H29.8978V1.37882H26.8683L15.9266 35.9759L3.59667 1.37882Z" fill="black"/>
+                                <path d="M89.7148 27.5117L89.6579 1.34508H86.2344V0.953125H98.8472V1.34508H95.4257L95.5017 30.0354C96.2591 33.3207 97.6058 35.8135 102.207 35.8506C106.807 35.8877 109.935 33.0901 111.097 29.2667V1.34508H107.181L107.181 0.964671H139.236L139.302 13.5257H138.994C138.4 5.41551 135.314 2.35045 129.919 1.45626C128.062 1.14856 126.114 1.37666 123.652 1.35724V17.3884C125.796 17.5565 128.08 17.419 129.619 16.0781C131.019 14.8587 131.415 12.0414 131.517 10.8968H131.788V24.855H131.495C131.41 24.855 131.298 21.3523 129.619 19.6904C127.93 18.0177 125.778 17.6065 123.652 18.005V35.1298C126.655 35.1298 129.049 35.3878 131.128 34.8097C137.448 33.0522 139.673 27.6441 139.656 22.22H140.008V35.5352H114.865V35.1298H117.708V1.34508H111.566V29.2667C110.869 31.9383 108.325 36.3581 101.804 36.3279C95.7412 36.2999 89.7279 33.5275 89.7148 27.5117Z" fill="black"/>
+                                </svg>
+                            <span class="text-black text-[13.5px] font-normal">Editorial</span>                                
                         </div>
-                        <div class="flex items-center gap-3">
-                            <!-- If we need navigation buttons -->
-                            <button id="story-btn-prev" class="story-slide-btn ">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_2064_14907)">
-                                        <path d="M16.8398 10.0039L3.08984 10.0039" stroke="" stroke-width="1.23216"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M8.71484 15.6328L3.08984 10.0078L8.71484 4.38281" stroke=""
-                                            stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round">
-                                        </path>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_2064_14907">
-                                            <rect width="20" height="20" fill="white" transform="matrix(1 0 0 -1 0 20)">
-                                            </rect>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </button>
-                            <button id="story-btn-next" class="story-slide-btn">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_2064_14912)">
-                                        <path d="M3.16016 10.0039L16.9102 10.0039" stroke="" stroke-width="1.23216"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M11.2852 15.6328L16.9102 10.0078L11.2852 4.38281" stroke=""
-                                            stroke-width="1.23216" stroke-linecap="round" stroke-linejoin="round">
-                                        </path>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_2064_14912">
-                                            <rect width="20" height="20" fill="white"
-                                                transform="matrix(-1 0 0 -1 20 20)"></rect>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </button>
-
+                        <div class="block cursor-pointer">
+                            <img src="assets/images/gallery-store-img-night.png" alt="image" class="w-full transition-all duration-500 hover:rounded-t-[1000px]"/>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="text-[#525252] text-base">Sustainable Fashion</span>
+                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="3" cy="3" r="3" fill="#9A9A9A" fill-opacity="0.8"/>
+                                    </svg>
+                                    <span class="text-[#525252] text-base">Press Release</span>
+                            </div>
+                            <h4 class="text-[#070707] text-[28px] font-helvetica-medium leading-[35px] max-w-[390px]">Paris’ Iconic ‘Galeries Lafayette’ Is Coming To India: All You Need To Know</h4>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    <!-- story of style end -->
-
-    <!-- YOUR STYLE. YOUR STORY Start -->
-    <div class="relative z-10 bg-white py-16 md:py-32">
-        <div class="mx-auto w-full max-w-7xl px-4 lg:px-10">
-            <p
-                class="mb-2 text-center text-base uppercase leading-[140%] tracking-[1.92px] text-[#6F6F6F] lg:text-left">
-                LOOK BOOK TO
-            </p>
-            <h2
-                class="mb-[60px] text-center font-helvetica-condensed-bold text-[56px] font-bold leading-[100%] text-black lg:text-left lg:text-[80px]">
-                YOUR STYLE. YOUR STORY
-            </h2>
-            <div class="grid grid-cols-2 xl:grid-cols-[repeat(auto-fit,minmax(224px,1fr))]  2xl:gap-5 gap-3">
-                <div class="col-span-2 row-span-3">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-1.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="cycle-slideshow sm:col-span-2 row-span-2">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-2.webp" alt=""
-                        loading="lazy" />
-                        <img class="h-full w-full object-cover" src="assets/images/book-cover-2-2.webp" alt=""
-                        loading="lazy" />
-                        <img class="h-full w-full object-cover" src="assets/images/book-cover-2-3.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="block sm:hidden w-full h-32"></div>
-                <div class="max-sm:row-span-2">
-                    <img class=" h-full w-full object-cover" src="assets/images/book-cover-3.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="block sm:hidden w-full h-32"></div>
-                <div>
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-4.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div>
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-5.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="sm:hidden  col-span-2 row-span-3">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-9.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="cycle-slideshow max-sm:col-span-2 max-sm:row-span-1">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-6.webp" alt=""
-                    loading="lazy" />
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-6-1.webp" alt=""
-                        loading="lazy" />
-                        <img class="h-full w-full object-cover" src="assets/images/book-cover-6-2.webp" alt=""
-                        loading="lazy" />
-                </div>
-               
-                <div class="hidden sm:block w-full h-full"></div>
-                <div class="sm:hidden">
-                    <img class="h-auto w-full object-cover" src="assets/images/book-cover-10.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="cycle-slideshow max-sm:aspect-[1/2] sm:col-span-2 row-span-2">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-7.webp" alt=""
-                    loading="lazy" />
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-7-2.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="w-full h-full "></div>
-                <div class="sm:block hidden col-span-2 row-span-3">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-9.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="cycle-slideshow !hidden sm:block">
-                    <img class="h-auto w-full object-cover" src="assets/images/book-cover-8.webp" alt=""
-                        loading="lazy" />
-                        <img class="h-auto w-full object-cover" src="assets/images/book-cover-8-2.webp" alt=""
-                        loading="lazy" />
-                        <img class="h-auto w-full object-cover" src="assets/images/book-cover-8-3.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="cycle-slideshow sm:hidden block mt-auto">
-                    <img class="h-auto w-full object-cover" src="assets/images/book-cover-8.webp" alt=""
-                        loading="lazy" />
-                        <img class="h-auto w-full object-cover" src="assets/images/book-cover-8-2.webp" alt=""
-                        loading="lazy" />
-                        <img class="h-auto w-full object-cover" src="assets/images/book-cover-8-3.webp" alt=""
-                        loading="lazy" />
-                </div>
-                <div class="hidden sm:block">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-10.webp" alt=""
-                        loading="lazy" />
-                </div>
-                
-                <div class="sm:col-span-2">
-                    <img class="h-full w-full object-cover" src="assets/images/book-cover-11.webp" alt=""
-                        loading="lazy" />
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- spotlight section end -->
+   
     <!--footer-->
     <footer class="bg-bg_black_neutral py-[48px] sm:py-[70px] relative overflow-hidden">
         <div class="absolute sm:bottom-[-140px] bottom-auto sm:top-auto top-0 left-0 right-0 m-auto z-0">
@@ -1487,14 +914,14 @@
         <div class="w-full mx-auto px-6 md:px-6 lg:px-8 2xl:px-8 max-w-8xl relative">
             <div
                 class="flex flex-col sm:flex-row sm:justify-between justify-content sm:gap-0 gap-9 sm:mb-[160px] mb-9 gap-9">
-                <div class="flex flex-col sm:justify-start justify-center md:items-start items-center">
+                <div class="flex flex-col gap-4 sm:justify-start justify-center md:items-start items-center">
                     <h3
                         class="text-base sm:text-[40px] text-lightgray font-helvetica-light leading-8 tracking-[-0.818px] sm:text-left text-center">
-                        Perfectly Curated
+                        An Iconic Love Affair
                     </h3>
                     <div
-                        class="text-white text-[56px] sm:text-[92px] tracking-[-0.92px] font-helvetica-medium sm:leading-[92px] leading-[56px] max-w-xs sm:text-left text-center">
-                        Parisian Flair
+                        class="text-white text-[56px] sm:text-[92px] tracking-[-0.92px] font-helvetica-medium sm:leading-[92px] leading-[56px] max-w-lg sm:text-left text-center">
+                        The Place to be
                     </div>
                 </div>
                 <div class="flex flex-col sm:gap-[70px] gap-9">
@@ -1502,12 +929,11 @@
                         <span class="text-xs text-white/50 font-normal uppercase mb-2">Catalog</span>
                         <li>
                             <a href="#"
-                                class="text-neutral_light text-xl sm:text-2xl tracking-[-0.48px] font-helvetica-light hover:text-white transition-all duration-500">Media</a>
+                                class="text-neutral_light text-xl sm:text-2xl tracking-[-0.48px] font-helvetica-light hover:text-white transition-all duration-500">Press Release</a>
                         </li>
                         <li>
                             <a href="#"
-                                class="text-neutral_light text-xl sm:text-2xl tracking-[-0.48px] font-helvetica-light hover:text-white transition-all duration-500">Press
-                                Release</a>
+                                class="text-neutral_light text-xl sm:text-2xl tracking-[-0.48px] font-helvetica-light hover:text-white transition-all duration-500">GL Story</a>
                         </li>
                         <li>
                             <a href="#"
@@ -1596,6 +1022,119 @@
     <script src="assets/js/gsap_code.js"></script>
     <script src="https://malsup.github.io/jquery.cycle2.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+$(document).ready(function () {
+    const mainSwiper = new Swiper(".main-slider-brand", {
+        loop: true, // Keep false for consistent slide indexing
+        speed: 0, // No Swiper transition effect
+        slidesPerView: 1,
+        direction: "vertical",
+        allowTouchMove: false, // optional, only use nav buttons
+        navigation: {
+            nextEl: ".brand-swiper-button-next",
+            prevEl: ".brand-swiper-button-prev"
+        },
+        on: {
+            init: function () {
+                // Brand init
+                updateBrandName(0);
+                animateSlide(this.slides[this.activeIndex]);
+            },
+            slideChange: function () {
+                updateBrandName(this.realIndex);
+                animateSlide(this.slides[this.activeIndex]);
+            }
+        }
+    });
+
+    function updateBrandName(index) {
+    const brandNames = $(".brand-name");
+    brandNames.removeClass("active").eq(index).addClass("active");
+
+    const container = $(".brand-names-container");
+    const active = brandNames.eq(index);
+    const isMobile = window.innerWidth <= 1024;
+
+    let scrollPos;
+    if (isMobile) {
+        scrollPos = active.position().left + container.scrollLeft() - container.width() / 2 + active.outerWidth() / 2;
+        container.stop().animate({ scrollLeft: scrollPos }, 400);
+    } else {
+        scrollPos = active.position().top + container.scrollTop() - container.height() / 2 + active.outerHeight() / 2;
+        container.stop().animate({ scrollTop: scrollPos }, 400);
+    }
+}
+
+    function animateSlide(slideEl) {
+        const $slide = $(slideEl);
+
+        // Reset positions
+        gsap.set($slide.find(".slide-inner, .nested-slider-container, .slide-text"), {
+            y: "30%",
+            opacity: 0
+        });
+
+        // Animate in
+        gsap.to($slide.find(".slide-inner, .nested-slider-container, .slide-text"), {
+            y: "0%",
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out"
+        });
+
+        // Start nested slider autoplay after 1s
+        const nested = $slide.find(".nested-slider");
+        if (nested.length) {
+            const nestedSwiper = nested[0].swiper;
+            if (nestedSwiper) {
+                nestedSwiper.slideTo(0, 0);
+                nestedSwiper.params.autoplay = {
+                    delay: 0,
+                    disableOnInteraction: true
+                };
+                setTimeout(() => {
+                    nestedSwiper.autoplay.start();
+                    setTimeout(() => nestedSwiper.autoplay.stop(), nestedSwiper.slides.length * 500);
+                }, 1000); // Wait for GSAP to finish
+            }
+        }
+    }
+
+    // Init nested sliders
+    $(".nested-slider").each(function () {
+        new Swiper(this, {
+            loop: false,
+            speed: 800,
+            slidesPerView: 1.5,
+            spaceBetween: 30,
+            direction: "horizontal",
+            autoplay: false,
+            breakpoints: {
+            // Mobile (≤768px)
+            0: {
+                slidesPerView: 2.5,
+                spaceBetween: 16,
+                direction: 'horizontal'
+            },
+            // Tablet (≥769px)
+            769: {
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+                direction: 'horizontal'
+            },
+            // Desktop (≥1024px)
+            1024: {
+                slidesPerView: 1.5,
+                spaceBetween: 30,
+                direction: 'horizontal'
+            }
+        }
+        });
+    });
+});
+
+
+    </script>
 </body>
 
 </html>

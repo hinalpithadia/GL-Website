@@ -104,9 +104,30 @@ function triggerGSAPAnimation3() {
             scrub: 2,
             end: "top 55%",
             markers: false,
-        }
+        },
+        
     });
 }
+// function rotateAnimation() {
+//     gsap.to(".rotate-img", {
+//         rotate: '-6.25deg',
+//         y: 50,  // Move slightly up
+//         x: -100,   // Move slightly right
+//         duration: 0.5,
+//         ease: "power1.out",
+//         scrollTrigger: {
+//             trigger: ".efforts",
+//             start: "top 95%",
+//             end: "top 55%",
+//             markers: false,
+//             toggleActions: "restart none none reverse",
+//         }
+
+//     });
+// }
+
+// Call function after a short delay to ensure GSAP is initialized
+
 gsap.from(".text-anim1", {
     y: 200,
     opacity: 0.2,

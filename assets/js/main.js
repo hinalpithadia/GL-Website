@@ -263,6 +263,7 @@ $(document).ready(function () {
 });
 
 
+
 /*========story slider===========*/
 $(document).ready(function () {
     var storyswiper = new Swiper('.story-slider', {
