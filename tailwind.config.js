@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily : {
+        'Edu': ['Edu AU VIC WA NT Hand'],
         'helvetica': ['Helvetica Neue'],
         'helvetica-light': ['Helvetica Neue Light'],
         'helvetica-medium': ['Helvetica Neue Medium'],
