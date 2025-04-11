@@ -1627,9 +1627,9 @@ p {
   }
 
   .news-slider .swiper-pagination {
-    max-width: 830px;
+    max-width: 850px;
     margin: auto;
-    bottom: 400px !important;
+    bottom: 420px !important;
   }
 
   .news-slider .swiper-slide .block.relative {
@@ -1711,9 +1711,9 @@ p {
   }
 
   .news-slider .swiper-pagination {
-    max-width: 740px;
+    max-width: 735px;
     margin: auto;
-    bottom: 400px !important;
+    bottom: 350px !important;
   }
 
   .news-arrow {
@@ -1793,7 +1793,7 @@ p {
 @media(max-width:767px) {
   .news-arrow{
     max-width: 100%;
-    justify-content: flex-start;
+    justify-content: flex-start!important;
     bottom: 30px;
     left: 20px;
   }
@@ -1927,6 +1927,10 @@ p {
   visibility: hidden !important;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -2049,6 +2053,26 @@ p {
 
 .top-6 {
   top: 1.5rem;
+}
+
+.bottom-\[300px\] {
+  bottom: 300px;
+}
+
+.bottom-\[220px\] {
+  bottom: 220px;
+}
+
+.bottom-\[280px\] {
+  bottom: 280px;
+}
+
+.bottom-\[180px\] {
+  bottom: 180px;
+}
+
+.bottom-\[175px\] {
+  bottom: 175px;
 }
 
 .\!z-30 {
@@ -2619,6 +2643,10 @@ p {
   cursor: pointer;
 }
 
+.resize {
+  resize: both;
+}
+
 .list-outside {
   list-style-position: outside;
 }
@@ -2645,6 +2673,10 @@ p {
 
 .flex-col-reverse {
   flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-start {
@@ -3010,6 +3042,10 @@ p {
   padding: 1px;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .px-2\.5 {
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -3180,6 +3216,10 @@ p {
   padding-top: 1rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -3198,6 +3238,18 @@ p {
 
 .pt-\[60px\] {
   padding-top: 60px;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pt-\[0px\] {
+  padding-top: 0px;
+}
+
+.pt-\[80px\] {
+  padding-top: 80px;
 }
 
 .\!text-left {
@@ -3268,6 +3320,10 @@ p {
 
 .text-\[13\.5px\] {
   font-size: 13.5px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
 }
 
 .text-\[19px\] {
@@ -3761,6 +3817,138 @@ p {
   src: url(../fonts/gt-america-trial/GT-America-Compressed-Bold-Trial.otf);
 }
 
+@media not all and (min-width: 1024px) {
+  .max-lg\:block {
+    display: block;
+  }
+
+  .news-slider .swiper-slide .max-lg\:block.relative{
+    max-width: 1360px;
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  .max-lg\:block {
+    display: block;
+  }
+
+  .news-slider .swiper-slide .max-lg\:block.relative{
+    max-width: 1360px;
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  @media(max-width:1400px){
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 1330px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  .max-lg\:block {
+    display: block;
+  }
+
+  .news-slider .swiper-slide .max-lg\:block.relative{
+    max-width: 1360px;
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  @media(max-width:1400px){
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 1330px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  @media(max-width:1350px) {
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 1190px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  .max-lg\:block {
+    display: block;
+  }
+
+  .news-slider .swiper-slide .max-lg\:block.relative{
+    max-width: 1360px;
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  @media(max-width:1400px){
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 1330px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  @media(max-width:1350px) {
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 1190px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  @media(max-width:1100px) {
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 865px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  .max-lg\:block {
+    display: block;
+  }
+
+  .news-slider .swiper-slide .max-lg\:block.relative{
+    max-width: 1360px;
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  @media(max-width:1400px){
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 1330px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  @media(max-width:1350px) {
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 1190px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  @media(max-width:1100px) {
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 865px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+
+  @media(max-width:900px) {
+    .news-slider .swiper-slide .max-lg\:block.relative {
+      max-width: 775px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  }
+}
+
 @media (min-width: 640px) {
   .news-slider .swiper-slide .sm\:block.relative{
     max-width: 1360px;
@@ -4058,6 +4246,10 @@ p {
 }
 
 @media not all and (min-width: 1024px) {
+  .max-lg\:bottom-12 {
+    bottom: 3rem;
+  }
+
   .max-lg\:z-20 {
     z-index: 20;
   }
@@ -4066,13 +4258,34 @@ p {
     z-index: 1000;
   }
 
+  .max-lg\:block {
+    display: block;
+  }
+
+  .max-lg\:hidden {
+    display: none;
+  }
+
   .max-lg\:w-full {
     width: 100%;
+  }
+
+  .max-lg\:max-w-max {
+    max-width: -moz-max-content;
+    max-width: max-content;
   }
 
   .max-lg\:-rotate-90 {
     --tw-rotate: -90deg;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .max-lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .max-lg\:justify-center {
+    justify-content: center;
   }
 
   .max-lg\:gap-8 {
@@ -4697,6 +4910,10 @@ p {
     font-weight: 300;
   }
 
+  .md\:\!leading-\[104px\] {
+    line-height: 104px !important;
+  }
+
   .md\:leading-6 {
     line-height: 1.5rem;
   }
@@ -4773,6 +4990,10 @@ p {
 
   .lg\:top-1\/3 {
     top: 33.333333%;
+  }
+
+  .lg\:bottom-12 {
+    bottom: 3rem;
   }
 
   .lg\:ml-auto {
@@ -4892,6 +5113,10 @@ p {
     gap: 60px;
   }
 
+  .lg\:gap-8 {
+    gap: 2rem;
+  }
+
   .lg\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -4920,6 +5145,11 @@ p {
   .lg\:py-\[21px\] {
     padding-top: 21px;
     padding-bottom: 21px;
+  }
+
+  .lg\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .lg\:text-left {
@@ -5031,6 +5261,10 @@ p {
     flex-direction: row;
   }
 
+  .xl\:gap-8 {
+    gap: 2rem;
+  }
+
   .xl\:bg-\[url\(\'\.\.\/images\/hero-img\.webp\'\)\] {
     background-image: url('../images/hero-img.webp');
   }
@@ -5056,6 +5290,10 @@ p {
 
   .\32xl\:gap-5 {
     gap: 1.25rem;
+  }
+
+  .\32xl\:gap-8 {
+    gap: 2rem;
   }
 
   .\32xl\:px-6 {
