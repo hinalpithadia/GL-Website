@@ -814,6 +814,408 @@
   .brand-names-container::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
   }
+  /*gl paris css*/
+  .gl-paris-body.scroll-lock {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+  }
+
+  .gl-paris-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 0px;
+    background-color: #f5f5f5;
+  }
+
+  .gl-paris-body::-webkit-scrollbar {
+    width: 0px;
+    background-color: #f5f5f5;
+  }
+
+  .gl-paris-body::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+  }
+
+    .add-img-before::before.swiper-timeline-paris-paris {
+        padding: 0;
+    }
+
+    .swiper-frame {
+        width: 438px;
+        max-width: 940px;
+        height: 362px;
+        margin: 0 auto;
+        overflow: hidden !important;
+
+    }
+
+    .swiper-frame .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+        right: -80px;
+        position: absolute;
+        z-index: 100 !important;
+        top: 170px;
+    }
+
+    .swiper-frame .swiper-slide.swiper-slide-active {
+        opacity: 1;
+    }
+
+    .swiper-frame .swiper-slide {
+        opacity: 0;
+        transition: all 0.5s ease-out;
+    }
+
+    .swiper-frame .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 6px;
+        height: 16px;
+        border-radius: 30px;
+        background: #000;
+    }
+
+    .add-img-before::before {
+        content: "";
+        position: absolute;
+        top: -55px;
+        left: -50px;
+        width: 460px;
+        height: 465px;
+        background-image: url('../images/gl-paris/frem.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 0;
+    }
+
+   
+    .hero {
+        position: relative;
+        transition: opacity 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+
+        .main-anim,
+        .swiper-timeline-paris {
+            display: block !important;
+            position: relative;
+            top: auto;
+        }
+    }
+
+    .swiper-timeline-paris {
+        width: 100%;
+    }
+
+    .swiper-timeline-paris .swiper-wrapper {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        min-height: 500px;
+    }
+
+    .timeline-section .year-1 .tringle {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 0px;
+        width: 0px;
+        border-left-width: 5px;
+        border-bottom-width: 10px;
+        border-right-width: 5px;
+        border-left-color: transparent;
+        border-bottom-color: #000;
+        border-right-color: transparent;
+        opacity: 0;
+    }
+
+    .year-1.active {
+        color: #000;
+    }
+
+    .year-1 {
+        position: relative;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 140%;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    .year-1.active .tringle {
+        opacity: 1;
+    }
+
+    .swiper-timeline-paris .swiper-slide {
+        flex-shrink: 0;
+        transition: all 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .swiper-timeline-paris.swiper-container {
+        padding-left: 60px;
+        padding-right: 60px;
+        overflow: visible;
+    }
+
+    .swiper-timeline-paris .swiper-slide {
+        background-position: top !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        margin: 0px 10px;
+        width: 450px;
+        height: 320px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .swiper-timeline-paris .swiper-slide img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-timeline-paris .swiper-slide.swiper-slide-active {
+        width: 450px;
+        height: 460px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .swiper-timeline-paris .swiper-slide.swiper-slide-prev,
+    .swiper-timeline-paris .swiper-slide.swiper-slide-next {
+        width: 450px;
+        height: 190px;
+    }
+
+    .img-wrapper img {
+        transition: all 0.5s ease-in-out;
+    }
+
+    .swiper-timeline-paris .swiper-slide.swiper-slide-active img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        scale: 1;
+    }
+
+    .swiper-timeline-paris .swiper-slide.swiper-slide-active .img-wrapper {
+        background-position: center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .swiper-timeline-paris .swiper-button-prev,
+    .swiper-button-next {
+        color: #000;
+    }
+
+    .text-content-container .odometer {
+        display: inline-block;
+        font-size: 104px;
+        line-height: 104px;
+    }
+
+    .timeline-section .year-1.year-1.active .scale .middle-line {
+        background: #000;
+    }
+
+    .text-content-container .odometer .odometer-formatting-mark {
+        display: none !important;
+    }
+
+    
+    @media(max-width:1270px){
+      
+        .left-small-img,.right-small-img{
+            bottom: -50px;
+            max-width: 300px;
+        }
+        .scale {
+            display: none !important;
+        }
+        .year-1 {
+            font-size: 12px;
+            width: 70px!important;
+            height: 50px!important;
+        }
+        .year-list{
+            max-width: 400px;
+            gap:20px;
+            justify-content: center;
+        }
+        #time-prevSlide-1{
+            position: relative;
+             left: 40px;
+        }
+        #time-nextSlide-1{
+            position: relative;
+             right: 40px;
+        }
+    }
+    @media(max-width:1024px){
+        .main-anim{
+            width: 100%;
+        }
+        .main-anim .flex{
+            flex-direction: column;
+        }
+        .hero{
+            height:100%;
+            padding-top: 180px;
+        }
+        .img-small{
+            overflow: visible;
+            height: auto;
+        }
+        .swiper-frame{
+            width: 100%;
+        }
+        #time-prevSlide-1,
+        #time-nextSlide-1 {
+            transform: rotate(0deg);
+            position: absolute;
+            bottom: 50px;
+        }
+        
+    }
+    @media(max-width:1000px) {
+        .scale {
+            display: none !important;
+        }
+        .left-small-img,.right-small-img{
+            max-width: 200px;
+            bottom: -50px;
+        }
+        .timeline-section{
+            overflow-y: hidden;
+        }
+        .year-list{
+            justify-content: center;
+        }
+        .text-content-container {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .slide-caption {
+            text-align: center;
+        }
+
+        .year-1 {
+            font-size: 12px;
+            width: 70px!important;
+            height: 50px!important;
+        }
+
+       
+
+        #time-prevSlide-1 {
+            left: 100px;
+        }
+
+        #time-nextSlide-1 {
+            right: 100px;
+        }
+    }
+
+    @media(max-width:767px) {
+        .left-small-img,.right-small-img{
+            display: none!important;
+        }
+        .swiper-timeline-paris.swiper-container {
+            padding-left: 0px;
+            padding-right: 0px;
+            overflow: visible;
+        }
+        #time-prevSlide-1, #time-nextSlide-1 {
+            bottom: -60px;
+        }
+        .swiper-timeline-paris .swiper-slide.swiper-slide-active {
+            width: 280px;
+            height: 320px;
+        }
+        .add-img-before::before {
+            left: -30px;
+            width: 360px;
+            height: 430px;
+            top: -50px;
+        }
+        .swiper-frame {
+            width: 100%;
+            height: 100%;
+            max-width: 260px;
+        }
+        .swiper-frame .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+            right: 0px;
+            position: absolute;
+            z-index: 100 !important;
+            top: 420px;
+            left: 0;
+            margin: auto;
+        }
+        .swiper-frame .swiper-pagination.swiper-pagination-clickable{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:5px;
+        }
+       .swiper-frame .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            width: 16px;
+            height: 8px;
+        }
+        .img-small
+        {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .swiper-timeline-paris .swiper-slide.swiper-slide-prev, .swiper-timeline-paris .swiper-slide.swiper-slide-next {
+            width: 280px;
+        }
+        .swiper-timeline-paris .swiper-wrapper{
+            min-height: 270px;
+        }
+        .timeline-section{
+            padding-bottom: 150px;
+        }
+        .swiper-timeline-paris .swiper-slide {
+            width: 70vw;
+            max-width: 400px;
+        }
+
+        body.scroll-lock {
+            overflow-y: auto;
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+
+        .scale {
+            display: none !important;
+        }
+
+        .year-list {
+            max-width: 360px;
+        }
+
+        .year-1 {
+            font-size: 12px;
+            height: 50px!important;
+        }
+
+        .swiper-timeline-paris .swiper-slide-active .img-wrapper img,
+        .swiper-timeline-paris .swiper-slide-active .img-wrapper-1 img {
+            width: 340px;
+            height: 290px;
+            object-fit: cover;
+        }
+    }
+
+
     @media (min-width: 768px) {
         .swiper-blog .swiper-slide  {
             /* upping it to a 3 column layout */
@@ -823,6 +1225,7 @@
         .swiper-blog .swiper-wrapper {
             justify-content: space-between;
         }
+       
     }
     @media (min-width: 767px) {
         .swiper-blog .swiper-wrapper {
@@ -990,6 +1393,9 @@
     }
 
     @media(max-width:900px) {
+        .hero{
+            padding: 150px 20px 0!important;
+        }
         .news-arrow{
             max-width: 775px;
         }
