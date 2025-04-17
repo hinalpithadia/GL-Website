@@ -184,72 +184,143 @@ function animation_text_all(selector) {
         );
     });
 }
+function triggerGSAPAnimation2(activeSlide) {
+    const cards = activeSlide.querySelectorAll('.card');
+    const textElements = activeSlide.querySelectorAll('.small_Title, .counter-pera');
 
-function triggerGSAPAnimation2() {
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: ".card-wrapper", // The parent container that wraps all the cards
-            start: "top 80%", // When the top of .card-wrapper reaches 80% of the viewport
-            toggleActions: "play none none none" // Play animation once when it enters
-        }
-    })
-        .from(".card-1", {
-            y: -0,
-            x: 40,
-            scale: 1.2,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power4.out"
-        })
-        .from(".card-2", {
-            y: -0,
-            x: 40,
-            scale: 1.05,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power4.out"
-        })
-        .from(".card-3", {
-            y: -0,
-            x: 40,
-            scale: 1.2,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power4.out"
-        });
-};
+    // Clear old inline styles just in case
+    gsap.set([...cards, ...textElements], { clearProps: "all" });
 
-gsap.timeline({
-    scrollTrigger: {
-        trigger: ".card-wrapper", // The parent container that wraps all the cards
-        start: "top 80%", // When the top of .card-wrapper reaches 80% of the viewport
-        toggleActions: "play none none none" // Play animation once when it enters
-    }
-})
-    .from(".card-1", {
-        y: -0,
-        x: 40,
-        scale: 1.1,
+    const tl = gsap.timeline();
+
+    // Animate cards (no scale here to avoid hover conflict)
+    tl.from(cards, {
         opacity: 0,
-        duration: 0.8,
-        ease: "power4.out"
-    })
-    .from(".card-2", {
-        y: -0,
-        x: 40,
-        scale: 1.05,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power4.out"
-    })
-    .from(".card-3", {
-        y: -0,
-        x: 40,
-        scale: 1.1,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power4.out"
+        y: 30,
+        duration: 0.4,
+        ease: "power2.out",
+        stagger: 0.05
     });
+
+    // Animate text right after cards
+    tl.from(textElements, {
+        opacity: 0,
+        y: 30,
+        duration: 0.4,
+        ease: "power2.out",
+        stagger: 0.05
+    }, "-=0.2"); // overlap a little
+}
+
+// function triggerGSAPAnimation2(activeSlide) {
+//     const images = activeSlide.querySelectorAll(".card img");
+//     const tl = gsap.timeline();
+//     // Animate images with stagger
+//     if (images.length) {
+//         tl.from(images, {
+//             opacity: 0,
+//             y: 50,
+//             scale: 1.2,
+//             duration: 0.6,
+//             ease: "power4.out",
+//             stagger: 0.05
+//         });
+//     }
+//     // Animate cards individually with a fixed 0.4s delay before each
+//     const card1 = activeSlide.querySelector(".card-1");
+//     const card2 = activeSlide.querySelector(".card-2");
+//     const card3 = activeSlide.querySelector(".card-3");
+//     if (card1) {
+//         tl.from(card1, {
+//             opacity: 0,
+//             y: 40,
+//             duration: 0.6,
+//             ease: "power4.out",
+//             delay: 0.2
+//         });
+//     }
+//     if (card2) {
+//         tl.from(card2, {
+//             opacity: 0,
+//             y: 40,
+//             duration: 0.6,
+//             ease: "power4.out",
+//             delay: 0.2
+//         });
+//     }
+//     if (card3) {
+//         tl.from(card3, {
+//             opacity: 0,
+//             y: 40,
+//             duration: 0.6,
+//             ease: "power4.out",
+//             delay: 0.2
+//         });
+//     }
+//     // Animate small title and counter text together
+//     const smallTitle = activeSlide.querySelector(".small_Title");
+//     const counterText = activeSlide.querySelector(".counter-pera");
+//     tl.from([smallTitle, counterText], {
+//         opacity: 0,
+//         y: 50,
+//         duration: 0.6,
+//         ease: "power4.out",
+//         stagger: 0.05
+//     }, "-=1.5"); // Overlap with previous animation
+// }
+
+/*optional code*/
+
+// function triggerGSAPAnimation2(activeSlide) {
+//     // 1. Reset all inline styles from previous GSAP animations (important for hover to work)
+//     gsap.set(activeSlide.querySelectorAll('.card'), { clearProps: 'all' });
+//     gsap.set(activeSlide.querySelectorAll('.card img'), { clearProps: 'all' });
+//     gsap.set(activeSlide.querySelectorAll('.small_Title, .counter-pera'), { clearProps: 'all' });
+
+//     const tl = gsap.timeline();
+
+//     // 2. Animate images immediately (remove delay, keep short duration)
+//     const images = activeSlide.querySelectorAll(".card img");
+//     if (images.length) {
+//         tl.from(images, {
+//             opacity: 0,
+//             y: 30,
+//             scale: 1.05,
+//             duration: 0.3,
+//             ease: "power1.out",
+//             stagger: 0.05
+//         });
+//     }
+
+//     // 3. Animate cards instantly (no delays)
+//     const card1 = activeSlide.querySelector(".card-1");
+//     const card2 = activeSlide.querySelector(".card-2");
+//     const card3 = activeSlide.querySelector(".card-3");
+
+//     [card1, card2, card3].forEach(card => {
+//         if (card) {
+//             tl.from(card, {
+//                 opacity: 0,
+//                 y: 30,
+//                 duration: 0.3,
+//                 ease: "power1.out"
+//             }, "-=0.25"); // overlap a bit
+//         }
+//     });
+
+//     // 4. Animate text (title + paragraph) together, fast, and overlapping previous
+//     const smallTitle = activeSlide.querySelector(".small_Title");
+//     const counterText = activeSlide.querySelector(".counter-pera");
+//     if (smallTitle || counterText) {
+//         tl.from([smallTitle, counterText], {
+//             opacity: 0,
+//             y: 30,
+//             duration: 0.3,
+//             ease: "power1.out",
+//             stagger: 0.05
+//         }, "-=0.25"); // overlap again
+//     }
+// }
 
 function inconictext() {
     let tl = new TimelineMax({});

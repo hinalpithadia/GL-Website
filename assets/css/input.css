@@ -222,7 +222,9 @@
 
 
     }
-
+    .swiper-Timeline .swiper-slide.swiper-slide-active {
+        z-index: 1000 !important;
+    }
     .swiper-Timeline .odometer-formatting-mark {
         display: none;
     }
@@ -230,7 +232,7 @@
    
     .card {
         position: relative;
-        transition: transform 0.3s ease-in-out, z-index 0.2s ease-in-out, filter 0.3s ease-in-out;
+       
     }
     .card::before {
         content: "";
@@ -242,7 +244,7 @@
         z-index: 2;
     }
     .card img {
-        transition: filter 0.3s ease-in-out;
+       
         pointer-events: none; /* Stops image from interfering */
     }
 

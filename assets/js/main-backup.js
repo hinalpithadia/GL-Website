@@ -326,10 +326,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 nextEl: "#time-nextSlide",
                 prevEl: "#time-prevSlide",
             },
-            effect: "fade", // Use fade effect for transitions
-            fadeEffect: {
-                crossFade: false // Ensure slides fade into each other smoothly
-            },
             initialSlide: startIndex,
             on: {
                 init: function () {
@@ -341,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 slideChangeTransitionStart: function () {
                     updateYear(swiper.realIndex);
                     let previousSlide = document.querySelector(".swiper-slide-prev");
-                     const activeSlide = swiper.slides[swiper.activeIndex];
+                    let activeSlide = document.querySelector(".swiper-slide-active");
 
                     if (previousSlide) {
                         resetOdometer(previousSlide);
@@ -413,12 +409,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+// timeline card hover
 document.querySelectorAll('.card').forEach((card) => {
     let isHovered = false;
     let hoverTimeout;
 
     card.addEventListener('mouseenter', function () {
-        clearTimeout(hoverTimeout);
+        clearTimeout(hoverTimeout); // Stop any pending mouseleave event
+
         if (isHovered) return;
         isHovered = true;
 
@@ -430,12 +429,11 @@ document.querySelectorAll('.card').forEach((card) => {
 
             card.style.zIndex = maxZIndex + 1;
             card.style.transform = "scale(1.2)";
-            card.style.transition = "transform 0.15s ease-out";
+            card.style.transition = "transform 0.3s ease-out";
 
             document.querySelectorAll('.card').forEach(sibling => {
                 if (sibling !== card) {
-                    const img = sibling.querySelector('img');
-                    if (img) img.style.filter = 'grayscale(100%)';
+                    sibling.querySelector('img').style.filter = 'grayscale(100%)';
                 }
             });
         });
@@ -451,83 +449,15 @@ document.querySelectorAll('.card').forEach((card) => {
                 });
 
                 card.style.transform = "scale(1)";
-                card.style.transition = "transform 0.3s ease-in-out";
+                card.style.zIndex = "";
 
                 const randomRotation = (Math.random() * 10 - 5).toFixed(2);
                 card.style.rotate = `${randomRotation}deg`;
-                card.style.transition += ", rotate 0.5s ease-in-out";
-
-                setTimeout(() => {
-                    card.style.zIndex = "";
-                }, 300);
+                card.style.transition = "transform 0.3s ease-in-out, rotate 0.5s ease-in-out";
             });
-        }, 50);
+        }, 50); // Small delay prevents flicker
     });
 });
-
-// timeline card hover
-// document.querySelectorAll('.card').forEach((card) => {
-//     const inner = card.querySelector('.card-inner');
-//     let isHovered = false;
-//     let hoverTimeout;
-
-//     card.addEventListener('mouseenter', function () {
-//         clearTimeout(hoverTimeout); // Stop any pending mouseleave event
-
-//         if (isHovered) return;
-//         isHovered = true;
-
-//         requestAnimationFrame(() => {
-//             let maxZIndex = Math.max(
-//                 ...Array.from(document.querySelectorAll('.card'))
-//                     .map(sibling => parseInt(window.getComputedStyle(sibling).zIndex) || 0)
-//             );
-
-//             // Bring hovered card to front
-//             card.style.zIndex = maxZIndex + 1;
-
-//             // Apply scale only to inner (not the full card to avoid GSAP conflict)
-//             inner.style.transform = "scale(1.2)";
-//             inner.style.transition = "transform 0.1s ease-out";
-
-//             // Grayscale all other cards
-//             document.querySelectorAll('.card').forEach(sibling => {
-//                 if (sibling !== card) {
-//                     const img = sibling.querySelector('.card-inner img');
-//                     if (img) img.style.filter = 'grayscale(100%)';
-//                 }
-//             });
-//         });
-//     });
-
-//     card.addEventListener('mouseleave', function () {
-//         hoverTimeout = setTimeout(() => {
-//             isHovered = false;
-
-//             requestAnimationFrame(() => {
-//                 // Reset grayscale on all cards
-//                 document.querySelectorAll('.card-inner img').forEach(img => {
-//                     img.style.filter = 'grayscale(0%)';
-//                 });
-
-//                 // Reset transform
-//                 inner.style.transform = "scale(1)";
-//                 inner.style.transition = "transform 0.3s ease-in-out";
-
-//                 // Optionally rotate card randomly on leave
-//                 const randomRotation = (Math.random() * 10 - 5).toFixed(2);
-//                 card.style.rotate = `${randomRotation}deg`;
-//                 card.style.transition = "rotate 0.5s ease-in-out";
-
-//                 // Reset z-index after animation
-//                 setTimeout(() => {
-//                     card.style.zIndex = "";
-//                 }, 300);
-//             });
-//         }, 50); // Small delay prevents flicker
-//     });
-// });
-
 
 document.querySelectorAll(".switcher-container").forEach((switcher) => {
     switcher.addEventListener("click", function () {
