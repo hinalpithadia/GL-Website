@@ -20,7 +20,48 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    
+    <style>
+#trigger-zone {
+  position: relative;
+  height: 120vh; 
+  overflow: hidden;
+}
+.hero, #timeline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  will-change: opacity;
+}
+
+#timeline {
+  opacity: 0;
+  padding-top: 25vh;
+}
+
+.hero {
+  opacity: 1;
+}
+
+#timeline {
+  opacity: 0;
+}
+@media(max-width:1025px){
+  #timeline {
+  opacity: 1;
+  visibility: visible;
+  padding-top: 0;
+}
+.hero, #timeline {
+  position: relative;
+  height: 100%;
+}
+#trigger-zone{
+  height: auto;
+}
+}
+    </style>
   </head>
 
   <body class="gl-paris-body">
@@ -103,9 +144,9 @@
     </nav>
 
     <!-- navbar end  -->
-    <main class="overflow-hidden relative">
+    <main class="overflow-hidden relative main-container"  id="trigger-zone">
       <div
-        class="hero w-full lg:h-screen h-full bg-white md:pt-[150px] pt-[80px] relative flex flex-col items-center justify-between overflow-hidden md:px-0 px-5"
+        id="hero" class=" section hero w-full lg:h-screen h-full bg-white md:pt-[150px] pt-[80px] relative flex flex-col items-center justify-between overflow-hidden md:px-0 px-5"
       >
         <div
           class="flex h-full max-lg:items-center justify-center lg:justify-between w-full gap-5 overflow-visible lg:px-5"
@@ -243,7 +284,7 @@
         </div>
       </div>
 
-      <div class="timeline-section pb-24 md:pt-16 pt-0 relative z-30 w-full">
+      <div id="timeline" class="section timeline-section pb-24 md:pt-16 pt-0 relative z-30 w-full">
         <img
           src="assets/images/gl-paris/time-abs-bg-left.png"
           alt=""
@@ -1777,6 +1818,7 @@
       });
     </script>
     <script>
+      let pageLoaded = false;
       document.addEventListener("DOMContentLoaded", function () {
         const isMobileOrTablet = window.innerWidth <= 1024;
         if (
@@ -1787,6 +1829,7 @@
           setTimeout(() => {
             document.body.classList.remove("scroll-lock");
           }, 9000);
+          
         } else {
           // Show necessary elements instantly for mobile/tablet
           const mainAnim = document.querySelector(".main-anim");
@@ -2000,6 +2043,8 @@
               ease: "power2.out",
             });
         }
+         // Delay scroll-trigger setup slightly to avoid conflicts with GSAP intro
+       
       });
     </script>
     <!-- Swiper Frame -->
@@ -2099,6 +2144,75 @@
 
       // Run on window resize
       window.addEventListener("resize", updateImgSmallClass);
+    </script>
+    <script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+if (window.innerWidth > 1024) {
+  // 🔧 Force .hero to be fully visible on init
+  gsap.set(".hero", {
+    opacity: 1,
+    autoAlpha: 1,
+    zIndex: 2,
+    position: "relative"
+  });
+
+  // Set initial states for timeline content
+  gsap.set(["#timeline", ".swiper-timeline-paris", ".left-big-img", ".right-big-img"], {
+    opacity: 0
+  });
+
+  const fadeTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#trigger-zone",
+      start: "top top",
+      end: "+=80%", // Scroll distance for entire animation
+      scrub: 2,
+      markers: true, // 🔍 For visual debugging
+      pin: true,
+      onLeaveBack: () => {
+        gsap.set("#timeline", { zIndex: 1 });
+        gsap.set(".hero", { zIndex: 2 });
+      },
+      onUpdate: (self) => {
+        console.log("Scroll progress:", self.progress);
+      }
+    }
+  });
+
+  // 👇 FADE OUT HERO to 0.5 opacity smoothly
+  fadeTimeline.to(".hero", {
+    opacity: 0.5,
+    ease: "power3.out",
+  }, "+=0.2");
+
+  // 👇 FADE IN TIMELINE
+  fadeTimeline.to("#timeline", {
+    opacity: 1,
+  }, ">");
+
+  // 👇 FADE IN ADDITIONAL ELEMENTS
+  fadeTimeline.to(
+    [".swiper-timeline-paris", ".left-big-img", ".right-big-img"],
+    {
+      opacity: 1,
+      ease: "power2.out",
+      stagger: 0.3,
+      delay: 0.2
+    },
+    ">" // Start right after previous one
+  );
+
+  // 👇 Final checks
+  console.log("Initial .hero opacity:", getComputedStyle(document.querySelector('.hero')).opacity);
+
+  // ✅ Important: Recalculate ScrollTrigger
+  ScrollTrigger.refresh();
+}
+
+
+
     </script>
   </body>
 </html>
