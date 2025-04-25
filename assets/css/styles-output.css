@@ -1640,7 +1640,7 @@ p {
   display: flex;
   margin: 0;
   padding: 0;
-  min-height: 500px;
+  min-height: 400px;
 }
 
 .timeline-section .year-1 .tringle {
@@ -1694,8 +1694,8 @@ p {
   background-size: cover !important;
   background-repeat: no-repeat !important;
   margin: 0px 10px;
-  width: 450px;
-  height: 320px;
+  width: 350px;
+  height: 220px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -1707,15 +1707,15 @@ p {
 }
 
 .swiper-timeline-paris .swiper-slide.swiper-slide-active {
-  width: 450px;
-  height: 460px;
+  width: 350px;
+  height: 360px;
   transition: all 0.5s ease-in-out;
 }
 
 .swiper-timeline-paris .swiper-slide.swiper-slide-prev,
     .swiper-timeline-paris .swiper-slide.swiper-slide-next {
-  width: 450px;
-  height: 190px;
+  width: 350px;
+  height: 150px;
 }
 
 .img-wrapper img {
@@ -2394,6 +2394,10 @@ p {
 
 .visible {
   visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 .fixed {

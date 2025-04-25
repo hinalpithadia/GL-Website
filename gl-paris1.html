@@ -21,10 +21,11 @@
       referrerpolicy="no-referrer"
     />
     <style>
-#trigger-zone {
+     
+#trigger-zone { 
   position: relative;
-  height: 120vh; 
-  overflow: hidden;
+  min-height: 990px; 
+  height: 100%;
 }
 .hero, #timeline {
   position: absolute;
@@ -36,7 +37,6 @@
 }
 
 #timeline {
-  opacity: 0;
   padding-top: 25vh;
 }
 
@@ -44,9 +44,9 @@
   opacity: 1;
 }
 
-#timeline {
+ .swiper-timeline-paris,.year-main,.text-content-container,.left-big-img,.right-big-img{
   opacity: 0;
-}
+} 
 @media(max-width:1025px){
   #timeline {
   opacity: 1;
@@ -158,13 +158,13 @@
             <img src="assets/images/gl-paris/load-img2.png" alt="" />
           </div>
           <div
-            class="pb-[60px] flex flex-col items-center main-anim gap-5 relative z-30"
+            class="pb-[60px] flex flex-col items-center main-anim  gap-5 relative z-30 "
           >
             <div
               class="flex lg:flex-row flex-col items-start justify-center md:gap-8 gap-16"
             >
               <div
-                class="text-div pt-5 hidden transition-all duration-500 ease-linear max-h-[510px]"
+                class="text-div pt-5 w-1 invisible opacity-0 hidden  max-h-[510px] "
               >
                 <h1
                   class="text-[#262B34] font-helvetica-condensed-bold text-[52px] max-lg:text-center leading-[55px] md:text-[80px] md:leading-[92px] font-bold uppercase mb-[60px]"
@@ -284,7 +284,7 @@
         </div>
       </div>
 
-      <div id="timeline" class="section timeline-section pb-24 md:pt-16 pt-0 relative z-30 w-full">
+      <div id="timeline" class="section timeline-section pb-24 md:pt-16 pt-0 relative w-full">
         <img
           src="assets/images/gl-paris/time-abs-bg-left.png"
           alt=""
@@ -466,7 +466,7 @@
           ></p>
         </div>
         <div
-          class="flex lg:flex-row flex-col items-center justify-center gap-10 relative z-10"
+          class="year-main flex lg:flex-row flex-col items-center justify-center gap-10 relative z-10"
         >
           <button
             id="time-prevSlide-1"
@@ -1795,293 +1795,231 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 100) {
-          // Get active slide image from vertical slider
-          const activeSlideImg = document.querySelector(
-            ".swiper-frame .swiper-slide-active img"
-          );
-          const timelineMainSlide = document.querySelector(
-            "#timeline-main-slide"
-          );
-
-          if (activeSlideImg && timelineMainSlide) {
-            const imgSrc = activeSlideImg.getAttribute("src");
-
-            // Set it as background image
-            timelineMainSlide.style.backgroundImage = `url(${imgSrc})`;
-            timelineMainSlide.style.backgroundSize = "cover";
-            timelineMainSlide.style.backgroundPosition = "center";
-            timelineMainSlide.style.backgroundRepeat = "no-repeat";
-          }
-        }
-      });
-    </script>
-    <script>
-      let pageLoaded = false;
-      document.addEventListener("DOMContentLoaded", function () {
-        const isMobileOrTablet = window.innerWidth <= 1024;
-        if (
-          !isMobileOrTablet &&
-          document.body.classList.contains("gl-paris-body")
-        ) {
-          document.body.classList.add("scroll-lock");
-          setTimeout(() => {
-            document.body.classList.remove("scroll-lock");
-          }, 9000);
-          
-        } else {
-          // Show necessary elements instantly for mobile/tablet
-          const mainAnim = document.querySelector(".main-anim");
-          mainAnim?.classList.remove("hidden");
-          mainAnim?.classList.add("opacity-100", "pointer-events-auto");
-          // Show swiper-frame slider and hide person image
-          document.querySelector(".swiper-frame")?.classList.remove("!w-0");
-          document.getElementById("person")?.classList.add("hidden");
-          // const textDiv = document.querySelector(".text-div");
-          // textDiv?.classList.remove(
-          //   "hidden",
-          //   "visibility-hidden",
-          //   "opacity-0",
-          //   "w-1"
-          // );
-          // textDiv?.classList.add("w-full");
-          // Ensure slide texts are visible
-          document
-            .querySelectorAll(".slide-text")
-            .forEach((el) => (el.style.display = "block"));
-          // Hide GSAP decorative anim elements
-          document
-            .querySelectorAll(".anim-div")
-            .forEach((el) => (el.style.display = "none"));
-
-          const imgSmall = document.querySelector(".img-small");
-          if (imgSmall) {
-            console.log("img-small found, adding class instantly");
-            imgSmall.classList.add("add-img-before"); // Add the class instantly
-          } else {
-            console.log("img-small not found");
-          }
-        }
-
-        // Timeline Swiper & Odometer Init
-        const odometerEl = document.querySelector(
-          ".text-content-container .odometer"
-        );
-        const activeYearEl = document.querySelector(".year-1.active");
-        if (odometerEl && activeYearEl) {
-          const initialYear = activeYearEl.textContent.trim();
-          odometerEl.innerHTML = initialYear;
-          odometerEl.setAttribute("data-value", initialYear);
-          odometerEl.odometer = new Odometer({
-            el: odometerEl,
-            value: initialYear,
-            format: "",
-            theme: "minimal",
-          });
-        }
-        const swiper = new Swiper(".swiper-timeline-paris", {
-          slidesPerView: "auto",
-          centeredSlides: true,
-          loop: false,
-          speed: 600,
-          slideToClickedSlide: true,
-          centerInsufficientSlides: true,
-          navigation: {
-            nextEl: "#time-nextSlide-1",
-            prevEl: "#time-prevSlide-1",
-          },
-          on: {
-            init: function () {
-              updateYearList(this.activeIndex);
-              updateOdometer(this.activeIndex);
-              updateStaticCaption(this.slides[this.activeIndex]);
-              this.update();
-            },
-            slideChange: function () {
-              updateYearList(this.activeIndex);
-              updateOdometer(this.activeIndex);
-              updateStaticCaption(this.slides[this.activeIndex]);
-            },
-            resize: function () {
-              this.update();
-            },
-          },
-        });
-        function updateYearList(index) {
-          document.querySelectorAll(".year-1").forEach((year, i) => {
-            year.classList.toggle("active", i === index);
-          });
-        }
-        function updateStaticCaption(activeSlide) {
-          const slideCaption = activeSlide.querySelector(".slide-caption");
-          const captionEl = document.querySelector(
-            "#static-slide-content .slide-caption"
-          );
-          if (slideCaption && captionEl) {
-            captionEl.classList.remove("active");
-            captionEl.innerHTML = slideCaption.innerHTML;
-            void captionEl.offsetWidth;
-            captionEl.classList.add("active");
-          }
-        }
-        function updateOdometer(index) {
-          const yearEl = document.querySelectorAll(".year-1")[index];
-          const newYear = yearEl?.textContent.trim();
-          if (odometerEl && newYear) {
-            const current = odometerEl.getAttribute("data-value") || "0";
-            if (current !== newYear) {
-              odometerEl.setAttribute("data-value", newYear);
-              odometerEl.odometer.update(newYear);
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 100) {
+            const activeSlideImg = document.querySelector(".swiper-frame .swiper-slide-active img");
+            const timelineMainSlide = document.querySelector("#timeline-main-slide");
+            if (activeSlideImg && timelineMainSlide) {
+              const imgSrc = activeSlideImg.getAttribute("src");
+              timelineMainSlide.style.backgroundImage = `url(${imgSrc})`;
+              timelineMainSlide.style.backgroundSize = "cover";
+              timelineMainSlide.style.backgroundPosition = "center";
+              timelineMainSlide.style.backgroundRepeat = "no-repeat";
             }
           }
-        }
-        document.querySelectorAll(".year-1").forEach((el, i) => {
-          el.addEventListener("click", () => {
-            swiper.slideTo(i);
+        });
+      </script>
+      
+      <script>
+        let pageLoaded = false;
+        document.addEventListener("DOMContentLoaded", function () {
+          const isMobileOrTablet = window.innerWidth <= 1024;
+          if (!isMobileOrTablet && document.body.classList.contains("gl-paris-body")) {
+            document.body.classList.add("scroll-lock");
+            setTimeout(() => {
+              document.body.classList.remove("scroll-lock");
+            }, 8000);
+          } else {
+            const mainAnim = document.querySelector(".main-anim");
+            mainAnim?.classList.remove("hidden");
+            mainAnim?.classList.add("opacity-100", "pointer-events-auto");
+
+          
+            const swiperFrame = document.querySelector(".swiper-frame");
+            if (swiperFrame) {
+            swiperFrame.classList.remove("!w-0"); // Tailwind class
+            swiperFrame.style.width = "100%"; // Force override in case of !important
+            }
+            document.getElementById("person")?.classList.add("hidden");
+        
+            document.querySelectorAll(".slide-text").forEach((el) => (el.style.display = "block"));
+            document.querySelectorAll(".anim-div").forEach((el) => (el.style.display = "none"));
+      
+            const imgSmall = document.querySelector(".img-small");
+            if (imgSmall) {
+              imgSmall.classList.add("add-img-before");
+            }
+          }
+      
+          const odometerEl = document.querySelector(".text-content-container .odometer");
+          const activeYearEl = document.querySelector(".year-1.active");
+          if (odometerEl && activeYearEl) {
+            const initialYear = activeYearEl.textContent.trim();
+            odometerEl.innerHTML = initialYear;
+            odometerEl.setAttribute("data-value", initialYear);
+            odometerEl.odometer = new Odometer({
+              el: odometerEl,
+              value: initialYear,
+              format: "",
+              theme: "minimal",
+            });
+          }
+      
+          const swiper = new Swiper(".swiper-timeline-paris", {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            loop: false,
+            speed: 600,
+            slideToClickedSlide: true,
+            centerInsufficientSlides: true,
+            navigation: {
+              nextEl: "#time-nextSlide-1",
+              prevEl: "#time-prevSlide-1",
+            },
+            on: {
+              init: function () {
+                updateYearList(this.activeIndex);
+                updateOdometer(this.activeIndex);
+                updateStaticCaption(this.slides[this.activeIndex]);
+                this.update();
+              },
+              slideChange: function () {
+                updateYearList(this.activeIndex);
+                updateOdometer(this.activeIndex);
+                updateStaticCaption(this.slides[this.activeIndex]);
+              },
+              resize: function () {
+                this.update();
+              },
+            },
+          });
+      
+          function updateYearList(index) {
+            document.querySelectorAll(".year-1").forEach((year, i) => {
+              year.classList.toggle("active", i === index);
+            });
+          }
+      
+          function updateStaticCaption(activeSlide) {
+            const slideCaption = activeSlide.querySelector(".slide-caption");
+            const captionEl = document.querySelector("#static-slide-content .slide-caption");
+            if (slideCaption && captionEl) {
+              captionEl.classList.remove("active");
+              captionEl.innerHTML = slideCaption.innerHTML;
+              void captionEl.offsetWidth;
+              captionEl.classList.add("active");
+            }
+          }
+      
+          function updateOdometer(index) {
+            const yearEl = document.querySelectorAll(".year-1")[index];
+            const newYear = yearEl?.textContent.trim();
+            if (odometerEl && newYear) {
+              const current = odometerEl.getAttribute("data-value") || "0";
+              if (current !== newYear) {
+                odometerEl.setAttribute("data-value", newYear);
+                odometerEl.odometer.update(newYear);
+              }
+            }
+          }
+      
+          document.querySelectorAll(".year-1").forEach((el, i) => {
+            el.addEventListener("click", () => {
+              swiper.slideTo(i);
+            });
           });
         });
-      });
-    </script>
-    <!-- Desktop-Only Scripts -->
-    <script>
-      window.addEventListener("load", function () {
-        const isMobileOrTablet = window.innerWidth <= 1024;
-        if (!isMobileOrTablet) {
-          setTimeout(() => {
-            const textDiv = document.querySelector(".text-div");
-            textDiv?.classList.remove("hidden");
-            // setTimeout(() => {
-            //   textDiv?.classList.remove("visibility-hidden", "opacity-0");
-            // }, 300);
-            //void textDiv.offsetWidth;
-            if (textDiv) {
-  // Initial hidden state
-  gsap.set(textDiv, {
-    opacity: 0,
-    autoAlpha: 0,
-    width: "0%"
-  });
+      </script>
+      
+      <!-- Desktop-Only Page Load Animations -->
+      <script>
+        window.addEventListener("load", function () {
+          const isMobileOrTablet = window.innerWidth <= 1024;
+          if (!isMobileOrTablet) {
+            setTimeout(() => {
+              document.getElementById("person")?.style.setProperty("display", "none");
+              document.getElementById("frame")?.style.setProperty("display", "none");
 
-  // Create a timeline to sequence animations
-  const tl = gsap.timeline();
+              const imgSmall = document.querySelector(".img-small");
+              const tributeText = document.querySelector(".tribute-text");
+              const slider = document.querySelector(".swiper-frame");
+              const slideText = document.querySelectorAll(".slide-text");
+              const animDiv = document.querySelectorAll(".anim-div");
+              const mainAnim = document.querySelector(".main-anim");
 
-  // Step 1: Animate width
-  tl.to(textDiv, {
-    width: "100%",
-    duration: 0.5,
-    opacity: 1,
-    autoAlpha: 1,
-    ease: "power2.out"
-  });
+              if (imgSmall) {
+                Object.assign(imgSmall.style, {
+                  position: "relative",
+                  paddingTop: "0px",
+                  paddingBottom: "110px",
+                  overflow: "visible",
+                });
+              }
+              if (tributeText) tributeText.style.display = "none";
+              if (mainAnim) {
+                Object.assign(mainAnim.style, {
+                  width: "100%",
+                  maxWidth: "1280px",
+                  margin: "0 auto",
+                });
+              }
 
-  // Step 2: Fade in opacity after width finishes
-  tl.to(textDiv, {
-    opacity: 1,
-    autoAlpha: 1,
-    ease: "power2.out"
-  }, 8000); // adds delay *after* width animation
-}
-          }, 6000);
-          // ScrollTrigger for hiding main-anim
-          gsap.registerPlugin(ScrollTrigger);
-          ScrollTrigger.create({
-            trigger: ".main-img",
-            start: "top top+=80",
-            onEnter: () => {
-              document
-                .querySelector(".main-anim")
-                ?.classList.add("opacity-0", "pointer-events-none");
-            },
-            onLeaveBack: () => {
-              document
-                .querySelector(".main-anim")
-                ?.classList.remove("opacity-0", "pointer-events-none");
-            },
-          });
-          // GSAP Page Load Animations
-          gsap
-            .timeline()
-            .to(".top-tr", {
-              y: 150,
-              opacity: 1,
-              duration: 2.5,
-              ease: "power2.out",
-            })
-            .to(".top-tr", {
-              x: -450,
-              opacity: 0,
-              duration: 2.5,
-              ease: "power2.out",
-            });
-          gsap
-            .timeline()
-            .to(".top--tr", {
-              y: 150,
-              opacity: 1,
-              duration: 2,
-              ease: "power2.out",
-            })
-            .to(".top--tr", {
-              x: 250,
-              opacity: 0,
-              duration: 1.5,
-              ease: "power2.out",
-            });
-          gsap
-            .timeline()
-            .to(".top-plus", { y: 200, duration: 3, ease: "power2.out" })
-            .to(
-              ".top-plus",
-              { scale: 1.3, opacity: 0, duration: 3.5, ease: "power2.out" },
-              "-=1"
-            );
-          gsap
-            .timeline()
-            .to(".top-minus", { y: -450, duration: 3.5, ease: "power2.out" })
-            .to(
-              ".top-minus",
-              { scale: 1.3, opacity: 0, duration: 3.5, ease: "power2.out" },
-              "-=1"
-            );
-          gsap
-            .timeline()
-            .to(".bottom-tr", { y: 350, duration: 3, ease: "power2.out" })
-            .to(
-              ".bottom-tr",
-              { scale: 1.3, opacity: 0, duration: 3.5, ease: "power2.out" },
-              "-=1"
-            );
-          gsap
-            .timeline()
-            .to(".main-anim", { y: 70, duration: 3, ease: "power2.out" })
+              slider?.classList.remove("!w-0");
+              slideText.forEach((el) => (el.style.display = "block"));
+              animDiv.forEach((el) => (el.style.display = "none"));
+
+              const textDiv = document.querySelector(".text-div");
+              textDiv.classList.remove("hidden");
             
-            
-            .to(".img-small", {
-              opacity: 1,
-              height: "auto",
-              duration: 1,
-              ease: "power2.out",
-            })
-            .to(".main-img", {
-              opacity: 1,
-              height: "auto",
-              duration: 2.5,
-              ease: "power2.out",
+              gsap.set(textDiv, {
+                opacity: 0,
+                autoAlpha: 0,
+                width: "0%"
+              });
+
+              const tl = gsap.timeline();
+              tl.to(textDiv, {
+                width: "100%",
+                duration: 0.8,
+                ease: "power2.out"
+              }).to(textDiv, {
+                opacity: 1,
+                autoAlpha: 1,
+                duration: 0.5,
+                ease: "power2.out"
+              });
+            }, 8000); // your original timeout
+
+            setTimeout(() => {
+          const imgSmall = document.querySelector(".img-small");
+          if (imgSmall) {
+            imgSmall.classList.add("add-img-before");
+            window.addEventListener("scroll", function () {
+              imgSmall.classList.add("add-img-before");
             });
+          }
+        }, 6000);
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.timeline().to(".top-tr", { y: 150, opacity: 1, duration: 2.5, ease: "power2.out" })
+              .to(".top-tr", { x: -450, opacity: 0, duration: 2.5, ease: "power2.out" });
+      
+            gsap.timeline().to(".top--tr", { y: 150, opacity: 1, duration: 2, ease: "power2.out" })
+              .to(".top--tr", { x: 250, opacity: 0, duration: 1.5, ease: "power2.out" });
+      
+            gsap.timeline().to(".top-plus", { y: 200, duration: 3, ease: "power2.out" })
+              .to(".top-plus", { scale: 1.3, opacity: 0, duration: 3.5, ease: "power2.out" }, "-=1");
+      
+            gsap.timeline().to(".top-minus", { y: -450, duration: 3.5, ease: "power2.out" })
+              .to(".top-minus", { scale: 1.3, opacity: 0, duration: 3.5, ease: "power2.out" }, "-=1");
+      
+            gsap.timeline().to(".bottom-tr", { y: 350, duration: 3, ease: "power2.out" })
+              .to(".bottom-tr", { scale: 1.3, opacity: 0, duration: 3.5, ease: "power2.out" }, "-=1");
+      
+            gsap.timeline()
+              .to(".main-anim", { y: 70, duration: 3, ease: "power2.out" })
+              .to(".img-small", { opacity: 1, height: "auto", duration: 1, ease: "power2.out" })
+              .to(".main-img", { opacity: 1, height: "auto", duration: 2.5, ease: "power2.out" });
+      
             // ✅ SCROLL ANIMATION after page-load (DESKTOP)
             setTimeout(() => {
-              gsap.set(["#timeline", ".swiper-timeline-paris", ".left-big-img", ".right-big-img"], { opacity: 0 });
-              // gsap.set([".text-div", "#photo-frame"], {
-              //   opacity: 1,
-              //   autoAlpha: 1,
-              //   zIndex: 2,
-              //   position: "relative"
-              // },"+=0.2");
+              gsap.set(["#timeline", ".swiper-timeline-paris", ".left-big-img", ".right-big-img", ".text-content-container", ".year-main"], { opacity: 0, zIndex:-1 });
+              gsap.set([".text-div", "#photo-frame"], {
+                opacity: 1,
+                autoAlpha: 1,
+                zIndex: 2,
+                position: "relative"
+              });
       
-
-              
-
               const fadeTimeline = gsap.timeline({
                 scrollTrigger: {
                   trigger: "#trigger-zone",
@@ -2089,21 +2027,52 @@
                   end: "+=80%",
                   scrub: 2,
                   pin: true,
-                  onLeaveBack: () => {
+                 onLeaveBack: () => {
                     gsap.set("#timeline", { zIndex: 1 });
-                    gsap.set(".text-div", { zIndex: 2 });
-                    gsap.set("#photo-frame", { zIndex: 2 });
+                    // Only fade in .text-div and #photo-frame on scroll back (without changing width)
+                    gsap.to(".text-div", {
+                            opacity: 1,
+                            autoAlpha: 1,
+                            duration: 0.3,
+                            ease: "power2.out"
+                          });
+                        
+                          gsap.set("#photo-frame", {
+                            opacity: 1,
+                            autoAlpha: 1,
+                            duration: 0.3,
+                            ease: "power2.out"
+                          });
+
                   }
                 }
               });
       
-              fadeTimeline.to([".text-div", "#photo-frame"], {
+              fadeTimeline
+              .to(".text-div", {
                 opacity: 0,
+                duration: 0.3,
+                ease: "power3.out"
+              })
+              .to("#photo-frame", {
+                opacity: 0,
+                duration: 0.3,
                 ease: "power3.out"
               }, "+=0.2");
-      
-              fadeTimeline.to("#timeline", { opacity: 1 }, ">");
-              fadeTimeline.to([".swiper-timeline-paris", ".left-big-img", ".right-big-img"], {
+              fadeTimeline.to("#timeline", { opacity: 1, zIndex:10 }, ">");
+              fadeTimeline.to([".swiper-timeline-paris"], {
+                opacity: 1,
+                ease: "power2.out",
+                stagger: 0.3,
+                delay: 0.2
+              }, ">");
+              fadeTimeline.to([".text-content-container",".year-main"], {
+                opacity: 1,
+                ease: "power2.out",
+                stagger: 0.3,
+                delay: 0.2
+              }, ">");
+              fadeTimeline.to([ ".left-big-img", ".right-big-img"], {
                 opacity: 1,
                 ease: "power2.out",
                 stagger: 0.3,
@@ -2113,109 +2082,42 @@
               ScrollTrigger.refresh();
             }, 6000);
 
-        }
-         // Delay scroll-trigger setup slightly to avoid conflicts with GSAP intro
-       
-      });
-    </script>
-    <!-- Swiper Frame -->
-    <script>
-      var mySwiper = new Swiper(".swiper-frame", {
-        direction: "vertical",
-        effect: "slide",
-        slidesPerView: 1,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        on: {
-          init: function () {
-            updateCurrClass(this);
-          },
-          slideChange: function () {
-            updateCurrClass(this);
-          },
-        },
-      });
-      function updateCurrClass(swiper) {
-        swiper.slides.forEach((slide) => slide.classList.remove("curr"));
-        const realIndex = swiper.realIndex;
-        swiper.slides.forEach((slide) => {
-          if (slide.getAttribute("data-swiper-slide-index") == realIndex) {
-            slide.classList.add("curr");
           }
         });
-      }
-    </script>
-    <!-- Final Forced Styling on Load (Desktop) -->
-    <script>
-      window.addEventListener("load", function () {
-        const isMobileOrTablet = window.innerWidth <= 1024;
-        setTimeout(() => {
-          if (!isMobileOrTablet) {
-            document
-              .getElementById("person")
-              ?.style.setProperty("display", "none");
-            document
-              .getElementById("frame")
-              ?.style.setProperty("display", "none");
-            const imgSmall = document.querySelector(".img-small");
-            const tributeText = document.querySelector(".tribute-text");
-            const slider = document.querySelector(".swiper-frame");
-            const slideText = document.querySelectorAll(".slide-text");
-            const animDiv = document.querySelectorAll(".anim-div");
-            const mainAnim = document.querySelector(".main-anim");
-            if (imgSmall) {
-              Object.assign(imgSmall.style, {
-                position: "relative",
-                paddingTop: "0px",
-                paddingBottom: "110px",
-                overflow: "visible",
-              });
+      </script>
+      
+      <script>
+        var mySwiper = new Swiper(".swiper-frame", {
+          direction: "vertical",
+          effect: "slide",
+          slidesPerView: 1,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          on: {
+            init: function () {
+              updateCurrClass(this);
+            },
+            slideChange: function () {
+              updateCurrClass(this);
+            },
+          },
+        });
+      
+        function updateCurrClass(swiper) {
+          swiper.slides.forEach((slide) => slide.classList.remove("curr"));
+          const realIndex = swiper.realIndex;
+          swiper.slides.forEach((slide) => {
+            if (slide.getAttribute("data-swiper-slide-index") == realIndex) {
+              slide.classList.add("curr");
             }
-            if (tributeText) tributeText.style.display = "none";
-            if (mainAnim) {
-              Object.assign(mainAnim.style, {
-                width: "100%",
-                maxWidth: "1280px",
-                margin: "0 auto",
-              });
-            }
-            slider?.classList.remove("!w-0");
-            slideText.forEach((el) => (el.style.display = "block"));
-            animDiv.forEach((el) => (el.style.display = "none"));
-          }
-        }, 6000);
-        setTimeout(() => {
-          const imgSmall = document.querySelector(".img-small");
-          if (imgSmall) {
-            imgSmall.classList.add("add-img-before");
-            window.addEventListener("scroll", function () {
-              imgSmall.classList.add("add-img-before");
-            });
-          }
-        }, 6000);
-      });
-    </script>
-    <script>
-      function updateImgSmallClass() {
-        const imgSmall = document.querySelector(".img-small");
-        if (!imgSmall) return;
-
-        if (window.innerWidth < 1024) {
-          imgSmall.classList.add("add-img-before", "overflow-visible");
-        } else {
-          imgSmall.classList.remove("add-img-before", "overflow-visible");
+          });
         }
-      }
-
-      // Run on page load
-      document.addEventListener("DOMContentLoaded", updateImgSmallClass);
-
-      // Run on window resize
-      window.addEventListener("resize", updateImgSmallClass);
-    </script>
-   
+      </script>
+      
+     
+      
   </body>
 </html>
