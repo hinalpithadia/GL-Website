@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeries Lafayette</title>
+    <link rel="stylesheet" href="assets/css/styles-output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.3/themes/odometer-theme-minimal.min.css" integrity="sha512-Jeqp8CoPCvf9tf/uWokfCTsFcv5BIhfTYaTTJA0NKn6B88zDSWe5d/9HTmZX63FGpGGQdB8Chg2khB96+wn4Tw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+         section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-wrap {
+	display: grid;
+	place-items: center;
+	grid-template-areas: 'main';
+}
+
+.content {
+	grid-area: main;
+	display: grid;	
+	place-items: center;
+	line-height: 1.2;
+	grid-template-areas: 'content';
+}
+
+.content-wrap .content:first-child {
+	height: 100vh;
+}
+@media screen and (min-width: 53em) {
+    .content__img--3 {
+        width: 30vw;
+        align-self: center;
+    }
+}
+.content--layout {
+	grid-template-areas:  'title-up title-down' 
+						  'img img'
+						  'text text';
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.content__img {
+	grid-area: img;
+	max-width: 50%;
+	height: auto;
+}
+.content--layout-3 {
+        grid-template-areas:
+        'title-up img title-down'
+        'text text text';
+        grid-template-columns: 20vw auto 20vw;
+        grid-template-rows: auto auto;
+        row-gap: 10vh;
+        column-gap: 2vw;
+        justify-content: center;
+        align-content: center;
+    }
+    .content__img--3 {
+    aspect-ratio: 1000 / 560;
+}
+svg {
+      width: 60%;
+      height: auto;
+    }
+    </style>
+</head>
+
+<body class=" relative font-helvetica overflow-x-hidden">
+   
+    <!--header-->
+    <div id="header" class="home-header fixed z-50 top-0 bg-black w-full py-2 text-center uppercase ">
+        <p class="text-sm font-medium leading-8 tracking-[1.68px] text-white">launching soon in India</p>
+    </div>
+    <!--header end-->
+    <!--navbar-->
+    <nav id="navbar" class="home-navbar fixed z-50 top-12 w-full bg-transparent flex justify-between items-center ">
+        <div id="navwrapper"
+            class=" w-full mx-auto px-2.5 md:px-6 lg:px-8 2xl:px-8 max-w-8xl py-1.5 lg:py-[21px] h-[80px] lg:h-max">
+           
+            <div class="flex flex-col lg:flex-row justify-between items-center">
+                <div class="flex items-center justify-between w-full lg:w-max">
+                    <a href="index.html"
+                        class="text-black relative z-10 bg-transparent max-w-[180px] inline-block py-[5px] mr-4 max-lg:z-[1000] leading-normal whitespace-nowrap ">
+                        <img loading="lazy" src="assets/images/logo-main.png" alt="" class="w-full logo-img-white">
+                        <img loading="lazy" src="assets/images/logo-main-black.png" alt="" class="w-full logo-img-black"/>
+                    </a>
+                    <button id="toggle-button"
+                        class=" relative z-10 bg-transparent right-2  block lg:hidden max-lg:z-[1000]">
+                        <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.5 12.5C0.5 6.14873 5.64873 1 12 1C18.3513 1 23.5 6.14873 23.5 12.5V31H0.5V12.5Z"
+                                stroke="white" />
+                            <path
+                                d="M18.2222 17.5C18.2222 17.6768 18.1608 17.8464 18.0514 17.9714C17.942 18.0964 17.7936 18.1667 17.6389 18.1667H6.36111C6.2064 18.1667 6.05803 18.0964 5.94863 17.9714C5.83924 17.8464 5.77778 17.6768 5.77778 17.5C5.77778 17.3232 5.83924 17.1536 5.94863 17.0286C6.05803 16.9036 6.2064 16.8333 6.36111 16.8333H17.6389C17.7936 16.8333 17.942 16.9036 18.0514 17.0286C18.1608 17.1536 18.2222 17.3232 18.2222 17.5ZM7.13889 12.8333H16.8611C17.0158 12.8333 17.1642 12.7631 17.2736 12.6381C17.383 12.513 17.4444 12.3435 17.4444 12.1667C17.4444 11.9899 17.383 11.8203 17.2736 11.6953C17.1642 11.5702 17.0158 11.5 16.8611 11.5H7.13889C6.98418 11.5 6.83581 11.5702 6.72641 11.6953C6.61701 11.8203 6.55556 11.9899 6.55556 12.1667C6.55556 12.3435 6.61701 12.513 6.72641 12.6381C6.83581 12.7631 6.98418 12.8333 7.13889 12.8333ZM18.4167 22.1667H5.58333C5.42862 22.1667 5.28025 22.2369 5.17085 22.3619C5.06146 22.487 5 22.6565 5 22.8333C5 23.0101 5.06146 23.1797 5.17085 23.3047C5.28025 23.4298 5.42862 23.5 5.58333 23.5H18.4167C18.5714 23.5 18.7198 23.4298 18.8291 23.3047C18.9385 23.1797 19 23.0101 19 22.8333C19 22.6565 18.9385 22.487 18.8291 22.3619C18.7198 22.2369 18.5714 22.1667 18.4167 22.1667Z"
+                                fill="white" />
+                        </svg>
+
+                    </button>
+                </div>
+                <ul id="toggle-menu"
+                    class="main-link lg:w-max w-full lg:ml-auto ml-0 max-lg:z-20 lg:top-0 max-lg:bg-transparent transform transition duration-500 lg:relative max-lg:gap-8 flex flex-col lg:flex-row gap-8 lg:gap-14 max-lg:py-4 max-lg:p-10 lg:min-h-0 lg:px-0 lg:py-0 -translate-y-[200%] lg:translate-y-0">
+                    <li>
+                        <a href="#HOME" class="nav_link ">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#Gl" class="nav_link ">OUR STORY</a>
+                    </li>
+                    <li>
+                        <a href="#BRANDS" class="nav_link ">BRANDS</a>
+                    </li>
+                    <li>
+                        <a href="#MEDIA" class="nav_link ">MEDIA</a>
+                    </li>
+                    <li>
+                        <a href="#ABOUT" class="nav_link ">ABOUT US</a>
+                    </li>
+                    <li>
+                        <button class="lg:hidden block btn-white">GET IN TOUCH</button>
+                    </li>
+                </ul>
+                <button class="hidden lg:block btn-white ml-auto whitespace-nowrap">GET IN TOUCH</button>
+            </div>
+        </div>
+    </nav>
+   
+    <!-- navbar end  -->
+    <!-- hero-section start  -->
+    <div class="hero-sec fixed top-0 bg-center bg-no-repeat md:bg-cover bg-auto md:bg-fixed bg-scroll z-0  w-full h-screen xl:bg-[url('../images/hero-img.webp')] bg-[url('../images/hero-img-mobile.png')]"
+        >
+        <div id="hero-Bottom" class="absolute bottom-0 bg-black py-6 w-full">
+            <div class=" w-full mx-auto px-2.5 md:px-6 lg:px-8 2xl:px-8 max-w-8xl">
+                <div class="flex items-end justify-between gap-14">
+                    <img src="assets/images/bash-logo.webp" alt="image" loading="lazy"
+                        class="lg:max-w-max max-w-[170px]">
+                    <span class="lg:text-lg text-xs font-normal text-white leading-6">Made for women, by women.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- hiro section end -->
+    <section class="panel" style="background:#222;">
+        <div class="reveal-text">First Insight</div>
+      </section>
+      
+      <section class="panel" style="background:#333;">
+        <svg class="content__img content__img--3" width="1000" height="560" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 560">
+            <defs>
+              <filter id="displacementFilter3">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise"></feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="80" result="displacement" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+              </filter>
+              <mask id="pathMask">
+                <path id="maskPath" 
+                  d="M 0 280 Q 500 620.2128 1000 280 Q 500 -34.0426 0 280" 
+                  fill="white" 
+                  style="filter: url(#displacementFilter3);">
+                </path>
+              </mask>
+            </defs>
+        
+            <image xlink:href="https://via.placeholder.com/1000x560/444/fff?text=GL+Logo" 
+                   width="1000" height="560" 
+                   mask="url(#pathMask)" />
+          </svg>
+      </section>
+  
+  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/flip.min.js"></script>
+    
+    <script>
+   document.addEventListener("DOMContentLoaded", () => {
+    const svg = document.querySelector('.content__img--3');
+    const mask = svg.querySelector('.mask');
+    const image = svg.querySelector('image');
+    const titleWrap = document.querySelector('.title-wrap');
+    const titleUp = titleWrap.querySelector('.title--up');
+    const titleDown = titleWrap.querySelector('.title--down');
+
+    // Save the initial state of the title elements
+    const flipState = Flip.getState([titleUp, titleDown]);
+
+    // Check if the mask element is a circle or path
+    const isCircle = mask.tagName.toLowerCase() === 'circle';
+
+    // Create Flip timeline
+    const flipTimeline = Flip.from(flipState, {
+      simple: true,
+      ease: "none",
+    })
+    .fromTo(mask, {
+      attr: isCircle ? { r: mask.getAttribute('r') } : { d: mask.getAttribute('d') },
+    }, {
+      attr: isCircle ? { r: mask.dataset.valueFinal } : { d: mask.dataset.valueFinal },
+      ease: "none",
+    }, 0)
+    .fromTo(image, {
+      transformOrigin: '50% 50%',
+      filter: 'brightness(100%)',
+    }, {
+      scale: isCircle ? 1.2 : 1,
+      filter: 'brightness(150%)',
+      ease: "none",
+    }, 0);
+
+    // Apply ScrollTrigger for scroll-based animation
+    ScrollTrigger.create({
+      trigger: titleWrap,
+      start: "clamp(top bottom-=10%)",
+      end: "+=40%",
+      scrub: true,
+      animation: flipTimeline,
+    });
+  });
+
+    </script>
+</body>
+
+</html>

@@ -60,6 +60,71 @@
 #trigger-zone{
   height: auto;
 }
+.swiper-timeline-paris, .year-main, .text-content-container, .left-big-img, .right-big-img, .text-div {
+    opacity: 1;
+}
+.text-div {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  max-height: 100%;
+  width: 100%;
+}
+.main-img{
+  opacity: 1;
+}
+.frame-bottom {
+ align-items: center;
+}
+.img-small {
+  height: auto;
+  overflow: visible;
+}
+.tribute-text{
+  bottom: 210px;
+}
+.hero{
+  padding-top: 200px;
+}
+}
+@media(max-width:990px){
+  .swiper-frame .swiper-slide {
+    opacity: 1;
+    transition: all 0.5s ease-out;
+}
+  .frame-bottom{
+  align-items: center;
+}
+.img-small{
+  height: auto;
+  overflow: visible;
+  position: relative;
+    top: 0;
+    height: 100%;
+    left: 0;
+    right: 0;
+    transform: translate(0px, 0px);
+}
+#photo-frame{
+  min-height: 800px;
+
+}
+.frame-bottom {
+  margin-top: 50px;
+}
+.main-anim{
+  padding-bottom: 0;
+}
+
+
+}
+@media(max-width:767px) {
+        .hero {
+            padding-top: 150px;
+        }
+        #photo-frame {
+        min-height: 680px;
+    }
 }
     </style>
   </head>
@@ -227,7 +292,7 @@
                         <p
                           class="slide-text hidden text-[14px] leading-[140%] tracking-[12%] uppercase text-center pt-5"
                         >
-                          Théophile Bader, 1959.
+                        Alphonse Kahn, 1959.
                         </p>
                       </div>
                     </div>
@@ -1813,7 +1878,7 @@
       <script>
         let pageLoaded = false;
         document.addEventListener("DOMContentLoaded", function () {
-          const isMobileOrTablet = window.innerWidth <= 1024;
+          const isMobileOrTablet = window.innerWidth <= 1027;
           if (!isMobileOrTablet && document.body.classList.contains("gl-paris-body")) {
             document.body.classList.add("scroll-lock");
             setTimeout(() => {
@@ -1839,6 +1904,30 @@
             if (imgSmall) {
               imgSmall.classList.add("add-img-before");
             }
+             // ➡️ FIX: Make sure mobile also shows the timeline
+  const timelineEls = ["#timeline", ".swiper-timeline-paris", ".left-big-img", ".right-big-img", ".text-content-container", ".year-main"];
+  timelineEls.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.style.opacity = "1";
+      el.style.zIndex = "1";
+      el.style.position = "relative";
+    });
+  });
+
+  const textDiv = document.querySelector(".text-div");
+  if (textDiv) {
+    textDiv.classList.remove("hidden");
+    textDiv.style.opacity = "1";
+    textDiv.style.zIndex = "2";
+    textDiv.style.width = "100%";
+  }
+  
+  const photoFrame = document.getElementById("photo-frame");
+  if (photoFrame) {
+    photoFrame.style.opacity = "1";
+    photoFrame.style.zIndex = "2";
+    photoFrame.style.position = "relative";
+  }
           }
       
           const odometerEl = document.querySelector(".text-content-container .odometer");
@@ -1924,7 +2013,7 @@
       <!-- Desktop-Only Page Load Animations -->
       <script>
         window.addEventListener("load", function () {
-          const isMobileOrTablet = window.innerWidth <= 1024;
+          const isMobileOrTablet = window.innerWidth <= 1027;
           if (!isMobileOrTablet) {
             setTimeout(() => {
               document.getElementById("person")?.style.setProperty("display", "none");
@@ -2083,28 +2172,83 @@
             }, 6000);
 
           }
+          else{
+             // Make sure necessary elements are visible on mobile
+
+  const timeline = document.querySelector('#timeline');
+  const swiperTimelineParis = document.querySelector('.swiper-timeline-paris');
+  const textDiv = document.querySelector('.text-div');
+  const photoFrame = document.querySelector('#photo-frame');
+
+  if (timeline) {
+    timeline.style.opacity = "1";
+    timeline.style.zIndex = "1";
+  }
+
+  if (swiperTimelineParis) {
+    swiperTimelineParis.style.opacity = "1";
+    swiperTimelineParis.style.zIndex = "1";
+  }
+
+  if (textDiv) {
+    textDiv.classList.remove('hidden'); // if hidden class
+    textDiv.style.opacity = "1";
+    textDiv.style.width = "100%";
+    textDiv.style.zIndex = "2";
+  }
+
+  if (photoFrame) {
+    photoFrame.classList.remove('hidden'); // if hidden class
+    photoFrame.style.opacity = "1";
+    photoFrame.style.zIndex = "2";
+  }
+
+  // Also, if you have any animation divs for desktop only (like .anim-div), you can hide them:
+  const animDiv = document.querySelector('.anim-div');
+  if (animDiv) {
+    animDiv.style.display = "none";
+  }
+          }
         });
       </script>
       
       <script>
-        var mySwiper = new Swiper(".swiper-frame", {
-          direction: "vertical",
-          effect: "slide",
-          slidesPerView: 1,
-          loop: true,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          on: {
-            init: function () {
-              updateCurrClass(this);
-            },
-            slideChange: function () {
-              updateCurrClass(this);
-            },
-          },
-        });
+    var mySwiper;
+
+// Function to initialize or update Swiper
+function initSwiper() {
+  const isSmallScreen = window.innerWidth <= 767;  // iPad and mobile check
+
+  if (mySwiper) {
+    mySwiper.destroy(true, true);  // Destroy existing Swiper
+  }
+
+  // Initialize Swiper with the appropriate direction based on screen size
+  mySwiper = new Swiper(".swiper-frame", {
+    direction: isSmallScreen ? "horizontal" : "vertical",  // Horizontal for small screens, Vertical for desktop
+    effect: "slide",
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      init: function () {
+        updateCurrClass(this);
+      },
+      slideChange: function () {
+        updateCurrClass(this);
+      },
+    },
+  });
+}
+
+// Initialize Swiper on page load
+initSwiper();
+
+// Reinitialize on window resize
+window.addEventListener("resize", initSwiper);
       
         function updateCurrClass(swiper) {
           swiper.slides.forEach((slide) => slide.classList.remove("curr"));

@@ -1862,6 +1862,10 @@ p {
 }
 
 @media(max-width:767px) {
+  .hero {
+    padding-top: 150px;
+  }
+
   .left-small-img,.right-small-img{
     display: none!important;
   }
@@ -1890,7 +1894,6 @@ p {
 
   .swiper-frame {
     width: 100%;
-    height: 100%;
     max-width: 260px;
   }
 
@@ -1898,9 +1901,13 @@ p {
     right: 0px;
     position: absolute;
     z-index: 100 !important;
-    top: 420px;
+    top: 400px;
     left: 0;
     margin: auto;
+  }
+
+  .tribute-text{
+    display: none;
   }
 
   .swiper-frame .swiper-pagination.swiper-pagination-clickable{
@@ -2171,9 +2178,9 @@ p {
 }
 
 @media(max-width:900px) {
-  .hero{
-    padding: 150px 20px 0!important;
-  }
+  /* .hero{
+            padding: 150px 20px 0!important;
+        } */
 
   .news-arrow{
     max-width: 775px;
@@ -2452,6 +2459,10 @@ p {
   bottom: 175px;
 }
 
+.bottom-\[200px\] {
+  bottom: 200px;
+}
+
 .bottom-auto {
   bottom: auto;
 }
@@ -2662,6 +2673,10 @@ p {
   margin-top: 2rem;
 }
 
+.mt-\[-450px\] {
+  margin-top: -450px;
+}
+
 .mt-\[120px\] {
   margin-top: 120px;
 }
@@ -2741,6 +2756,10 @@ p {
   height: 1px;
 }
 
+.h-\[280px\] {
+  height: 280px;
+}
+
 .h-\[300px\] {
   height: 300px;
 }
@@ -2805,8 +2824,16 @@ p {
   min-height: 360px;
 }
 
+.min-h-\[460px\] {
+  min-height: 460px;
+}
+
 .min-h-\[517px\] {
   min-height: 517px;
+}
+
+.min-h-\[880px\] {
+  min-height: 880px;
 }
 
 .\!w-0 {
@@ -2930,6 +2957,10 @@ p {
   max-width: 400px;
 }
 
+.max-w-\[432px\] {
+  max-width: 432px;
+}
+
 .max-w-\[698px\] {
   max-width: 698px;
 }
@@ -2969,6 +3000,10 @@ p {
 
 .max-w-xs {
   max-width: 20rem;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
 }
 
 .shrink-0 {
@@ -3186,6 +3221,10 @@ p {
 
 .gap-\[20px\] {
   gap: 20px;
+}
+
+.gap-\[30px\] {
+  gap: 30px;
 }
 
 .gap-\[40px\] {
@@ -3571,6 +3610,10 @@ p {
   padding-bottom: 60px;
 }
 
+.pl-14 {
+  padding-left: 3.5rem;
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
@@ -3611,12 +3654,20 @@ p {
   padding-top: 0px;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
 .pt-5 {
   padding-top: 1.25rem;
 }
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pt-\[150px\] {
+  padding-top: 150px;
 }
 
 .pt-\[50px\] {
@@ -3669,6 +3720,10 @@ p {
 
 .font-helvetica-medium {
   font-family: Helvetica Neue Medium;
+}
+
+.\!text-\[104px\] {
+  font-size: 104px !important;
 }
 
 .\!text-\[50px\] {
@@ -3735,6 +3790,10 @@ p {
 
 .text-\[66px\] {
   font-size: 66px;
+}
+
+.text-\[80px\] {
+  font-size: 80px;
 }
 
 .text-base {
@@ -3810,6 +3869,10 @@ p {
   line-height: 100%;
 }
 
+.leading-\[104px\] {
+  line-height: 104px;
+}
+
 .leading-\[110\%\] {
   line-height: 110%;
 }
@@ -3860,6 +3923,10 @@ p {
 
 .leading-\[56px\] {
   line-height: 56px;
+}
+
+.leading-\[92px\] {
+  line-height: 92px;
 }
 
 .leading-normal {
@@ -4092,6 +4159,10 @@ p {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -4226,6 +4297,10 @@ p {
   }
 
   @media(max-width:900px) {
+    /* .hero{
+            padding: 150px 20px 0!important;
+        } */
+
     .news-slider .swiper-slide .sm\:block.relative {
       max-width: 775px;
       width: 100%;
@@ -4272,6 +4347,10 @@ p {
   }
 
   @media(max-width:900px) {
+    /* .hero{
+            padding: 150px 20px 0!important;
+        } */
+
     .news-slider .swiper-slide .md\:block.relative {
       max-width: 775px;
       width: 100%;
@@ -4342,11 +4421,19 @@ p {
   }
 
   @media(max-width:900px) {
+    /* .hero{
+            padding: 150px 20px 0!important;
+        } */
+
     .news-slider .swiper-slide .lg\:block.relative {
       max-width: 775px;
       width: 100%;
       margin: 0px auto;
     }
+
+    /* .hero{
+            padding: 150px 20px 0!important;
+        } */
 
     .news-slider .swiper-slide .lg\:relative.block {
       max-width: 775px;
@@ -4388,6 +4475,10 @@ p {
   }
 
   @media(max-width:900px) {
+    /* .hero{
+            padding: 150px 20px 0!important;
+        } */
+
     .news-slider .swiper-slide .xl\:block.relative {
       max-width: 775px;
       width: 100%;
