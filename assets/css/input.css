@@ -871,7 +871,7 @@
     }
 
     .swiper-frame .swiper-pagination-bullet.swiper-pagination-bullet-active {
-        width: 6px;
+        width: 8px;
         height: 16px;
         border-radius: 30px;
         background: #000;
@@ -1078,7 +1078,13 @@
         #time-nextSlide-1 {
             transform: rotate(0deg);
             position: absolute;
-            bottom: 50px;
+            bottom: -45px;
+        }
+        #time-prevSlide-1{
+            left: 40%;
+        }
+        #time-nextSlide-1 {
+            right:40%;
         }
         
     }
@@ -1114,11 +1120,11 @@
        
 
         #time-prevSlide-1 {
-            left: 100px;
+            left: 35%;
         }
 
         #time-nextSlide-1 {
-            right: 100px;
+            right: 35%;
         }
     }
 
@@ -1219,6 +1225,12 @@
             width: 340px;
             height: 290px;
             object-fit: cover;
+        }
+        #time-nextSlide-1 {
+            right: 25%;
+        }
+        #time-prevSlide-1 {
+            left: 25%;
         }
     }
 
