@@ -2689,6 +2689,10 @@ p {
   margin-top: 0.5rem;
 }
 
+.mt-24 {
+  margin-top: 6rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -2715,14 +2719,6 @@ p {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
-.mt-24 {
-  margin-top: 6rem;
 }
 
 .line-clamp-2 {
@@ -4815,16 +4811,16 @@ p {
     max-width: 56rem;
   }
 
+  .sm\:max-w-5xl {
+    max-width: 64rem;
+  }
+
   .sm\:max-w-\[360px\] {
     max-width: 360px;
   }
 
   .sm\:max-w-\[540px\] {
     max-width: 540px;
-  }
-
-  .sm\:max-w-5xl {
-    max-width: 64rem;
   }
 
   .sm\:grid-cols-\[repeat\(auto-fit\2c minmax\(224px\2c 1fr\)\)\] {
@@ -4855,12 +4851,12 @@ p {
     gap: 100px;
   }
 
-  .sm\:gap-\[70px\] {
-    gap: 70px;
-  }
-
   .sm\:gap-\[46px\] {
     gap: 46px;
+  }
+
+  .sm\:gap-\[70px\] {
+    gap: 70px;
   }
 
   .sm\:py-\[70px\] {
@@ -5010,12 +5006,12 @@ p {
     height: 510px;
   }
 
-  .md\:h-\[72px\] {
-    height: 72px;
-  }
-
   .md\:h-\[558px\] {
     height: 558px;
+  }
+
+  .md\:h-\[72px\] {
+    height: 72px;
   }
 
   .md\:max-h-\[100vh\] {

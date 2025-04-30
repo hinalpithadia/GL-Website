@@ -112,6 +112,9 @@
                 max-width: 480px;
                 margin: auto;
             }
+            .panel-text, .panel-para, #maskPath,.coming-soon{
+                opacity: 0;
+            }
     </style>
 </head>
 
@@ -220,10 +223,10 @@
     
     <!-- hiro section end -->
     <div class="animate-scale_first max-lg:backdrop-blur-lg"></div>
-    <img src="assets/images/brand-window-desktop.png" alt="" class="hidden md:block w-full h-screen window z-[10101] fixed top-0">
-    <img src="assets/images/brand-window-small.webp" alt=""
-        class="sm:block hidden md:hidden w-full h-screen window z-[10101] fixed top-0">
-    <img src="assets/images/brand-window-small-2.webp" alt="" class="sm:hidden w-full h-screen window z-[10101] fixed top-0">
+    <img src="assets/images/homepage-window-desktop.png" alt="" class="hidden md:block w-full h-screen window-gray z-[10101] fixed top-0">
+    <img src="assets/images/homepage-window-small.webp" alt=""
+        class="sm:block hidden md:hidden w-full h-screen window-gray z-[10101] fixed top-0">
+    <img src="assets/images/homepage-window-small-2.webp" alt="" class="sm:hidden w-full h-screen window-gray z-[10101] fixed top-0">
     <!-- efforts-section start  -->
     <div id="efforts-section"
         class="bg-transparent w-full h-auto min-h-[1080px] flex  items-center justify-end flex-col">
@@ -1270,79 +1273,115 @@ $(document).ready(function () {
 
 
     </script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Select the mask path and turbulence filter elements
-        const maskPath = document.querySelector('#maskPath');
-        const turbulence = document.querySelector('#turbulence');
-        const panelTexts = document.querySelectorAll(".panel-text"); // Now selects both
-        const panelpara  = document.querySelector(".panel-para");
-        const comingsoon  = document.querySelector(".coming-soon");
+   <script>
+ gsap.registerPlugin(ScrollTrigger);
 
-        // Initially hide the arrow and image (fully hidden)
-        gsap.set(maskPath, { attr: { d: "M 0 280 Q 500 280 1000 280 Q 500 280 0 280" } }); // Hide the mask by resetting the path
-        
-        gsap.set(panelTexts, { opacity: 0 });
-        gsap.set(panelpara, { opacity: 0, y: 50 });
-        gsap.set(comingsoon, { opacity: 0 });
+function checkScrollAndAnimate(onComplete) {
+  const windowImages = document.querySelectorAll(".window-gray");
+  let animationsRemaining = 0;
 
+  if (window.scrollY > 150) {
+    windowImages.forEach((image) => {
+      image.style.display = "none";
+    });
+    if (onComplete) onComplete(); // Skip animation if scrolled
+  } else {
+    windowImages.forEach((image) => {
+      if (!image.classList.contains("animate-scale_first")) {
+        image.style.display = "block";
+        image.classList.add("animate-scale_first");
+        animationsRemaining++;
 
-        // Set a delay after page load before starting the animation
-        gsap.delayedCall(2, () => {
-        
-          // Animate the mask path to fully reveal the image over time
-          gsap.to(maskPath, {
-            duration: 3, // Duration of path reveal
-            ease: "power2.inOut",
-            
-            attr: {
-              d: "M 0 0 L 1000 0 L 1000 560 L 0 560 Z"  // Final shape of the mask
-            },
-            onComplete: () => {
-      // When mask reveal completes, show text elements
-
-      // Fade in panel text
-      gsap.to(panelTexts, {
-        duration: 1,
-        opacity: 1,
-        ease: "power2.out",
-        stagger: 0.2
-      });
-
-
-      // Slide up and fade in paragraph
-      gsap.to(panelpara, {
-        duration: 1,
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-        delay: 0.2
-      });
-
-      // Fade in coming soon
-      gsap.to(comingsoon, {
-        duration: 1,
-        opacity: 1,
-        ease: "power2.out",
-        delay: 0.4
-      });
-    }
-           // M 0 280 Q 500 800 1000 280 Q 500 -200 0 280
-          });
-        
-          // Animate the turbulence to reduce its effect, making the image clearer
-          gsap.to(turbulence, {
-            duration: 3,  // Duration of turbulence effect
-            ease: "power2.inOut",
-            attr: {
-              baseFrequency: 0.001  // Final reduced value of baseFrequency
+        image.addEventListener(
+          "animationend",
+          () => {
+            image.style.display = "none";
+            animationsRemaining--;
+            if (animationsRemaining === 0 && typeof onComplete === "function") {
+              onComplete();
             }
+          },
+          { once: true }
+        );
+      }
+    });
+
+    // If no animations were added, call onComplete immediately
+    if (animationsRemaining === 0 && typeof onComplete === "function") {
+      onComplete();
+    }
+  }
+}
+
+window.addEventListener("load", () => {
+  // First: run the window animation and wait
+  checkScrollAndAnimate(() => {
+    // Then: start the GSAP sequence
+    const maskPath = document.querySelector('#maskPath');
+    const turbulence = document.querySelector('#turbulence');
+    const panelTexts = document.querySelectorAll(".panel-text");
+    const panelpara = document.querySelector(".panel-para");
+    const comingsoon = document.querySelector(".coming-soon");
+
+    gsap.set(maskPath, {
+      attr: {
+        d: "M 0 280 Q 500 280 1000 280 Q 500 280 0 280"
+      }
+    });
+
+    gsap.set(panelTexts, { opacity: 0 });
+    gsap.set(panelpara, { opacity: 0, y: 50 });
+    gsap.set(comingsoon, { opacity: 0 });
+
+    gsap.to(maskPath, {opacity:1});
+    gsap.delayedCall(0.2, () => {
+      gsap.to(maskPath, {
+        duration: 3,
+        ease: "power2.inOut",
+        attr: {
+          d: "M 0 0 L 1000 0 L 1000 560 L 0 560 Z"
+        },
+        onComplete: () => {
+          gsap.to(panelTexts, {
+            duration: 1,
+            opacity: 1,
+            ease: "power2.out",
+            stagger: 0.2
           });
-        });
-        
-        
-            </script>
+
+          gsap.to(panelpara, {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            ease: "power2.out",
+            delay: 0.2
+          });
+
+          gsap.to(comingsoon, {
+            duration: 1,
+            opacity: 1,
+            ease: "power2.out",
+            delay: 0.4
+          });
+        }
+      });
+
+      gsap.to(turbulence, {
+        duration: 3,
+        ease: "power2.inOut",
+        attr: {
+          baseFrequency: 0.001
+        }
+      });
+    });
+
+    // Attach scroll listener only after first animation
+    window.addEventListener("scroll", checkScrollAndAnimate);
+  });
+});
+
+  </script>
+  
 </body>
 
 </html>
