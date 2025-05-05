@@ -44,10 +44,7 @@
     opacity: 1;
   }
 }
-            .svg-bg{
-                position: absolute;
-                top:0;
-            }
+       
          .panel {
             min-height: 100vh;
             display: flex;
@@ -104,7 +101,7 @@
             <div class="flex flex-col lg:flex-row justify-between items-center">
                 <div class="flex items-center justify-between max-lg:w-full">
                     <a href="index.html" class="text-black relative z-10 bg-transparent max-w-[180px] inline-block py-[5px] mr-4 max-lg:z-[1000] leading-normal whitespace-nowrap ">
-                        <img loading="lazy" src="assets/images/gl-logo-black.jpg" alt="" class="w-full max-w-[120px]">
+                        <img loading="lazy" src="assets/images/gl-logo-black.jpg" alt="" class="w-full ">
                     </a>
                     <button id="toggle-button" class=" relative z-10 bg-transparent right-1 w-8 h-8 block lg:hidden max-lg:z-[1000]">
                         <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,10 +133,9 @@
    
     <!-- navbar end  -->
     <!-- hero-section start  -->
-    <div class="hero-sec relative md:pt-0 pt-10 fixed top-0 bg-center bg-no-repeat md:bg-cover bg-auto md:bg-fixed bg-scroll z-0  w-full h-screen"
+    <div class="hero-sec svg-bg md:pt-0 pt-10 fixed top-0 bg-center bg-no-repeat md:bg-cover bg-auto md:bg-fixed bg-scroll z-0  w-full h-screen"
         >
-        <div class="svg-bg">
-        </div>
+       
         <div class="panel ">
             <div class="flex xl:flex-row flex-col items-center lg:gap-10 gap-5 xl:mb-0 mb-8">
             <div class="panel-text lg:mt-24 mt-10">
@@ -180,17 +176,10 @@
     
     <!-- hiro section end -->
     <div class="animate-scale_first max-lg:backdrop-blur-lg"></div>
- <!-- Desktop only (≥1024px) -->
-<img src="assets/images/homepage-window-desktop.png" alt=""
-class=" w-full h-screen window-gray fixed top-0 left-0 z-[10101]  window-gray-dektop">
-
-<!-- Medium screens (768–1023px) -->
-<img src="assets/images/homepage-window-small.png" alt=""
-class=" w-full h-screen window-gray fixed top-0 left-0 z-[10100]  window-gray-tablet">
-
-<!-- Small screens (<768px) -->
-<img src="assets/images/homepage-window-small2.png" alt=""
-class=" w-full h-screen window-gray fixed top-0 left-0 z-[10099]  window-gray-mobile">
+    <img src="assets/images/homepage-window-desktop.png" alt="" class="window-gray-dektop w-full h-screen window-gray z-[10101] fixed top-0">
+    <img src="assets/images/homepage-window-small.png" alt=""
+        class="window-gray-tablet w-full h-screen window-gray z-[10101] fixed top-0">
+    <img src="assets/images/homepage-window-small2.png" alt="" class="window-gray-mobile w-full h-screen window-gray z-[10101] fixed top-0">
     <!-- efforts-section start  -->
     <div id="efforts-section"
         class="bg-transparent w-full h-auto min-h-[1080px] flex  items-center justify-end flex-col">
@@ -1278,7 +1267,6 @@ $(document).ready(function () {
   }
 }
 
-
 function initAnimationSequence() {
   checkScrollAndAnimate(() => {
     const maskPath = document.querySelector('#maskPath');
@@ -1358,7 +1346,6 @@ window.addEventListener("resize", () => {
 
   initAnimationSequence();
 });
-
 
   </script>
   
