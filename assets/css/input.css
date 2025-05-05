@@ -1026,7 +1026,13 @@
     .text-content-container .odometer .odometer-formatting-mark {
         display: none !important;
     }
-
+    .svg-bg{
+        background: url(../images/svg-bg.png);
+    background-size: contain;
+    background-position: top;
+    width: 100%;
+    height: 100%;
+    }
     
     @media(max-width:1270px){
       
@@ -1089,6 +1095,9 @@
         
     }
     @media(max-width:1000px) {
+        .svg-bg{
+            background-size: cover;
+           }
         .scale {
             display: none !important;
         }
@@ -1129,6 +1138,7 @@
     }
 
     @media(max-width:767px) {
+       
         .hero {
             padding-top: 150px;
         }
